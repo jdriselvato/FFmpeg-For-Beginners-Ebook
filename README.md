@@ -638,8 +638,8 @@ Source:
 **Linux**
 
 Linux users who want to configure extra dependencies are required to
-install from source, reference question 3, *"How to Install FFmpeg on
-Linux?"*.
+install from source, reference question 3, "How to Install FFmpeg on
+Linux?".
 
 Here's an example of how to install dependencies provided by the FFmpeg
 wiki:
@@ -825,8 +825,7 @@ limitless. Next, let's explore the world of audio editing with FFmpeg!
 
 ![](media/image18.png){width="1.0in" height="1.0in"}
 
-Understanding the\
-Basics of FFmpeg
+Understanding the Basics of FFmpeg
 
 This section quickly catches you up to speed on the foundational
 building blocks of FFmpeg and key concepts. Here you'll learn about
@@ -1444,6 +1443,7 @@ In this example, FFmpeg lacks a specific media file as an input but uses
 input variables for the external file (file.txt). Thus -f is used to
 "force" a non-media file type input.
 
+```
 concat
 
 Indicates the argument that combines multiple media files
@@ -1451,6 +1451,7 @@ Indicates the argument that combines multiple media files
 -f
 
 Indicates a forced input or output
+```
 
 ### A Note About Trimming
 
@@ -1460,6 +1461,7 @@ initially, confusing arguments. Once one gets familiar with the syntax,
 trimming isn't difficult. In order to understand the next 3 questions,
 let's look at the common FFmpeg arguments to properly trim audio.
 
+```
 -ss \[time\]
 
 Indicates seeking (the start time of audio) and must be set before the
@@ -1479,6 +1481,7 @@ stream
 
 The formatting for time are in order from hour, minute seconds
 (HH:MM:SS)
+```
 
 ## 24. How to Trim 'x' Seconds From the Start of an Audio Track?
 
@@ -1602,6 +1605,7 @@ The volume value can also be a negative value to decrease the volume:
 
 **Tip:** The volume filter also works on video input.
 
+```
 volume
 
 Indicates the volume filter name
@@ -1609,6 +1613,7 @@ Indicates the volume filter name
 volume
 
 Indicates the volume value (input_volume \* value = output_volume)
+```
 
 The volume filter has over 17 different parameters to precisely change
 the sound. For more information visit,
@@ -1626,6 +1631,7 @@ both inputs:
   \"acrossfade=duration=00:00:01:curve1=exp:curve2=exp\" output.mp3
 ```
 
+```
 acrossfade
 
 Indicates the filter name for crossfading
@@ -1669,6 +1675,7 @@ cubic
 nofade
 
 No fade applied
+```
 
 For more information on crossfades and curves, visit:
 [[https://ffmpeg.org/ffmpeg-filters.html#afade]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#afade)
@@ -1697,6 +1704,7 @@ settings for normalizing audio with loudnorm:
 a clear identity of who invented these exact variables. Play around with
 the values to get a sound you prefer.
 
+```
 loudnorm
 
 Indicates the name of the normalization filter
@@ -1712,6 +1720,7 @@ Indicates the loudness range (1.0 to 20.0 with default 7.0)
 TP, tp
 
 Indicates the max true peak (-9.0 to 0.0 with default -2.0)
+```
 
 For more information on loudnorm, visit:
 [[https://ffmpeg.org/ffmpeg-filters.html#loudnorm]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)
@@ -1744,6 +1753,7 @@ echo control, as seen below:
 **Tip:** The number of delays and decays must equal the same amount so
 if there are 2 delay numbers, there must be 2 decay numbers.
 
+```
 aecho
 
 Indicates the name of the echo filter
@@ -1765,6 +1775,7 @@ decays
 
 Indicates the list of loudness of each reflected signal (0.0 to 1.0 with
 default 0.5)
+```
 
 **Tip:** If this filter is applied to the video input, a pixel format
 may be required, -pix_fmt yuv420p. YUV is a color encoding system to
@@ -1871,6 +1882,7 @@ no input media. *Libavfilter*, or lavfi as seen above, is an input
 virtual device that allows for filters, like sine, to virtually create
 data for future output.
 
+```
 sine
 
 Indicates the sine filter name. Sine generates signals made from sine
@@ -1883,7 +1895,7 @@ Indicates the tone or frequency (with default 440Hz)
 duration, d
 
 Indicates the duration of the generated frequency output
-
+```
 ## 34. How to Generate Text to Speech Audio? 
 
 **Tip:** You'll need to enable \--enable-libflite, full Tutorial:
@@ -2144,9 +2156,11 @@ seen below:
   \$ ffmpeg -i input.webm -r 24 output.mp4
 ```
 
+```
 -r
 
 Indicates the frame rate (Hz value) or FPS
+```
 
 **Tip:** Instagram and Twitter do not support WebM video uploads.
 
@@ -2314,6 +2328,7 @@ value as a recommendation.
 The FFmpeg documentation states using -force_key_frames is one way to
 force each cut length but by frames not duration.
 
+```
 segment
 
 Indicates the segment filter name
@@ -2326,6 +2341,7 @@ Indicates the segment duration to time (default value 2)
 
 Indicates requiring each segment to begin with a near-zero timestamp
 which is useful for when each segment must have playback (optional)
+```
 
 **Challenge:** How would you do this with an audio file instead?
 
@@ -2358,6 +2374,7 @@ Streaming with concat is not covered in this book but more information
 can be found by visiting:
 [[https://ffmpeg.org/ffmpeg-formats.html#concat-1]{.underline}](https://ffmpeg.org/ffmpeg-formats.html#concat-1)
 
+```
 fflags
 
 Indicates the specific flag that is used
@@ -2367,6 +2384,7 @@ Indicates the specific flag that is used
 Indicates the need to generate missing presentation timestamps (PTS) if
 needed. A common requirement when a video is segmented by duration
 instead of timestamp
+```
 
 **Challenge:** How would you do this with an audio file instead?
 
@@ -2498,6 +2516,7 @@ required, as seen in the example below:
   \[v\] \[a\]\" -map \"\[v\]\" -map \"\[a\]\" output.mp4
 ```
 
+```
 concat
 
 Indicates the concat filter name
@@ -2513,6 +2532,7 @@ Indicates the number of output video streams
 a
 
 Indicates the number of output audio streams
+```
 
 **Tip:** See question 17, *"What is -map and How is it Used?"*, for more
 details.
@@ -2587,6 +2607,7 @@ inputs gives an interesting inverted look as seen in figure 54.0:
   \"blend=difference\" output.mp4
 ```
 
+```
 blend
 
 Indicates the blend filter name
@@ -2658,6 +2679,7 @@ subtract
 vividlight
 
 xor
+```
 
 ![](media/image30.png){width="3.5in" height="1.9288888888888889in"}
 
@@ -2693,6 +2715,7 @@ strength:
 **Tip:** If this filter is applied to an MP4, you may need to add a
 pixel format, -pix_fmt yuv420p, for the previewer to work on macOS.
 
+```
 normalize
 
 Indicates the normalization filter name
@@ -2706,6 +2729,7 @@ smoothing
 
 Indicates setting a temporal smoothing based on the previous frame (1 or
 0 with a default 0 - no smoothing)
+```
 
 ## 56. How to Add Color Balance to a Video? 
 
@@ -2725,6 +2749,7 @@ are maxed out, as seen in figure 56.0:
   output.mp4
 ```
 
+```
 colorbalance
 
 Indicates the color balance filter name
@@ -2748,6 +2773,7 @@ pl
 
 Indicates preserve lightness when changing color balance (1.0 to -1.0
 with default 0.0)
+```
 
 **Tip:** Negative values shift to complementary colors while positive
 values shift to primary colors.
@@ -2781,6 +2807,7 @@ be programmed, as seen in figure 57.1:
   output.mp4
 ```
 
+```
 hue
 
 Indicates the hue filter name
@@ -2808,6 +2835,7 @@ Indicates frame count of the input frame (starts at 0)
 t
 
 Indicates the timestamp (HH:MM:SS)
+```
 
 ## 58. How to Convert a Video to Black and White? 
 
