@@ -1,3 +1,5 @@
+![banner](https://github.com/jdriselvato/FFmpeg-For-Beginners-Ebook/blob/main/banner.png?raw=true)
+
 NOTE: This is a work in progress, the pandoc conversion seems to have added some funky layout or text problems. Feel free to make a PR if you want to fix anything. 
 
 
