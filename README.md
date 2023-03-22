@@ -1,8 +1,14 @@
+NOTE: This is a work in progress, the pandoc conversion seems to have added some funky layout or text problems. Feel free to make a PR if you want to fix anything. 
+
+
 # FFmpeg For Beginners - Edit Audio & Video Like a Pro for Youtube and Social Media
 
 The entire book released under [Creative Commons Attribution-NonCommercial 4.0 International](./license.md)
 
-NOTE: This is a work in progress, the pandoc conversion seems to have added some funky layout or text problems. Feel free to make a PR if you want to fix anything. 
+## Purchase physical book
+
+Link: https://www.amazon.com/dp/B087GYV15Y
+
 
 # Contents
 
