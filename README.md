@@ -492,7 +492,7 @@ $ ffmpeg -i input.mp4 [blur argument] blur.mp4
 $ ffmpeg -i blur.mp4 [color correction argument] output.mp4
 ```
 
-![](media/image43.png){width="1.0in" height="1.0in"}
+![](media/image43.png)
 
 Installation
 
@@ -823,7 +823,7 @@ the basics of FFmpeg. Although this book covers the top 112 most
 searched questions for FFmpeg, the functionality of this application is
 limitless. Next, let's explore the world of audio editing with FFmpeg!
 
-![](media/image18.png){width="1.0in" height="1.0in"}
+![](media/image18.png)
 
 Understanding the Basics of FFmpeg
 
@@ -1292,7 +1292,7 @@ the rest of this book so feel free to review these questions a couple of
 times. But now that you're a pro at the basics, let's script a few basic
 audio conversions.
 
-![](media/image51.png){width="0.75in" height="0.75in"}
+![](media/image51.png)
 
 Basic Audio Conversions
 
@@ -1402,7 +1402,7 @@ Up To \$100"\* in credit:
 [[http://www.fiverr.com/s2/6229935ae0]{.underline}](http://www.fiverr.com/s2/6229935ae0)
 \* according to Fiverr referral terms and services
 
-![](media/image42.png){width="1.0in" height="1.0in"}
+![](media/image42.png)
 
 Audio Duration Editing
 
@@ -1571,7 +1571,7 @@ various audio and video filters takes your programming skills to that
 next level. Plus this is where FFmpeg becomes creative and artistic,
 here the power of FFmpeg really shines.
 
-![](media/image39.png){width="1.0in" height="1.0in"}
+![](media/image39.png)
 
 Top Audio Filters
 
@@ -1852,8 +1852,7 @@ There are no correct answers here for what works best, that's up to you.
 Play around with each version, find a sound that works with your ears
 and what you are trying to accomplish.
 
-![](media/image6.jpg){width="2.0052088801399823in"
-height="2.0052088801399823in"}
+![](media/image6.jpg)
 
 We Are コンピューター生成 by メトロイヤー\
 an album made entirely with FFmpeg
@@ -2047,7 +2046,7 @@ more tasks with new filters being added yearly.
 For more information, visit:
 [[https://ffmpeg.org/ffmpeg-filters.html#Audio-Filters]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#Audio-Filters)
 
-![](media/image3.png){width="1.0in" height="1.0in"}
+![](media/image3.png)
 
 Basic Video Conversions
 
@@ -2224,7 +2223,7 @@ wonderful is that?!
 In the next section, you'll take everything you learned so far from
 audio to the basic video and apply it to video timeline editing.
 
-![](media/image44.png){width="1.0in" height="0.875in"}
+![](media/image44.png)
 
 Video Timeline Editing
 
@@ -2543,7 +2542,7 @@ the timeline of a video, you are equipped with a new skill set to
 determine when to use a GUI or when to use FFmpeg. The simplicity of a
 terminal and the quickness of a command has more power than you thought.
 
-![](media/image29.png){width="1.0in" height="0.8333333333333334in"}
+![](media/image29.png)
 
 Top Video Filters
 
@@ -2579,7 +2578,7 @@ The primary video used in each example is a Tokyo metro station
 (input.mp4 or input1.mp4). When a second video is required, input2.mp4
 is used which contains a video of a busy road.
 
-![](media/image71.png){width="4.6in" height="1.46in"}
+![](media/image71.png)
 
 Left input.mp4 / Right input2.mp4
 
@@ -2595,7 +2594,7 @@ let's try it out.
 **Tip:** In order to blend two files, they must contain the same
 resolution.
 
-![](media/image37.png){width="3.5in" height="1.9444444444444444in"}
+![](media/image37.png)
 
 Figure 54.0, blend uses the difference filter
 
@@ -2681,7 +2680,7 @@ vividlight
 xor
 ```
 
-![](media/image30.png){width="3.5in" height="1.9288888888888889in"}
+![](media/image30.png)
 
 Figure 54.1: A lighten blend with a vintage look
 
@@ -2737,7 +2736,7 @@ The color balance filter allows the RGB shadows, midtones, highlights
 and preserving lightness can be adjusted. This filter can be used to
 apply very custom color grading or used to create trippy color changes.
 
-![](media/image55.png){width="3.5in" height="1.9288888888888889in"}
+![](media/image55.png)
 
 Figure 56.0: green/blue extreme color balance
 
@@ -2783,7 +2782,7 @@ values shift to primary colors.
 The hue filter allows for modification of the hue and saturation of a
 video.
 
-![](media/image57.png){width="3.5in" height="1.9288888888888889in"}
+![](media/image57.png)
 
 Figure 57.0: applying a hue and saturation
 
@@ -2794,7 +2793,7 @@ saturation, as seen in figure 57.0:
 $ ffmpeg -i input.mp4 -vf "hue=h=45:s=2" output.mp4
 ```
 
-![](media/image48.png){width="3.5in" height="1.9288888888888889in"}
+![](media/image48.png)
 
 Figure 57.1: dynamic hues
 
@@ -2842,7 +2841,7 @@ Indicates the timestamp (HH:MM:SS)
 Turning a video to black and white is also accomplished by using the hue
 filter.
 
-![](media/image60.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image60.png)
 
 Figure 58.0: black and white video
 
@@ -2863,7 +2862,7 @@ another filter called vibrance which is used to adjust the color
 intensity. Both filters give slightly different saturation effects but
 each has its place.
 
-![](media/image63.png){width="3.5in" height="1.9288888888888889in"}
+![](media/image63.png)
 
 Figure 59.0: max boosted saturation
 
@@ -2875,7 +2874,7 @@ $ ffmpeg -i input.mp4 -filter_complex "vibrance=intensity=2"
 -pix_fmt yuv420p output.mp4
 ```
 
-![](media/image40.png){width="3.5in" height="1.9288888888888889in"}
+![](media/image40.png)
 
 Figure 59.1: negative intensity + green saturation
 
@@ -2929,7 +2928,7 @@ Indicates the blue luma coefficient (1 to 0 default 0)
 FFmpeg has a very simple filter, negate, that inverts the colors of the
 input. The train station looks really futuristic with this filter on.
 
-![](media/image27.png){width="3.5in" height="1.9288888888888889in"}
+![](media/image27.png)
 
 Figure 60.0: inverted video
 
@@ -2946,7 +2945,7 @@ RBG shifting is one of the coolest and easiest effects for emulating 3D
 or add that Vaporwave Aesthetics. With rgbashift, the RGBA pixels can
 freely shift horizontally and/or vertically.
 
-![](media/image13.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image13.png)
 
 Figure 61.0: red horizontal shift
 
@@ -2958,7 +2957,7 @@ $ ffmpeg -i input.mp4 -vf "rgbashift=rh=-10" -pix_fmt yuv420p
 output.mp4
 ```
 
-![](media/image46.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image46.png)
 
 Figure 61.1: blue horizontal shift
 
@@ -2970,7 +2969,7 @@ $ ffmpeg -i input.mp4 -vf "rgbashift=bh=10" -pix_fmt yuv420p
 output.mp4
 ```
 
-![](media/image21.png){width="3.5in" height="1.96in"}
+![](media/image21.png)
 
 Figure 61.2: green vertical shift
 
@@ -3025,7 +3024,7 @@ Indicates alpha vertical (255 to -255 with default 0)
 A *vignette* is a fade that is added to the edges of an input. It's a
 simple way to add atmosphere or emulate vintage television sets.
 
-![](media/image62.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image62.png)
 
 Figure 62.0: vignetting
 
@@ -3074,7 +3073,7 @@ FFmpeg has a filter called colorhold with documentation that states:
 This is incorrect, colorhold does not work this way... well not exactly.
 It removes colors but it's completely unpredictable.
 
-![](media/image56.png){width="4.6in" height="1.265in"}
+![](media/image56.png)
 
 Figure 63.0: left original / right cyan color hold
 
@@ -3121,7 +3120,7 @@ copy it? Getting that look can be accomplished using the palettegen
 filter. palettegen generates a single palette for an entire video stream
 and saves it as an image file.
 
-![](media/image54.png){width="1.0in" height="1.0in"}
+![](media/image54.png)
 
 Figure 64.0: color palette for input.mp4 (enlarged)
 
@@ -3143,7 +3142,7 @@ pixel palette.png was generated from input.mp4. In this example, the
 same palette.png is applied to input2.mp4 giving it the same color
 palette input.mp4 had.
 
-![](media/image23.png){width="4.6in" height="1.265in"}
+![](media/image23.png)
 
 Figure 65.0: the input.mp4 color palette applied to input2.mp4
 
@@ -3203,7 +3202,7 @@ emphasizes shapes, colors and lines to give a clearer image. This filter
 has a couple of useful parameters to fine tune the effect but in this
 example let's keep it simple.
 
-![](media/image16.png){width="4.6in" height="1.265in"}
+![](media/image16.png)
 
 Figure 66.0: left original / right max sharpen
 
@@ -3244,7 +3243,7 @@ For more information about this filter, visit:
 FFmpeg has another sharpen/blur filter called unsharp. Although it's
 still not as strong as some filters, it does have it's own aesthetic.
 
-![](media/image66.png){width="4.6in" height="1.265in"}
+![](media/image66.png)
 
 Figure 67.0: left original / right unsharp blur
 
@@ -3277,7 +3276,7 @@ result. The blur with this filter looks less foggy but has more of a
 blur glow effect. Smartblur still uses luma and chroma but with more
 control.
 
-![](media/image45.png){width="4.6in" height="1.265in"}
+![](media/image45.png)
 
 Figure 68.0: left original / right luma based blur
 
@@ -3289,7 +3288,7 @@ $ ffmpeg -i input.mp4 -filter_complex "smartblur=lr=5:ls=1"
 output.mp4
 ```
 
-![](media/image64.png){width="4.6in" height="1.265in"}
+![](media/image64.png)
 
 Figure 68.1: left original / right "glowing" blur
 
@@ -3349,7 +3348,7 @@ The *Gaussian blur* is probably the most popular blur in video editing.
 It gives a very clean smooth blur and it's very easy to use with the
 gblur filter.
 
-![](media/image25.png){width="3.0in" height="1.65in"}
+![](media/image25.png)
 
 Figure 69.0: maximum Gaussian blur
 
@@ -3360,7 +3359,7 @@ In this example, the maximum blur is set. It might look gray in figure
 $ ffmpeg -i input.mp4 -vf "gblur=sigma=1024" output.mp4
 ```
 
-![](media/image26.png){width="3.0in" height="1.6523075240594927in"}
+![](media/image26.png)
 
 Figure 69.1: standard Gaussian blur
 
@@ -3387,7 +3386,7 @@ A *boxblur* is another blur algorithm that uses a form of low-pass blur
 filtering. The blur is dependent on the neighboring pixels applying an
 average blur to each.
 
-![](media/image32.png){width="4.6in" height="1.265in"}
+![](media/image32.png)
 
 Figure 70.0: left smartblur / right boxblur
 
@@ -3448,7 +3447,7 @@ think of it as an optional plugin FFmpeg has access to.
 **Tip:** For more information about Frei0r, refer to question 103, *"How
 to Use Frei0r Filters?"*.
 
-![](media/image41.png){width="3.0in" height="1.65in"}
+![](media/image41.png)
 
 Figure 71.0: pixeliz0r filter
 
@@ -3459,7 +3458,7 @@ $ ffmpeg -i input.mp4 -vf "frei0r=filter_name=pixeliz0r" -pix_fmt
 yuv420p output.mp4
 ```
 
-![](media/image7.png){width="3.0in" height="1.6523075240594927in"}
+![](media/image7.png)
 
 Figure 71.1: scaling method
 
@@ -3692,7 +3691,7 @@ information.
 In cases where a video requires a new dimensional crop, the use of the
 crop filter makes it easy.
 
-![](media/image49.png){width="2.0in" height="1.3266666666666667in"}
+![](media/image49.png)
 
 Figure 76.0: cropping from a specific position
 
@@ -3704,7 +3703,7 @@ by 200px from the position x=10 and y=20, as seen in figure 76.0:
 $ ffmpeg -i input.mp4 -vf "crop=w=300:h=200:x=10:y=20" output.mp4
 ```
 
-![](media/image59.png){width="2.0in" height="1.3266666666666667in"}
+![](media/image59.png)
 
 Figure 76.1: cropping from center
 
@@ -3715,7 +3714,7 @@ the video, as seen in figure 76.1:
 $ ffmpeg -i input.mp4 -vf "crop=w=300:h=200" output.mp4
 ```
 
-![](media/image17.png){width="2.0in" height="1.1023622047244095in"}
+![](media/image17.png)
 
 Figure 76.2: dynamically cropping from center
 
@@ -3820,8 +3819,7 @@ $ ffmpeg -i input.mp4 -vf "scale=1920:1080,setsar=1" output.mp4
 $ ffmpeg -i input.mp4 -vf "scale=3840:2160,setsar=1" output.mp4
 ```
 
-![](media/image20.png){width="2.5208333333333335in"
-height="1.890625546806649in"}
+![](media/image20.png)
 
 Figure 78.0: fixed aspect ratio
 
@@ -3940,7 +3938,7 @@ Throughout this entire book, the hstack filter has been used to create
 comparison "figure images". It's a filter that once you start using it,
 you'll wish you knew it sooner.
 
-![](media/image65.png){width="4.6in" height="1.2667694663167104in"}
+![](media/image65.png)
 
 Figure 81.0: left input1.mp4 / right input2.mp4 in one output
 
@@ -3975,7 +3973,7 @@ works great for cases like *Instagram TV* that require two displays.
 and you now have all the tools needed to become a social media
 influencer.
 
-![](media/image61.png){width="2.5489654418197727in" height="2.8in"}
+![](media/image61.png)
 
 Figure 82.0: top input1.mp4 / bottom input2.mp4 in one output
 
@@ -4001,7 +3999,7 @@ $ ffmpeg -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex
 A horizontal flip applied to an input is easy to do with the hflip
 filter.
 
-![](media/image12.png){width="3.5in" height="1.925in"}
+![](media/image12.png)
 
 Figure 83.0: mirroring on the horizontal axis
 
@@ -4018,7 +4016,7 @@ $ ffmpeg -i input.mp4 -vf "hflip" output.mp4
 
 A vertical flip applied to an input is easy to do with the vflip filter.
 
-![](media/image22.png){width="3.5in" height="1.925in"}
+![](media/image22.png)
 
 Figure 84.0: mirroring on the vertical axis
 
@@ -4036,7 +4034,7 @@ rotate, rotates the input video by an arbitrary angle in radians. While
 the second filter, transpose, can be used with predefined rotation
 variables.
 
-![](media/image19.png){width="3.5in" height="1.925in"}
+![](media/image19.png)
 
 Figure 85.0: 45 degree rotation
 
@@ -4182,7 +4180,7 @@ Here input.srt is used as an example:
 Subtitles Added!
 ```
 
-![](media/image50.png){width="3.5in" height="1.96in"}
+![](media/image50.png)
 
 Figure 87.0: subtitles embedded
 
@@ -4218,7 +4216,7 @@ input.srt, let's burn these words into input.mp4:
 Subtitles Added!
 ```
 
-![](media/image50.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image50.png)
 
 Figure 88.0: burned subtitles
 
@@ -4238,7 +4236,7 @@ overlay with parameters such as timing, color and location. drawtext is
 a massive filter with over 50 different parameters, so let's keep things
 easy.
 
-![](media/image9.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image9.png)
 
 Figure 89.0: printing hello world
 
@@ -4311,7 +4309,7 @@ the world of memes, it's so easy for someone to claim "I made that".
 Luckily, with the overlay filter, it's really easy to put a watermark
 anywhere on a video.
 
-![](media/image10.png){width="3.5in" height="1.96in"}
+![](media/image10.png)
 
 Figure 90.0: *3 Slashed Book*s Logo in the bottom right
 
@@ -4381,7 +4379,7 @@ Previously -ss or the seeking option was used to trim, here seeking is
 used to jump to a specific time. Once the frame is selected, using
 FFmpeg to export a PNG file is easy.
 
-![](media/image33.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image33.png)
 
 Figure 92.0: frame at 10 seconds
 
@@ -4442,7 +4440,7 @@ quality. FFmpeg has a filter called tile which easily allows for a
 multi-image grid preview. The tile filter even has additional parameters
 like padding, margin and color to use but let's keep in simple.
 
-![](media/image34.png){width="4.6in" height="0.8421533245844269in"}
+![](media/image34.png)
 
 Figure 94.0: 3x1 tile of input.mp4
 
@@ -4483,7 +4481,7 @@ entire audio clip. This might be useful to determine if a volume change
 was successful on an output file when comparing it to the input. It also
 just looks cool.
 
-![](media/image5.png){width="3.25in" height="1.3in"}
+![](media/image5.png)
 
 Figure 95.0: the waveform of input.mp3
 
@@ -4541,7 +4539,7 @@ paired with the blending filter (Question 54. *"How to Blend Two Videos
 Together?"*), adding stylized colored filters to an entire video is
 possible.
 
-![](media/image35.png){width="3.0in" height="1.6197922134733158in"}
+![](media/image35.png)
 
 Figure 96.0: a solid red standard definition video
 
@@ -4623,7 +4621,7 @@ $ datamosh input.avi -o output.avi
 The glitching has finished. So with FFmpeg, convert the new video to a
 gif or MP4 to share on social media.
 
-![](media/image4.png){width="3.5in" height="1.96in"}
+![](media/image4.png)
 
 Figure 97.0: Datamoshed
 
@@ -4655,7 +4653,7 @@ This filter has over 30 different transitions to play around with; add
 in duration, offset and even custom expressions, xfade almost feels like
 a standalone software itself.
 
-![](media/image47.png){width="4.6in" height="1.9933333333333334in"}
+![](media/image47.png)
 
 Figure 98.0: various example of fades
 
@@ -4704,7 +4702,7 @@ There's something about adding a little noise to a video that makes it
 feel older than it is. With the right amount of noise, it can help
 layers to look naturally part of the video.
 
-![](media/image68.png){width="3.5in" height="1.925in"}
+![](media/image68.png)
 
 Figure 99.0: temporal noise
 
@@ -4755,7 +4753,7 @@ was added that had RGB values. This might not be suitable if the
 requirement is black and white noise. Black and white noise blends
 better and feels more natural.
 
-![](media/image52.png){width="3.5in" height="1.925in"}
+![](media/image52.png)
 
 Figure 100.0: create static from an equation
 
@@ -4769,7 +4767,7 @@ $ ffmpeg -i input.mp4 -filter_complex
 [0:v][static]blend=overlay" output.mp4
 ```
 
-![](media/image14.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image14.png)
 
 Figure 100.1: less visible static
 
@@ -4858,14 +4856,14 @@ With FFmpeg, this can easily be accomplished using the colorkey filter.
 The colorkey filter takes an input, looks for a specific color depending
 on similarity, and stores the information in a new stream.
 
-![](media/image2.png){width="2.625in" height="1.4479166666666667in"}
+![](media/image2.png)
 
 Figure 102.0: greenscreen.mp4
 
 In this example, the use of greenscreen.mp4 is used as a mask to be
 applied to input.mp4, as seen in figure 102.0.
 
-![](media/image31.png){width="2.625in" height="1.4479166666666667in"}
+![](media/image31.png)
 
 Figure 102.1: video applied to a green screen
 
@@ -4902,7 +4900,7 @@ common filters are discussed to get you started. There's a certain wow
 factor in using frei0r, from glitching to color effects to emulating
 full blown Snapchat / Instagram filters if done right.
 
-![](media/image67.png){width="3.5in" height="1.9276924759405074in"}
+![](media/image67.png)
 
 Figure 103.0: glowing a glamorous train station
 
@@ -4925,7 +4923,7 @@ frei0r filter name filter_params. Unfortunately, the frei0r filter does
 require digging deep into the documentation to understand which
 parameters it supports.
 
-![](media/image38.png){width="3.5in" height="1.96in"}
+![](media/image38.png)
 
 Figure 103.1: distort0r applied to input.mp4
 
@@ -4949,7 +4947,7 @@ nothing like what you'd expect and the view below is breathtaking. For
 those who don't do well with heights and get vertigo, maybe you can use
 this filter to start training your brain for the trip.
 
-![](media/image36.png){width="3.5in" height="1.96in"}
+![](media/image36.png)
 
 Figure 103.2: oh no! vertigo
 
@@ -4986,7 +4984,7 @@ What can be more advanced than using the complex filters FFmpeg
 provides? Using them in a live setting on streaming platforms. The next
 section covers setting up FFmpeg to stream with YouTube.
 
-![](media/image53.png){width="1.0in" height="1.0in"}
+![](media/image53.png)
 
 ### YouTube Streaming
 
@@ -5009,14 +5007,14 @@ First, go to
 click the create a video button and select the 'Go Live' option from the
 drop-down, as seen in figure 104.0:
 
-![](media/image24.png){width="2.0in" height="1.38in"}
+![](media/image24.png)
 
 Figure 104.0: Go Live!
 
 Select 'New Stream' and fill out the desired title, description, etc.
 Next, select 'Create Stream'. As seen in figure 104.1:
 
-![](media/image70.png){width="3.0in" height="4.2in"}
+![](media/image70.png)
 
 Figure 104.1: Setting up a new stream
 
@@ -5033,7 +5031,7 @@ only one YouTube supports.
 The current screen has these two variables available at the bottom left
 corner, as seen in figure 104.2:
 
-![](media/image69.png){width="4.0in" height="2.4879997812773404in"}
+![](media/image69.png)
 
 Figure 104.2: stream key and stream URL
 
@@ -5194,7 +5192,7 @@ normal input but not all filters work in real-time. Unfortunately the
 documentation isn't specific on which filters work but most audio
 effects and visual filters do.
 
-![](media/image11.png){width="3.5in" height="1.925in"}
+![](media/image11.png)
 
 Figure 107.0: streaming the frei0r perspective filter
 
@@ -5224,7 +5222,7 @@ At this point, all that is left to cover is the common errors found in
 FFmpeg. Soon enough you'll have all the tools to master programming with
 FFmpeg.
 
-![](media/image1.png){width="1.0in" height="1.0in"}
+![](media/image1.png)
 
 Common Errors
 
@@ -5329,7 +5327,7 @@ are not covered in this book. The FFmpeg Wiki has a resource for other
 solutions, which can be found here:
 [[https://trac.ffmpeg.org/wiki/Errors]{.underline}](https://trac.ffmpeg.org/wiki/Errors)
 
-![](media/image15.png){width="0.75in" height="0.75in"}
+![](media/image15.png)
 
 ## Conclusion
 
