@@ -20,263 +20,263 @@ All rights reserved
 
 # Table of Contents
 
-[1. What is FFmpeg?](# what-is-ffmpeg)
+[1. What is FFmpeg?](#1-what-is-ffmpeg)   
 
-[2. How to Install FFmpeg on macOS?](# how-to-install-ffmpeg-on-macos)
+[2. How to Install FFmpeg on macOS?](#2-how-to-install-ffmpeg-on-macos)
 
-[3. How to Install FFmpeg on Linux?](# how-to-install-ffmpeg-on-linux)
+[3. How to Install FFmpeg on Linux?](#3-how-to-install-ffmpeg-on-linux)
 
-[4. How to Install FFmpeg on Windows?](# how-to-install-ffmpeg-on-windows)
+[4. How to Install FFmpeg on Windows?](#4-how-to-install-ffmpeg-on-windows)
 
-[5. How to Configure FFmpeg with Extra Dependencies?](# how-to-configure-ffmpeg-with-extra-dependencies)
+[5. How to Configure FFmpeg with Extra Dependencies?](#5-how-to-configure-ffmpeg-with-extra-dependencies)
 
-[6. How to Install FFmpeg on a PHP Server?](# how-to-install-ffmpeg-on-a-php-server)
+[6. How to Install FFmpeg on a PHP Server?](#6-how-to-install-ffmpeg-on-a-php-server)
 
-[7. How to Use FFmpeg in Various Languages?](# how-to-use-ffmpeg-in-various-languages)
+[7. How to Use FFmpeg in Various Languages?](#7-how-to-use-ffmpeg-in-various-languages)
 
-[8. How to Check the Installed FFmpeg Version?](# how-to-check-the-installed-ffmpeg-version)
+[8. How to Check the Installed FFmpeg Version?](#8-how-to-check-the-installed-ffmpeg-version)
 
-[9. What is a Codec? Explained](# what-is-a-codec-explained)
+[9. What is a Codec? Explained](#9-what-is-a-codec-explained)
 
-[10. What are All the Codecs FFmpeg Supports?](# what-are-all-the-codecs-ffmpeg-supports)
+[10. What are All the Codecs FFmpeg Supports?](#10-what-are-all-the-codecs-ffmpeg-supports)
 
-[11. What are All the Formats FFmpeg Supports?](# what-are-all-the-formats-ffmpeg-supports)
+[11. What are All the Formats FFmpeg Supports?](#11-what-are-all-the-formats-ffmpeg-supports)
 
-[12. How to Copy a Codec From One File to Another?](# how-to-copy-a-codec-from-one-file-to-another)
+[12. How to Copy a Codec From One File to Another?](#12-how-to-copy-a-codec-from-one-file-to-another)
 
-[13. How to Check the Audio / Video File Information?](# how-to-check-the-audio-video-file-information)
+[13. How to Check the Audio / Video File Information?](#13-how-to-check-the-audio-video-file-information)
 
-[14. How to Use Filters (-vf/-af VS -filter_complex)?](# how-to-use-filters--vf-af-vs--filter_complex)
+[14. How to Use Filters (-vf/-af VS -filter_complex)?](#14-how-to-use-filters--vf-af-vs--filter_complex)
 
-[15. How to Chain Multiple Filters?](# how-to-chain-multiple-filters)
+[15. How to Chain Multiple Filters?](#15-how-to-chain-multiple-filters)
 
-[16. How to Use -filter_complex Without Losing Video Quality?](# how-to-use--filter_complex-without-losing-video-quality)
+[16. How to Use -filter_complex Without Losing Video Quality?](#16-how-to-use--filter_complex-without-losing-video-quality)
 
-[17. What is -map and How is it Used?](# what-is--map-and-how-is-it-used)
+[17. What is -map and How is it Used?](#17-what-is--map-and-how-is-it-used)
 
-[18. How to Convert an Entire Directory?](# how-to-convert-an-entire-directory)
+[18. How to Convert an Entire Directory?](#18-how-to-convert-an-entire-directory)
 
-[19. How to Extract Audio From a Video?](# how-to-extract-audio-from-a-video)
+[19. How to Extract Audio From a Video?](#19-how-to-extract-audio-from-a-video)
 
-[A Note about Audio conversions:](# a-note-about-audio-conversions)
+[A Note about Audio conversions:](#a-note-about-audio-conversions)
 
-[20. How to Convert Ogg to MP3?](# how-to-convert-ogg-to-mp3)
+[20. How to Convert Ogg to MP3?](#20-how-to-convert-ogg-to-mp3)
 
-[21. How to Convert FLAC to MP3?](# how-to-convert-flac-to-mp3)
+[21. How to Convert FLAC to MP3?](#21-how-to-convert-flac-to-mp3)
 
-[22. How to Convert WAV to MP3?](# how-to-convert-wav-to-mp3)
+[22. How to Convert WAV to MP3?](#22-how-to-convert-wav-to-mp3)
 
-[23. How to Merge Multiple MP3s into One Track?](# how-to-merge-multiple-mp3s-into-one-track)
+[23. How to Merge Multiple MP3s into One Track?](#23-how-to-merge-multiple-mp3s-into-one-track)
 
-[A Note About Trimming](# a-note-about-trimming)
+[A Note About Trimming](#a-note-about-trimming)
 
-[24. How to Trim 'x' Seconds From the Start of an Audio Track?](# how-to-trim-x-seconds-from-the-start-of-an-audio-track)
+[24. How to Trim 'x' Seconds From the Start of an Audio Track?](#24-how-to-trim-x-seconds-from-the-start-of-an-audio-track)
 
-[25. How to Trim 'x' Seconds From the End of an Audio Track?](# how-to-trim-x-seconds-from-the-end-of-an-audio-track)
+[25. How to Trim 'x' Seconds From the End of an Audio Track?](#25-how-to-trim-x-seconds-from-the-end-of-an-audio-track)
 
-[26. How to Trim 'x' Seconds From the Start and End of an Audio Track?](# how-to-trim-x-seconds-from-the-start-and-end-of-an-audio-track)
+[26. How to Trim 'x' Seconds From the Start and End of an Audio Track?](#26-how-to-trim-x-seconds-from-the-start-and-end-of-an-audio-track)
 
-[27. How to Adjust Audio Volume?](# how-to-adjust-audio-volume)
+[27. How to Adjust Audio Volume?](#27-how-to-adjust-audio-volume)
 
-[28. How to Crossfade Two Audio Tracks?](# how-to-crossfade-two-audio-tracks)
+[28. How to Crossfade Two Audio Tracks?](#28-how-to-crossfade-two-audio-tracks)
 
-[29. How to Normalize Audio Data?](# how-to-normalize-audio-data)
+[29. How to Normalize Audio Data?](#29-how-to-normalize-audio-data)
 
-[30. How to Add an Echo to an Audio Track?](# how-to-add-an-echo-to-an-audio-track)
+[30. How to Add an Echo to an Audio Track?](#30-how-to-add-an-echo-to-an-audio-track)
 
-[31. How to Change the Tempo of an Audio Track?](# how-to-change-the-tempo-of-an-audio-track)
+[31. How to Change the Tempo of an Audio Track?](#31-how-to-change-the-tempo-of-an-audio-track)
 
-[32. How to Change the Pitch / Sample Rate of an Audio Track?](# how-to-change-the-pitch-sample-rate-of-an-audio-track)
+[32. How to Change the Pitch / Sample Rate of an Audio Track?](#32-how-to-change-the-pitch-sample-rate-of-an-audio-track)
 
-[A Note about Pitch, Tempo & Sample Rate](# a-note-about-pitch-tempo-sample-rate)
+[A Note about Pitch, Tempo & Sample Rate](#a-note-about-pitch-tempo-sample-rate)
 
-[33. How to Generate an Audio Tone?](# how-to-generate-an-audio-tone)
+[33. How to Generate an Audio Tone?](#33-how-to-generate-an-audio-tone)
 
-[34. How to Generate Text to Speech Audio?](# how-to-generate-text-to-speech-audio)
+[34. How to Generate Text to Speech Audio?](#34-how-to-generate-text-to-speech-audio)
 
-[35. How to Add a Low-Pass Filter to an Audio Track?](# how-to-add-a-low-pass-filter-to-an-audio-track)
+[35. How to Add a Low-Pass Filter to an Audio Track?](#35-how-to-add-a-low-pass-filter-to-an-audio-track)
 
-[36. How to Add a High-Pass Filter to an Audio Track?](# how-to-add-a-high-pass-filter-to-an-audio-track)
+[36. How to Add a High-Pass Filter to an Audio Track?](#36-how-to-add-a-high-pass-filter-to-an-audio-track)
 
-[A Note About Audio only Related Filters](# a-note-about-audio-only-related-filters)
+[A Note About Audio only Related Filters](#a-note-about-audio-only-related-filters)
 
-[37. How to Remove Audio From a Video?](# how-to-remove-audio-from-a-video)
+[37. How to Remove Audio From a Video?](#37-how-to-remove-audio-from-a-video)
 
-[38. How to Mix Additional Audio into a Video?](# how-to-mix-additional-audio-into-a-video)
+[38. How to Mix Additional Audio into a Video?](#38-how-to-mix-additional-audio-into-a-video)
 
-[39. How to Replace the Audio on a Video?](# how-to-replace-the-audio-on-a-video)
+[39. How to Replace the Audio on a Video?](#39-how-to-replace-the-audio-on-a-video)
 
-[40. How to Convert MOV to MP4?](# how-to-convert-mov-to-mp4)
+[40. How to Convert MOV to MP4?](#40-how-to-convert-mov-to-mp4)
 
-[41. How to Convert MKV to MP4?](# how-to-convert-mkv-to-mp4)
+[41. How to Convert MKV to MP4?](#41-how-to-convert-mkv-to-mp4)
 
-[42. How to Convert AVI to MP4?](# how-to-convert-avi-to-mp4)
+[42. How to Convert AVI to MP4?](#42-how-to-convert-avi-to-mp4)
 
-[43. How to Convert FLV to MP4?](# how-to-convert-flv-to-mp4)
+[43. How to Convert FLV to MP4?](#43-how-to-convert-flv-to-mp4)
 
-[44. How to Convert WebM to MP4?](# how-to-convert-webm-to-mp4)
+[44. How to Convert WebM to MP4?](#44-how-to-convert-webm-to-mp4)
 
-[A Note about Converting to MP4](# a-note-about-converting-to-mp4)
+[A Note about Converting to MP4](#a-note-about-converting-to-mp4)
 
 
-[45. How to Convert MP4 to GIF?](# how-to-convert-mp4-to-gif)
+[45. How to Convert MP4 to GIF?](#45-how-to-convert-mp4-to-gif)
 
-[46. How to Compress MP4 and Reduce File Size?](# how-to-compress-mp4-and-reduce-file-size)
+[46. How to Compress MP4 and Reduce File Size?](#46-how-to-compress-mp4-and-reduce-file-size)
 
-[47. How to Trim 'x' Seconds From the Start of a Video?](# how-to-trim-x-seconds-from-the-start-of-a-video)
+[47. How to Trim 'x' Seconds From the Start of a Video?](#47-how-to-trim-x-seconds-from-the-start-of-a-video)
 
-[48. How to Trim 'x' Seconds From the End of a Video?](# how-to-trim-x-seconds-from-the-end-of-a-video)
+[48. How to Trim 'x' Seconds From the End of a Video?](#48-how-to-trim-x-seconds-from-the-end-of-a-video)
 
-[49. How to Trim 'x' Seconds From the Start and End of a Video?](# how-to-trim-x-seconds-from-the-start-and-end-of-a-video)
+[49. How to Trim 'x' Seconds From the Start and End of a Video?](#49-how-to-trim-x-seconds-from-the-start-and-end-of-a-video)
 
-[50. How to Splice a Video into Segments?](# how-to-splice-a-video-into-segments)
+[50. How to Splice a Video into Segments?](#50-how-to-splice-a-video-into-segments)
 
-[51. How to Stitch Segments to One Video?](# how-to-stitch-segments-to-one-video)
+[51. How to Stitch Segments to One Video?](#51-how-to-stitch-segments-to-one-video)
 
-[52. How to Loop a Section of Video Multiple Times?](# how-to-loop-a-section-of-video-multiple-times)
+[52. How to Loop a Section of Video Multiple Times?](#52-how-to-loop-a-section-of-video-multiple-times)
 
-[53. How to Concatenate Multiple Videos?](# how-to-concatenate-multiple-videos)
+[53. How to Concatenate Multiple Videos?](#53-how-to-concatenate-multiple-videos)
 
-**[Color Editing Filters](# color-editing-filters)**
+**[Color Editing Filters](#color-editing-filters)**
 
 
-[54. How to Blend Two Videos Together?](# how-to-blend-two-videos-together)
+[54. How to Blend Two Videos Together?](#54-how-to-blend-two-videos-together)
 
-[55. How to Add Color Normalization to a Video?](# how-to-add-color-normalization-to-a-video)
+[55. How to Add Color Normalization to a Video?](#55-how-to-add-color-normalization-to-a-video)
 
-[56. How to Add Color Balance to a Video?](# how-to-add-color-balance-to-a-video)
+[56. How to Add Color Balance to a Video?](#56-how-to-add-color-balance-to-a-video)
 
-[57. How to Edit the Hue of a Video?](# how-to-edit-the-hue-of-a-video)
+[57. How to Edit the Hue of a Video?](#57-how-to-edit-the-hue-of-a-video)
 
-[58. How to Convert a Video to Black and White?](# how-to-convert-a-video-to-black-and-white)
+[58. How to Convert a Video to Black and White?](#58-how-to-convert-a-video-to-black-and-white)
 
-[59. How to Edit the Saturation of a Video?](# how-to-edit-the-saturation-of-a-video)
+[59. How to Edit the Saturation of a Video?](#59-how-to-edit-the-saturation-of-a-video)
 
-[60. How to Invert the Colors of a Video?](# how-to-invert-the-colors-of-a-video)
+[60. How to Invert the Colors of a Video?](#60-how-to-invert-the-colors-of-a-video)
 
-[61. How to RGB Shift a Video?](# how-to-rgb-shift-a-video)
+[61. How to RGB Shift a Video?](#61-how-to-rgb-shift-a-video)
 
-[62. How to Apply a Vignette to a Video?](# how-to-apply-a-vignette-to-a-video)
+[62. How to Apply a Vignette to a Video?](#62-how-to-apply-a-vignette-to-a-video)
 
-[63. How to Remove All Colors Except One From a Video?](# how-to-remove-all-colors-except-one-from-a-video)
+[63. How to Remove All Colors Except One From a Video?](#63-how-to-remove-all-colors-except-one-from-a-video)
 
-[64. How to Generate a Color Palette From a Video?](# how-to-generate-a-color-palette-from-a-video)
+[64. How to Generate a Color Palette From a Video?](#64-how-to-generate-a-color-palette-from-a-video)
 
-[65. How to Apply a Color Palette to a Video?](# how-to-apply-a-color-palette-to-a-video)
+[65. How to Apply a Color Palette to a Video?](#65-how-to-apply-a-color-palette-to-a-video)
 
-**[Sharpening / Blurring Filters](# sharpening-blurring-filters)**
+**[Sharpening / Blurring Filters](#sharpening-blurring-filters)**
 
 
-[66. How to Sharpen a Video with Unsharp?](# how-to-sharpen-a-video-with-unsharp)
+[66. How to Sharpen a Video with Unsharp?](#66-how-to-sharpen-a-video-with-unsharp)
 
-[67. How to Blur a Video with Unsharp?](# how-to-blur-a-video-with-unsharp)
+[67. How to Blur a Video with Unsharp?](#67-how-to-blur-a-video-with-unsharp)
 
-[68. How to Blur a Video with Smartblur?](# how-to-blur-a-video-with-smartblur)
+[68. How to Blur a Video with Smartblur?](#68-how-to-blur-a-video-with-smartblur)
 
-[69. How to Apply a Gaussian Blur to a Video?](# how-to-apply-a-gaussian-blur-to-a-video)
+[69. How to Apply a Gaussian Blur to a Video?](#69-how-to-apply-a-gaussian-blur-to-a-video)
 
-[70. How to Apply a Box Blur to a Video?](# how-to-apply-a-box-blur-to-a-video)
+[70. How to Apply a Box Blur to a Video?](#70-how-to-apply-a-box-blur-to-a-video)
 
-[71. How to Apply a Pixelated Effect to a Video?](# how-to-apply-a-pixelated-effect-to-a-video)
+[71. How to Apply a Pixelated Effect to a Video?](#71-how-to-apply-a-pixelated-effect-to-a-video)
 
-**[Video Playback Filters](# video-playback-filters)**
+**[Video Playback Filters](#video-playback-filters)**
 
 
-[72. How to Adjust the Volume of a Video?](# how-to-adjust-the-volume-of-a-video)
+[72. How to Adjust the Volume of a Video?](#72-how-to-adjust-the-volume-of-a-video)
 
-[73. How to Slow Down a Video?](# how-to-slow-down-a-video)
+[73. How to Slow Down a Video?](#73-how-to-slow-down-a-video)
 
-[74. How to Speed Up a video?](# how-to-speed-up-a-video)
+[74. How to Speed Up a video?](#74-how-to-speed-up-a-video)
 
-[75. How to Reverse a Video?](# how-to-reverse-a-video)
+[75. How to Reverse a Video?](#75-how-to-reverse-a-video)
 
-[76. How to Crop a Video?](# how-to-crop-a-video)
+[76. How to Crop a Video?](#76-how-to-crop-a-video)
 
-[77. How to Change the Frame Rate of a Video?](# how-to-change-the-frame-rate-of-a-video)
+[77. How to Change the Frame Rate of a Video?](#77-how-to-change-the-frame-rate-of-a-video)
 
-[78. How to Change the Resolution of a Video?](# how-to-change-the-resolution-of-a-video)
+[78. How to Change the Resolution of a Video?](#78-how-to-change-the-resolution-of-a-video)
 
-[79. How to Apply Quantization to a Video?](# how-to-apply-quantization-to-a-video)
+[79. How to Apply Quantization to a Video?](#79-how-to-apply-quantization-to-a-video)
 
-[80. How to Remove Duplicate Frames From a Video?](# how-to-remove-duplicate-frames-from-a-video)
+[80. How to Remove Duplicate Frames From a Video?](#80-how-to-remove-duplicate-frames-from-a-video)
 
-**[Video Transformation Filters](# video-transformation-filters)**
+**[Video Transformation Filters](#video-transformation-filters)**
 
 
-[81. How to Stack Multiple Videos Horizontally?](# how-to-stack-multiple-videos-horizontally)
+[81. How to Stack Multiple Videos Horizontally?](#81-how-to-stack-multiple-videos-horizontally)
 
-[82. How to Stack Multiple Videos Vertically?](# how-to-stack-multiple-videos-vertically)
+[82. How to Stack Multiple Videos Vertically?](#82-how-to-stack-multiple-videos-vertically)
 
-[83. How to Horizontal Flip a Video?](# how-to-horizontal-flip-a-video)
+[83. How to Horizontal Flip a Video?](#83-how-to-horizontal-flip-a-video)
 
-[84. How to Vertically Flip a Video ?](# how-to-vertically-flip-a-video)
+[84. How to Vertically Flip a Video ?](#84-how-to-vertically-flip-a-video)
 
-[85. How to Rotate a Video?](# how-to-rotate-a-video)
+[85. How to Rotate a Video?](#85-how-to-rotate-a-video)
 
-**[Adding Text to Video](# adding-text-to-video)**
+**[Adding Text to Video](#adding-text-to-video)**
 
 
-[86. How to Extract Subtitles From Video?](# how-to-extract-subtitles-from-video)
+[86. How to Extract Subtitles From Video?](#86-how-to-extract-subtitles-from-video)
 
-[87. How to Add Subtitles to a Video?](# how-to-add-subtitles-to-a-video)
+[87. How to Add Subtitles to a Video?](#87-how-to-add-subtitles-to-a-video)
 
-[88. How to Burn Subtitles Into a Video?](# how-to-burn-subtitles-into-a-video)
+[88. How to Burn Subtitles Into a Video?](#88-how-to-burn-subtitles-into-a-video)
 
-[89. How to Overlay Custom Text in a Video?](# how-to-overlay-custom-text-in-a-video)
+[89. How to Overlay Custom Text in a Video?](#89-how-to-overlay-custom-text-in-a-video)
 
-**[Image video filters](# image-video-filters)**
+**[Image video filters](#image-video-filters)**
 
 
-[90. How to Add a Transparent Watermark to a Video?](# how-to-add-a-transparent-watermark-to-a-video)
+[90. How to Add a Transparent Watermark to a Video?](#90-how-to-add-a-transparent-watermark-to-a-video)
 
-[91. How to Create a Slideshow Video From Multiple Images?](# how-to-create-a-slideshow-video-from-multiple-images)
+[91. How to Create a Slideshow Video From Multiple Images?](#91-how-to-create-a-slideshow-video-from-multiple-images)
 
-[92. How to Extract an Image Frame From a Video at a Specific Time?](# how-to-extract-an-image-frame-from-a-video-at-a-specific-time)
+[92. How to Extract an Image Frame From a Video at a Specific Time?](#92-how-to-extract-an-image-frame-from-a-video-at-a-specific-time)
 
-[93. How to Add an MP3 to an Image to Create a Video?](# how-to-add-an-mp3-to-an-image-to-create-a-video)
+[93. How to Add an MP3 to an Image to Create a Video?](#93-how-to-add-an-mp3-to-an-image-to-create-a-video)
 
-[94. How to Convert a Video into a Tile Image?](# how-to-convert-a-video-into-a-tile-image)
+[94. How to Convert a Video into a Tile Image?](#94-how-to-convert-a-video-into-a-tile-image)
 
-[95. How to Generate a Picture Waveform from a Video?](# how-to-generate-a-picture-waveform-from-a-video)
+[95. How to Generate a Picture Waveform from a Video?](#95-how-to-generate-a-picture-waveform-from-a-video)
 
-[96. How to Generate a Solid Colored Video?](# how-to-generate-a-solid-colored-video)
+[96. How to Generate a Solid Colored Video?](#96-how-to-generate-a-solid-colored-video)
 
-**[Advanced Video Filters](# advanced-video-filters)**
+**[Advanced Video Filters](#advanced-video-filters)**
 
 
-[97. How to Datamosh/Glitch a Video?](# how-to-datamoshglitch-a-video)
+[97. How to Datamosh/Glitch a Video?](#97-how-to-datamoshglitch-a-video)
 
-[98. How to Add Various Fades to a Video?](# how-to-add-various-fades-to-a-video)
+[98. How to Add Various Fades to a Video?](#98-how-to-add-various-fades-to-a-video)
 
-[99. How to Add Noise to a Video?](# how-to-add-noise-to-a-video)
+[99. How to Add Noise to a Video?](#99-how-to-add-noise-to-a-video)
 
-[100. How to Apply Static to a Video?](# how-to-apply-static-to-a-video)
+[100. How to Apply Static to a Video?](#100-how-to-apply-static-to-a-video)
 
-[101. How to Randomize Frames in a Video?](# how-to-randomize-frames-in-a-video)
+[101. How to Randomize Frames in a Video?](#101-how-to-randomize-frames-in-a-video)
 
-[102. How to Use Green Screen to Mask a Video Into Another Video?](# how-to-use-green-screen-to-mask-a-video-into-another-video)
+[102. How to Use Green Screen to Mask a Video Into Another Video?](#102-how-to-use-green-screen-to-mask-a-video-into-another-video)
 
-[A Note about frei0r filters](# a-note-about-frei0r-filters)
+[A Note about frei0r filters](#a-note-about-frei0r-filters)
 
-[103. How to Use the Frei0r Filters?](# how-to-use-the-frei0r-filters)
+[103. How to Use the Frei0r Filters?](#103-how-to-use-the-frei0r-filters)
 
-[104. How to obtain a YouTube Streaming key?](# how-to-obtain-a-youtube-streaming-key)
+[104. How to obtain a YouTube Streaming key?](#104-how-to-obtain-a-youtube-streaming-key)
 
-[105. How to Stream a File to YouTube?](# how-to-stream-a-file-to-youtube)
+[105. How to Stream a File to YouTube?](#105-how-to-stream-a-file-to-youtube)
 
-[106. How to Stream a Webcam to YouTube?](# how-to-stream-a-webcam-to-youtube)
+[106. How to Stream a Webcam to YouTube?](#106-how-to-stream-a-webcam-to-youtube)
 
-[107. How to Use Filters with Video Streaming?](# how-to-use-filters-with-video-streaming)
+[107. How to Use Filters with Video Streaming?](#107-how-to-use-filters-with-video-streaming)
 
-[108. How to Fix the 'width/height not divisible by 2' Error?](# how-to-fix-the-widthheight-not-divisible-by-2-error)
+[108. How to Fix the 'width/height not divisible by 2' Error?](#108-how-to-fix-the-widthheight-not-divisible-by-2-error)
 
-[109. How to Fix the '\...was expected to have exactly 1 input and 1 output. However, it had \>1 input(s) and 1 output(s)' Error?](# how-to-fix-the-...was-expected-to-have-exactly-1-input-and-1-output.-however-it-had-1-inputs-and-1-outputs-error)
+[109. How to Fix the '\...was expected to have exactly 1 input and 1 output. However, it had \>1 input(s) and 1 output(s)' Error?](#109-how-to-fix-the-...was-expected-to-have-exactly-1-input-and-1-output.-however-it-had-1-inputs-and-1-outputs-error)
 
-[110. How to Fix the 'Cannot connect audio filter to non audio input' Error?](# how-to-fix-the-cannot-connect-audio-filter-to-non-audio-input-error)
+[110. How to Fix the 'Cannot connect audio filter to non audio input' Error?](#110-how-to-fix-the-cannot-connect-audio-filter-to-non-audio-input-error)
 
-[111. How to Fix the 'Cannot connect video filter to audio input' Error?](# how-to-fix-the-cannot-connect-video-filter-to-audio-input-error)
+[111. How to Fix the 'Cannot connect video filter to audio input' Error?](#111-how-to-fix-the-cannot-connect-video-filter-to-audio-input-error)
 
-[112. How to Fix the 'No such filter: x' Error?](#  how-to-fix-the-no-such-filter-x-error)
+[112. How to Fix the 'No such filter: x' Error?](#112-how-to-fix-the-no-such-filter-x-error)
 
 ## An Introduction to FFmpeg
 
