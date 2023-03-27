@@ -1,6 +1,4 @@
-![banner](https://github.com/jdriselvato/FFmpeg-For-Beginners-Ebook/blob/main/banner.png?raw=true)
-
-NOTE: This is a work in progress, the pandoc conversion seems to have added some funky layout or text problems. Feel free to make a PR if you want to fix anything. 
+NOTE: This is a work in progress, the pandoc conversion seems to have added some funky layout or text problems. Feel free to make a PR if you want to fix anything.
 
 
 # FFmpeg For Beginners - Edit Audio & Video Like a Pro for Youtube and Social Media
@@ -369,16 +367,16 @@ FFmpeg provides the following features:
 3.  Transcoding - the ability to take one format and reformat to another
 
 4.  Muxing - the ability to combine audio and video into a single data
-    > stream.
+> stream.
 
 5.  Demuxing - the ability to split a data stream into multiple formats
-    > (audio, video, subtitles)
+> (audio, video, subtitles)
 
 6.  Filtering - the ability to apply complex algorithms to video or
-    > audio streams
+> audio streams
 
 7.  Streaming - the ability to stream data in real time from a host to a
-    > client
+> client
 
 8.  Playback - the ability to play a video from terminal with ffplay
 
@@ -396,7 +394,7 @@ commands are typed and run from.
 The standard command syntax for FFmpeg is as follows:
 
 ```
-  \$ ffmpeg \[input\] \[options & arguments\] \[output\]
+$ ffmpeg [input] [options & arguments] [output]
 ```
 
 Bash can execute FFmpeg commands from a terminal or from a file but this
@@ -406,13 +404,13 @@ FFmpeg also has a built-in player called ffplay. This tool allows for
 script testing or playback. Here's an example of playback using ffplay:
 
 ```
-  \$ ffplay input.mp4
+$ ffplay input.mp4
 ```
 
 Here's an example of ffplay used to test a filter:
 
 ```
-  \$ ffplay -i input.mp4 -vf \"negate\"
+$ ffplay -i input.mp4 -vf "negate"
 ```
 
 This is an additional feature of FFmpeg but not a major focus in this
@@ -490,8 +488,8 @@ the output of the first command takes the name of the action and with
 the final output file resulting in output.mp3/output.mp4. For example:
 
 ```
-  \$ ffmpeg -i input.mp4 \[blur argument\] blur.mp4\
-  \$ ffmpeg -i blur.mp4 \[color correction argument\] output.mp4
+$ ffmpeg -i input.mp4 [blur argument] blur.mp4
+$ ffmpeg -i blur.mp4 [color correction argument] output.mp4
 ```
 
 ![](media/image43.png){width="1.0in" height="1.0in"}
@@ -533,8 +531,8 @@ has yet to have. Think of it as an equivalent to apt-get on linux.
 To quickly install Homebrew run the following:
 
 ```
-  \$ /bin/bash -c \"\$(curl -fsSL
-  https://raw.githubusercontent.com/Homebrew/install/master/install.sh)\"
+$ /bin/bash -c "$(curl -fsSL
+https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 **Tip:** For more information on homebrew or installing homebrew, visit:
@@ -543,7 +541,7 @@ To quickly install Homebrew run the following:
 The FFmpeg installation command is as follows:
 
 ```
-  \$ brew install ffmpeg
+$ brew install ffmpeg
 ```
 
 **Tip:** If additional libraries are required for an FFmpeg build,
@@ -556,8 +554,8 @@ On Ubuntu or Debian based Linux operating systems with apt-get
 installed, FFmpeg installation is easy:
 
 ```
-  \$ sudo apt-get update\
-  \$ sudo apt-get install ffmpeg
+$ sudo apt-get update
+$ sudo apt-get install ffmpeg
 ```
 
 This installs the latest FFmpeg package but some Linux users may want to
@@ -590,13 +588,13 @@ general requirement to install FFmpeg but installation may vary:
 2.  **Rename** the build folder to FFmpeg
 
 3.  Navigate to Environment Variables by doing a Windows **search** for:
-    > *Edit the system environment variables*
+> *Edit the system environment variables*
 
 4.  In the Environment Variables window, select the Variable Path and
-    > click **New**
+> click **New**
 
 5.  Type the path of the FFmpeg folder C:\\FFmpeg\\bin\\ and click
-    > **OK** to apply changes
+> **OK** to apply changes
 
 Upon installation, FFmpeg is accessible via the *command prompt*. Typing
 ffmpeg and pressing enter to verify if the installation has been
@@ -622,14 +620,14 @@ current workaround is as follows (install all available dependencies):
 
 ```
 +-----------------------------------------------------------------------+
-| \$ brew uninstall \--force \--ignore-dependencies ffmpeg\             |
-| \$ brew install chromaprint amiaopensource/amiaos/decklinksdk\        |
-| \$ brew tap homebrew-ffmpeg/ffmpeg                                    |
+| $ brew uninstall --force --ignore-dependencies ffmpeg             |
+| $ brew install chromaprint amiaopensource/amiaos/decklinksdk        |
+| $ brew tap homebrew-ffmpeg/ffmpeg                                    |
 |                                                                       |
-| \$ brew install ffmpeg\                                               |
-| \$ brew upgrade homebrew-ffmpeg/ffmpeg/ffmpeg \$(brew options         |
-| homebrew-ffmpeg/ffmpeg/ffmpeg \| grep -vE \'\\s\' \| grep \--         |
-| \'\--with-\' \| grep -vi chromaprint \| tr \'\\n\' \' \')             |
+| $ brew install ffmpeg                                               |
+| $ brew upgrade homebrew-ffmpeg/ffmpeg/ffmpeg $(brew options         |
+| homebrew-ffmpeg/ffmpeg/ffmpeg | grep -vE 's' | grep --         |
+| '--with-' | grep -vi chromaprint | tr 'n' ' ')             |
 +=======================================================================+
 +-----------------------------------------------------------------------+
 ```
@@ -647,40 +645,40 @@ Here's an example of how to install dependencies provided by the FFmpeg
 wiki:
 
 ```
-  \$ cd \~/ffmpeg_sources && \\\
-  wget -O ffmpeg-snapshot.tar.bz2
-  https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 && \\\
-  tar xjvf ffmpeg-snapshot.tar.bz2 && \\\
-  cd ffmpeg && \\\
-  PATH=\"\$HOME/bin:\$PATH\"
-  PKG_CONFIG_PATH=\"\$HOME/ffmpeg_build/lib/pkgconfig\" ./configure \\\
-  \--prefix=\"\$HOME/ffmpeg_build\" \\\
-  \--pkg-config-flags=\"\--static\" \\\
-  \--extra-cflags=\"-I\$HOME/ffmpeg_build/include\" \\\
-  \--extra-ldflags=\"-L\$HOME/ffmpeg_build/lib\" \\\
-  \--extra-libs=\"-lpthread -lm\" \\\
-  \--bindir=\"\$HOME/bin\" \\\
-  \--enable-gpl \\\
-  \--enable-libaom \\\
-  \--enable-libass \\\
-  \--enable-libfdk-aac \\\
-  \--enable-libfreetype \\\
-  \--enable-libmp3lame \\\
-  \--enable-libopus \\\
-  \--enable-libvorbis \\\
-  \--enable-libvpx \\\
-  \--enable-libx264 \\\
-  \--enable-libx265 \\\
-  \--enable-nonfree && \\\
-  PATH=\"\$HOME/bin:\$PATH\" make && \\\
-  make install && \\\
-  hash -r
+$ cd ~/ffmpeg_sources && 
+wget -O ffmpeg-snapshot.tar.bz2
+https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 && 
+tar xjvf ffmpeg-snapshot.tar.bz2 && 
+cd ffmpeg && 
+PATH="$HOME/bin:$PATH"
+PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure 
+--prefix="$HOME/ffmpeg_build" 
+--pkg-config-flags="--static" 
+--extra-cflags="-I$HOME/ffmpeg_build/include" 
+--extra-ldflags="-L$HOME/ffmpeg_build/lib" 
+--extra-libs="-lpthread -lm" 
+--bindir="$HOME/bin" 
+--enable-gpl 
+--enable-libaom 
+--enable-libass 
+--enable-libfdk-aac 
+--enable-libfreetype 
+--enable-libmp3lame 
+--enable-libopus 
+--enable-libvorbis 
+--enable-libvpx 
+--enable-libx264 
+--enable-libx265 
+--enable-nonfree && 
+PATH="$HOME/bin:$PATH" make && 
+make install && 
+hash -r
 ```
 
 Source:
 [[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
 
-## 6. How to Install FFmpeg on a PHP Server? 
+## 6. How to Install FFmpeg on a PHP Server?
 
 Now that FFmpeg is installed on your specific operating system, you can
 use FFmpeg in the *command line* or graduate to using it on your
@@ -692,7 +690,7 @@ Once FFmpeg is installed on the server, using PHPs' shell_exec() to
 access FFmpeg is as easy as using the command line, for example:
 
 ```
-  echo shell_exec(\"ffmpeg -i input.mp4 output.mp4 &\");
+echo shell_exec("ffmpeg -i input.mp4 output.mp4 &");
 ```
 
 There is a PHP library, *PHP-FFMpeg*, available if this method is too
@@ -715,8 +713,8 @@ languages using FFmpeg:
 FFmpeg is easily accessible using os.system in Python, as seen below:
 
 ```
-  import os
-  os.system("ffmpeg -i input.mp4 output.mp3")
+import os
+os.system("ffmpeg -i input.mp4 output.mp3")
 ```
 
 But Python also has a 3rd party library *ffmpy*, which has its own
@@ -724,12 +722,12 @@ syntax and way of using FFmpeg. In this example an MP4 is covered to
 MP3:
 
 ```
-  import ffmpy
-  ff = ffmpy.FFmpeg(
-  ... inputs={'input.mp4': None},
-  ... outputs={'output.mp3': None}
-  ... )
-  ff.run()
+import ffmpy
+ff = ffmpy.FFmpeg(
+... inputs={'input.mp4': None},
+... outputs={'output.mp3': None}
+... )
+ff.run()
 ```
 
 More information:
@@ -743,11 +741,11 @@ example, the script converts all MP4 files in a folder to MP3
 (script.sh):
 
 ```
-  for i in \*.mp4; do\
-  OUTPUT=\${i%.mp4}\
-  echo \$OUTPUT\
-  ffmpeg -i \"\$i\" \$OUTPUT.mp3\
-  done
+for i in *.mp4; do
+OUTPUT=${i%.mp4}
+echo $OUTPUT
+ffmpeg -i "$i" $OUTPUT.mp3
+done
 ```
 
 **Ruby/Streamio**
@@ -757,10 +755,10 @@ a MOV file is converted to MP4:
 
 ```
 +-----------------------------------------------------------------------+
-| require \'streamio-ffmpeg\'                                           |
+| require 'streamio-ffmpeg'                                           |
 |                                                                       |
-| input = FFmpeg::Movie.new(\"path/to/input.mov\")\                     |
-| output.transcode(\"movie.mp4\") \# Output to mp4                      |
+| input = FFmpeg::Movie.new("path/to/input.mov")                     |
+| output.transcode("movie.mp4") # Output to mp4                      |
 +=======================================================================+
 +-----------------------------------------------------------------------+
 ```
@@ -782,7 +780,7 @@ choice and ready for use. To double check installation run the following
 command:
 
 ```
-  \$ ffmpeg -version
+$ ffmpeg -version
 ```
 
 The output details the FFmpeg version as well as the various
@@ -790,32 +788,32 @@ configurations enabled and disabled and which additional codecs are
 installed. Below is the recommended setup for this book:
 
 ```
-  \$ ffmpeg -version\
-  ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers\
-  built with Apple clang version 11.0.0 (clang-1100.0.33.17)\
-  configuration: \--prefix=/usr/local/Cellar/ffmpeg/4.2.2_2
-  \--enable-shared \--enable-pthreads \--enable-version3
-  \--enable-avresample \--cc=clang \--host-cflags= \--host-ldflags=
-  \--enable-ffplay \--enable-gnutls \--enable-gpl \--enable-libaom
-  \--enable-libbluray \--enable-libmp3lame \--enable-libopus
-  \--enable-librubberband \--enable-libsnappy \--enable-libtesseract
-  \--enable-libtheora \--enable-libvidstab \--enable-libvorbis
-  \--enable-libvpx \--enable-libwebp \--enable-libx264 \--enable-libx265
-  \--enable-libxvid \--enable-lzma \--enable-libfontconfig
-  \--enable-libfreetype \--enable-frei0r \--enable-libass
-  \--enable-libopencore-amrnb \--enable-libopencore-amrwb
-  \--enable-libflite \--enable-libzvbi \--enable-libopenjpeg
-  \--enable-librtmp \--enable-libspeex \--enable-libsoxr
-  \--enable-videotoolbox \--disable-libjack \--disable-indev=jack\
-  libavutil 56. 31.100 / 56. 31.100\
-  libavcodec 58. 54.100 / 58. 54.100\
-  libavformat 58. 29.100 / 58. 29.100\
-  libavdevice 58. 8.100 / 58. 8.100\
-  libavfilter 7. 57.100 / 7. 57.100\
-  libavresample 4. 0. 0 / 4. 0. 0\
-  libswscale 5. 5.100 / 5. 5.100\
-  libswresample 3. 5.100 / 3. 5.100\
-  libpostproc 55. 5.100 / 55. 5.100
+$ ffmpeg -version
+ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers
+built with Apple clang version 11.0.0 (clang-1100.0.33.17)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.2.2_2
+--enable-shared --enable-pthreads --enable-version3
+--enable-avresample --cc=clang --host-cflags= --host-ldflags=
+--enable-ffplay --enable-gnutls --enable-gpl --enable-libaom
+--enable-libbluray --enable-libmp3lame --enable-libopus
+--enable-librubberband --enable-libsnappy --enable-libtesseract
+--enable-libtheora --enable-libvidstab --enable-libvorbis
+--enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265
+--enable-libxvid --enable-lzma --enable-libfontconfig
+--enable-libfreetype --enable-frei0r --enable-libass
+--enable-libopencore-amrnb --enable-libopencore-amrwb
+--enable-libflite --enable-libzvbi --enable-libopenjpeg
+--enable-librtmp --enable-libspeex --enable-libsoxr
+--enable-videotoolbox --disable-libjack --disable-indev=jack
+libavutil 56. 31.100 / 56. 31.100
+libavcodec 58. 54.100 / 58. 54.100
+libavformat 58. 29.100 / 58. 29.100
+libavdevice 58. 8.100 / 58. 8.100
+libavfilter 7. 57.100 / 7. 57.100
+libavresample 4. 0. 0 / 4. 0. 0
+libswscale 5. 5.100 / 5. 5.100
+libswresample 3. 5.100 / 3. 5.100
+libpostproc 55. 5.100 / 55. 5.100
 ```
 
 **Tip:** It is suggested to use FFmpeg *version 4.2.2* or higher.
@@ -867,7 +865,7 @@ Since *codecs* are the backbone of FFmpeg, it is beneficial to know how
 to access the full list of supported codecs. The command is as follows:
 
 ```
-  \$ ffmpeg -codecs
+$ ffmpeg -codecs
 ```
 
 The output from this command shows hundreds of codecs for both audio and
@@ -894,7 +892,7 @@ automatic result but a manual selection through being familiar with the
 supported formats and their codecs. For a full list type:
 
 ```
-  \$ ffmpeg -formats
+$ ffmpeg -formats
 ```
 
 The output of this command results in a list detailing hundreds of
@@ -911,7 +909,7 @@ Here is an example of a MOV file being converted to an MP4 with both
 audio and video codecs being copied:
 
 ```
-  \$ ffmpeg -i input.mov -c:v copy -c:a copy output.mp4
+$ ffmpeg -i input.mov -c:v copy -c:a copy output.mp4
 ```
 
 This is the first syntax based command seen in this book, let's break it
@@ -929,7 +927,7 @@ In this example, an AVI file is being converted to an MP4 but there is a
 risk in copying the codecs:
 
 ```
-  \$ ffmpeg -i input.avi -vcodec copy -acodec copy output.mp4
+$ ffmpeg -i input.avi -vcodec copy -acodec copy output.mp4
 ```
 
 The reason for concern is the AVI format supports a wide range of
@@ -947,48 +945,48 @@ conform to, let's investigate the information inside an input file. The
 command is as follows:
 
 ```
-  \$ ffmpeg -i input.mp3\
-  ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers\
-  built with Apple clang version 11.0.0 (clang-1100.0.33.17)\
-  configuration: \--prefix=/usr/local/Cellar/ffmpeg/4.2.2_2
-  \--enable-shared \--enable-pthreads \--enable-version3
-  \--enable-avresample \--cc=clang \--host-cflags= \--host-ldflags=
-  \--enable-ffplay \--enable-gnutls \--enable-gpl \--enable-libaom
-  \--enable-libbluray \--enable-libmp3lame \--enable-libopus
-  \--enable-librubberband \--enable-libsnappy \--enable-libtesseract
-  \--enable-libtheora \--enable-libvidstab \--enable-libvorbis
-  \--enable-libvpx \--enable-libwebp \--enable-libx264 \--enable-libx265
-  \--enable-libxvid \--enable-lzma \--enable-libfontconfig
-  \--enable-libfreetype \--enable-frei0r \--enable-libass
-  \--enable-libopencore-amrnb \--enable-libopencore-amrwb
-  \--enable-libopenjpeg \--enable-librtmp \--enable-libspeex
-  \--enable-libsoxr \--enable-videotoolbox \--disable-libjack
-  \--disable-indev=jack\
-  libavutil 56. 31.100 / 56. 31.100\
-  libavcodec 58. 54.100 / 58. 54.100\
-  libavformat 58. 29.100 / 58. 29.100\
-  libavdevice 58. 8.100 / 58. 8.100\
-  libavfilter 7. 57.100 / 7. 57.100\
-  libavresample 4. 0. 0 / 4. 0. 0\
-  libswscale 5. 5.100 / 5. 5.100\
-  libswresample 3. 5.100 / 3. 5.100\
-  libpostproc 55. 5.100 / 55. 5.100\
-  Input #0, mp3, from \'input.mp3\':\
-  Metadata:\
-  title : 1989 MAZDA FAMILIA // Car\
-  artist : テレビCM\
-  track : 16\
-  album : Visual Signals\
-  date : 2020\
-  encoder : Lavf58.29.100\
-  Duration: 00:00:16.58, start: 0.023021, bitrate: 128 kb/s\
-  Stream #0:0: Audio: mp3, 48000 Hz, stereo, fltp, 128 kb/s\
-  Metadata:\
-  encoder : Lavc58.54\
-  Side data:\
-  replaygain: track gain - 13.100000, track peak - unknown, album gain -
-  unknown, album peak - unknown,\
-  At least one output file must be specified
+$ ffmpeg -i input.mp3
+ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers
+built with Apple clang version 11.0.0 (clang-1100.0.33.17)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.2.2_2
+--enable-shared --enable-pthreads --enable-version3
+--enable-avresample --cc=clang --host-cflags= --host-ldflags=
+--enable-ffplay --enable-gnutls --enable-gpl --enable-libaom
+--enable-libbluray --enable-libmp3lame --enable-libopus
+--enable-librubberband --enable-libsnappy --enable-libtesseract
+--enable-libtheora --enable-libvidstab --enable-libvorbis
+--enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265
+--enable-libxvid --enable-lzma --enable-libfontconfig
+--enable-libfreetype --enable-frei0r --enable-libass
+--enable-libopencore-amrnb --enable-libopencore-amrwb
+--enable-libopenjpeg --enable-librtmp --enable-libspeex
+--enable-libsoxr --enable-videotoolbox --disable-libjack
+--disable-indev=jack
+libavutil 56. 31.100 / 56. 31.100
+libavcodec 58. 54.100 / 58. 54.100
+libavformat 58. 29.100 / 58. 29.100
+libavdevice 58. 8.100 / 58. 8.100
+libavfilter 7. 57.100 / 7. 57.100
+libavresample 4. 0. 0 / 4. 0. 0
+libswscale 5. 5.100 / 5. 5.100
+libswresample 3. 5.100 / 3. 5.100
+libpostproc 55. 5.100 / 55. 5.100
+Input #0, mp3, from 'input.mp3':
+Metadata:
+title : 1989 MAZDA FAMILIA // Car
+artist : テレビCM
+track : 16
+album : Visual Signals
+date : 2020
+encoder : Lavf58.29.100
+Duration: 00:00:16.58, start: 0.023021, bitrate: 128 kb/s
+Stream #0:0: Audio: mp3, 48000 Hz, stereo, fltp, 128 kb/s
+Metadata:
+encoder : Lavc58.54
+Side data:
+replaygain: track gain - 13.100000, track peak - unknown, album gain -
+unknown, album peak - unknown,
+At least one output file must be specified
 ```
 
 After the FFmpeg version and configuration information the Input section
@@ -1020,14 +1018,14 @@ syntax types.
 An example using -vf / -af syntax:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"reverse\" -af \"areverse\" output.mp4
+$ ffmpeg -i input.mp4 -vf "reverse" -af "areverse" output.mp4
 ```
 
 An example using -filter_complex syntax:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"\[0:v\]reverse;\[0:a\]areverse\" output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"[0:v]reverse;[0:a]areverse" output.mp4
 ```
 
 The -filter_complex option isn't only used when chaining audio and video
@@ -1064,7 +1062,7 @@ Below is an example of a linear chain horizontally flipping a video and
 then inverting the colors:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf "hflip,negate" output.mp4
+$ ffmpeg -i input.mp4 -vf "hflip,negate" output.mp4
 ```
 
 *Distinct linear* chains use secondary inputs or temporary streams
@@ -1074,9 +1072,9 @@ two temporary streams are merged together. Resulting in an audio
 playback with both forward and reversed playing at the same time:
 
 ```
-  \$ ffmpeg -i input.mp3 -filter_complex "asplit [main][tmp];
-  [tmp]areverse[new]; [new][main]amix=inputs=2[out]" -map
-  "[out]" output.mp3
+$ ffmpeg -i input.mp3 -filter_complex "asplit [main][tmp];
+[tmp]areverse[new]; [new][main]amix=inputs=2[out]" -map
+"[out]" output.mp3
 ```
 
 Don't worry if the above code looks intimidating, distinct linear chains
@@ -1093,8 +1091,8 @@ a colon. This example of multiple filter parameters adds two seconds to
 the end of an audio file:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"apad=packet_size=4096:pad_dur=2\"
-  output.mp3
+$ ffmpeg -i input.mp3 -af "apad=packet_size=4096:pad_dur=2"
+output.mp3
 ```
 
 Where apad is the padding audio filter that has the parameters packet
@@ -1123,7 +1121,7 @@ configured with \--enable-libx264.
 The H.264 codec can be set as seen in the example below:
 
 ```
-  \$ ffmpeg -i input.mp4 -c:v libx264 output.mp4
+$ ffmpeg -i input.mp4 -c:v libx264 output.mp4
 ```
 
 Setting the *constant rate factor* (-crf) is another recommended
@@ -1136,7 +1134,7 @@ values between 17-28 are "virtually lossless" visually but not
 technically. Here's an example of using -crf:
 
 ```
-  \$ ffmpeg -i input.mp4 -c:v libx264 -crf 28 output.mp4
+$ ffmpeg -i input.mp4 -c:v libx264 -crf 28 output.mp4
 ```
 
 In addition to setting the codec and constant rate factor, selecting a
@@ -1167,7 +1165,7 @@ For the highest video quality with all 3 settings, use the following
 command:
 
 ```
-  \$ ffmpeg -i input.mp4 -c:v libx264 -crf 0 -preset veryslow output.mp4
+$ ffmpeg -i input.mp4 -c:v libx264 -crf 0 -preset veryslow output.mp4
 ```
 
 **Tip:** If a filter is causing quality to degrade, add these options
@@ -1188,13 +1186,13 @@ are known. Here an input is duplicated to an output and FFmpeg knows to
 use the same audio and video for the final result:
 
 ```
-  \$ ffmpeg -i input.mp4 output.mp4
+$ ffmpeg -i input.mp4 output.mp4
 ```
 
 If this was written using -map the example would like this:
 
 ```
-  \$ ffmpeg -i input.mp4 -map 0:v -map 0:a output.mp4
+$ ffmpeg -i input.mp4 -map 0:v -map 0:a output.mp4
 ```
 
 Here the map of 0:v is the video of input 1 (0 index) and 0:a is the
@@ -1207,7 +1205,7 @@ results in a new output with the video from the first input and the
 audio from the second:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -map 0:v -map 1:a output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -map 0:v -map 1:a output.mp4
 ```
 
 In the case of using a filter with a script of two inputs, the specific
@@ -1221,9 +1219,9 @@ The volume of the audio had an increased volume of 10dB because that
 second input was specified to have the filter applied to it:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex
-  \"\[1:a\]volume=10dB\[new_audio\]\" -map 0:v -map \[new_audio\]:a
-  output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex
+"[1:a]volume=10dB[new_audio]" -map 0:v -map [new_audio]:a
+output.mp4
 ```
 
 The volume filter is applied to \[1:a\], the audio from input2.mp4, and
@@ -1235,7 +1233,7 @@ If an input has multiple audio sources as seen in MKV files, the access
 to a specific audio channel syntax is as seen below:
 
 ```
-  \$ ffmpeg -i input.mkv -map 0:v -map 0:a:1 output.mp4
+$ ffmpeg -i input.mkv -map 0:v -map 0:a:1 output.mp4
 ```
 
 The additional syntax adds a third variable for the audio source. If the
@@ -1249,10 +1247,10 @@ example, except the \[new_audio\] stream has an areverse filter applied
 to it:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex
-  \"\[1:a\]volume=50dB\[new_audio\];
-  \[new_audio\]areverse\[reversed_audio\]\" -map 0:v -map
-  \[reversed_audio\]:a -shortest output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex
+"[1:a]volume=50dB[new_audio];
+[new_audio]areverse[reversed_audio]" -map 0:v -map
+[reversed_audio]:a -shortest output.mp4
 ```
 
 Here a new audio stream, \[reversed_audio\], is created and set for the
@@ -1277,8 +1275,8 @@ In the example below, this one-liner converts all WAV files in a folder
 to MP3:
 
 ```
-  \$ **for** i **in** \*.wav; **do** ffmpeg -i \"\$i\" \"\${i%.\*}.mp3\";
-  **done**
+$ **for** i **in** *.wav; **do** ffmpeg -i "$i" "${i%.*}.mp3";
+**done**
 ```
 
 This keeps a copy of the input WAV file while additionally adding a new
@@ -1313,7 +1311,7 @@ This is easily done by simply converting the video into an audio format.
 For example, here an MP4 is converted to an MP3:
 
 ```
-  \$ ffmpeg -i input.mp4 -vn output.mp3
+$ ffmpeg -i input.mp4 -vn output.mp3
 ```
 
 A new argument -vn (no video) is used to ensure the encoded MP3 is only
@@ -1324,14 +1322,14 @@ If for any reason a conversion of a video to audio format results in a
 broken MP3, setting the mp3 codec to libmp3lame may fix the issue:
 
 ```
-  \$ ffmpeg -i input.mp4 -vn -acodec libmp3lame output.mp3
+$ ffmpeg -i input.mp4 -vn -acodec libmp3lame output.mp3
 ```
 
 For the sake of reference here's the most simplistic way to convert an
 MP4 to an MP3:
 
 ```
-  \$ ffmpeg -i input.mp4 output.mp3
+$ ffmpeg -i input.mp4 output.mp3
 ```
 
 ### A Note about Audio conversions:
@@ -1342,7 +1340,7 @@ check if your specific audio format is supported visit question 11,
 *"What are All the Formats FFmpeg Supports?"*, for a full list check the
 back of the book.
 
-## 20. How to Convert Ogg to MP3? 
+## 20. How to Convert Ogg to MP3?
 
 Ogg is an open container format by the *xiph.org foundation* with no
 restrictions on software patents. Ogg does have a higher audio quality
@@ -1353,7 +1351,7 @@ Fortunately, Ogg to MP3 is simplistic and an easy conversion. With audio
 to audio conversions setting -acodec maybe redundant as seen below:
 
 ```
-  \$ ffmpeg -i input.ogg output.mp3
+$ ffmpeg -i input.ogg output.mp3
 ```
 
 **Tip:** If an MP3 codec is required add -acodec libmp3lame.
@@ -1370,7 +1368,7 @@ Although this might have superior audio quality, MP3 is just more
 convenient and thus converting a FLAC to MP3 is as follows:
 
 ```
-  \$ ffmpeg -i input.flac -ab 320k output.mp3
+$ ffmpeg -i input.flac -ab 320k output.mp3
 ```
 
 In this example, the introduction of -ab or *bitrate* can be noted. The
@@ -1387,7 +1385,7 @@ its uncompressed audio but high quality format so converting to MP3 may
 be required:
 
 ```
-  \$ ffmpeg -i input.wav -ab 320k output.mp3
+$ ffmpeg -i input.wav -ab 320k output.mp3
 ```
 
 The -ab here is audio bitrate. The higher the value the better the audio
@@ -1424,16 +1422,16 @@ with a list of MP3 tracks must be made before the merging can begin.
 Below is an example list inside the file (file.txt):
 
 ```
-  file \'track1.mp3\'\
-  file \'track2.mp3\'\
-  file \'track3.mp3\'
+file 'track1.mp3'
+file 'track2.mp3'
+file 'track3.mp3'
 ```
 
 Next, using the following FFmpeg one-liner, all three MP3 files are
 merged into one long track:
 
 ```
-  \$ ffmpeg -f concat -i file.txt -c copy output.mp3
+$ ffmpeg -f concat -i file.txt -c copy output.mp3
 ```
 
 concat or *concatenate* is one of the most common processes of combining
@@ -1464,22 +1462,22 @@ trimming isn't difficult. In order to understand the next 3 questions,
 let's look at the common FFmpeg arguments to properly trim audio.
 
 ```
--ss \[time\]
+-ss [time]
 
 Indicates seeking (the start time of audio) and must be set before the
 input audio
 
--t \[time\]
+-t [time]
 
 Indicates the input audio duration. Must be set manually
 
--async \[sample per second\]
+-async [sample per second]
 
-This \"stretches/squeezes\" the audio stream to fit the timestamp.
+This "stretches/squeezes" the audio stream to fit the timestamp.
 -async 1 is a special case that corrects only the start of the audio
 stream
 
-\[time\]
+[time]
 
 The formatting for time are in order from hour, minute seconds
 (HH:MM:SS)
@@ -1496,7 +1494,7 @@ identify these two numbers because trimming requires tricky subtraction.
 Let's look at the example below:
 
 ```
-  \$ ffmpeg -ss 00:00:10 -i input.mp3 -t 00:01:00 -async 1 output.mp3
+$ ffmpeg -ss 00:00:10 -i input.mp3 -t 00:01:00 -async 1 output.mp3
 ```
 
 As outlined in *"A Note About Trimming"*, -ss is used to *seek* to a
@@ -1512,8 +1510,8 @@ value. Luckily, FFmpeg has a tool called ffprobe which is used to give
 the exact duration:
 
 ```
-  \$ ffprobe -i input.mp3 -show_entries format=duration -v quiet -of
-  csv=\"p=0\" -sexagesimal
+$ ffprobe -i input.mp3 -show_entries format=duration -v quiet -of
+csv="p=0" -sexagesimal
 ```
 
 **Challenge:** See question 7, *"How to Use FFmpeg in Various
@@ -1531,7 +1529,7 @@ In this example, the input file is 1 minute long with the requirement
 that has 10 seconds removed from the end:
 
 ```
-  \$ ffmpeg -t 00:00:50 -i input.mp3 -async 1 output.mp3
+$ ffmpeg -t 00:00:50 -i input.mp3 -async 1 output.mp3
 ```
 
 By setting a duration smaller than the actual audio duration, FFmpeg
@@ -1553,7 +1551,7 @@ In this example, the input file is 1 minute long with the requirement of
 the audio. This results in a new 40 second audio clip:
 
 ```
-  \$ ffmpeg -t 00:00:50 -i input.mp3 -ss 00:00:10 -async 1 output.mp3
+$ ffmpeg -t 00:00:50 -i input.mp3 -ss 00:00:10 -async 1 output.mp3
 ```
 
 In question 25, *"How to Trim 'x' Seconds From the End of an Audio
@@ -1596,13 +1594,13 @@ adjusting the volume of an input. In the following one-liner, the volume
 is increased by 10dB (decibels):
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"volume=volume=10dB\" output.mp3
+$ ffmpeg -i input.mp3 -af "volume=volume=10dB" output.mp3
 ```
 
 The volume value can also be a negative value to decrease the volume:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"volume=volume=-10dB\" output.mp3
+$ ffmpeg -i input.mp3 -af "volume=volume=-10dB" output.mp3
 ```
 
 **Tip:** The volume filter also works on video input.
@@ -1614,14 +1612,14 @@ Indicates the volume filter name
 
 volume
 
-Indicates the volume value (input_volume \* value = output_volume)
+Indicates the volume value (input_volume * value = output_volume)
 ```
 
 The volume filter has over 17 different parameters to precisely change
 the sound. For more information visit,
 [[http://ffmpeg.org/ffmpeg-filters.html#volume]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#volume)
 
-## 28. How to Crossfade Two Audio Tracks? 
+## 28. How to Crossfade Two Audio Tracks?
 
 Making a music mix? Easily crossfade each track with FFmpeg within
 seconds. *Crossfading* creates a smooth fade in and out between each
@@ -1629,8 +1627,8 @@ audio file. In this example a crossfade of 1 second is applied between
 both inputs:
 
 ```
-  \$ ffmpeg -i input1.mp3 -i input2.mp3 -filter_complex
-  \"acrossfade=duration=00:00:01:curve1=exp:curve2=exp\" output.mp3
+$ ffmpeg -i input1.mp3 -i input2.mp3 -filter_complex
+"acrossfade=duration=00:00:01:curve1=exp:curve2=exp" output.mp3
 ```
 
 ```
@@ -1682,7 +1680,7 @@ No fade applied
 For more information on crossfades and curves, visit:
 [[https://ffmpeg.org/ffmpeg-filters.html#afade]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#afade)
 
-## 29. How to Normalize Audio Data? 
+## 29. How to Normalize Audio Data?
 
 Ever get an audio file that just isn't loud enough but when the volume
 is increased it peaks? The solution to this problem is to run the audio
@@ -1699,7 +1697,7 @@ If this is starting to feel complex, don't worry, here's the recommended
 settings for normalizing audio with loudnorm:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"loudnorm=I=-16:LRA=11:TP=-1.5\" output.mp3
+$ ffmpeg -i input.mp3 -af "loudnorm=I=-16:LRA=11:TP=-1.5" output.mp3
 ```
 
 **Tip:** The above example has been found all over the internet, without
@@ -1727,7 +1725,7 @@ Indicates the max true peak (-9.0 to 0.0 with default -2.0)
 For more information on loudnorm, visit:
 [[https://ffmpeg.org/ffmpeg-filters.html#loudnorm]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)
 
-## 30. How to Add an Echo to an Audio Track? 
+## 30. How to Add an Echo to an Audio Track?
 
 Adding an echo (or reflected sound) to an audio track is a great way to
 add more ambiance or smoothness to a choppy playback. It's a personal
@@ -1738,8 +1736,8 @@ Here aecho uses of *gain*, *delays* and *decays* make for a great airy
 echo effect that fades over time:
 
 ```
-  \$ ffmpeg -i input.mp3 -af
-  \"aecho=in_gain=0.5:out_gain=0.5:delays=500:decays=0.2\" output.mp3
+$ ffmpeg -i input.mp3 -af
+"aecho=in_gain=0.5:out_gain=0.5:delays=500:decays=0.2" output.mp3
 ```
 
 In this filter the *delay* and *decay* arguments are plural because
@@ -1747,9 +1745,9 @@ multiple delays and decays are stackable using the \| syntax for extra
 echo control, as seen below:
 
 ```
-  \$ ffmpeg -i input.mp3 -af
-  \"aecho=in_gain=0.5:out_gain=0.5:delays=500\|200:decays=0.2\|1.0\"
-  output.mp3
+$ ffmpeg -i input.mp3 -af
+"aecho=in_gain=0.5:out_gain=0.5:delays=500|200:decays=0.2|1.0"
+output.mp3
 ```
 
 **Tip:** The number of delays and decays must equal the same amount so
@@ -1783,14 +1781,14 @@ default 0.5)
 may be required, -pix_fmt yuv420p. YUV is a color encoding system to
 define the color image or video which some player might need.
 
-## 31. How to Change the Tempo of an Audio Track? 
+## 31. How to Change the Tempo of an Audio Track?
 
 Changing the tempo of an audio file is easy with atempo. This filter
 only accepts one value, a number between 0.5 and 100. In this example,
 the audio tempo is increased by 50%:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"atempo=1.50\" output.mp3
+$ ffmpeg -i input.mp3 -af "atempo=1.50" output.mp3
 ```
 
 So how does 1.50 equal 50%? That's because any value above 1.0 increases
@@ -1799,7 +1797,7 @@ the tempo and any value below 1.0 decreases the tempo.
 Here the tempo is reduced by 50% instead:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"atempo=0.50\" output.mp3
+$ ffmpeg -i input.mp3 -af "atempo=0.50" output.mp3
 ```
 
 Reducing the tempo has an issue with making the playback choppy and
@@ -1810,7 +1808,7 @@ is slower or faster but the pitch does not change.
 Audio Track?"*, a preferred method of decreasing tempo with a smoother
 playback can be explored.
 
-## 32. How to Change the Pitch / Sample Rate of an Audio Track? 
+## 32. How to Change the Pitch / Sample Rate of an Audio Track?
 
 Changing the *pitch* of an audio track means the tempo stays the same
 but the audio pitch increases/decreases. There isn't a native way to
@@ -1823,7 +1821,7 @@ sample rate with asetrate, which by itself results in a longer playback
 duration:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"asetrate=44100\*0.5\" output.mp3
+$ ffmpeg -i input.mp3 -af "asetrate=44100*0.5" output.mp3
 ```
 
 **Tip:** Changing the sample rate to change the pitch might create a
@@ -1834,8 +1832,8 @@ To keep the pitch change while setting the preferred sample rate the
 filter aresample is needed, as seen below:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"asetrate=44100\*0.5,aresample=44100\"
-  output.mp3
+$ ffmpeg -i input.mp3 -af "asetrate=44100*0.5,aresample=44100"
+output.mp3
 ```
 
 As stated earlier in this question, for a true pitch to be applied the
@@ -1844,8 +1842,8 @@ while the tempo nearly stays the same. In the example below, an atempo
 between 1.5 to 1.7 should result in proper pitch change:
 
 ```
-  \$ ffmpeg -i input.mp3 -af
-  \"asetrate=44100\*0.5,atempo=1.5,aresample=44100\" output.mp3
+$ ffmpeg -i input.mp3 -af
+"asetrate=44100*0.5,atempo=1.5,aresample=44100" output.mp3
 ```
 
 ### A Note about Pitch, Tempo & Sample Rate
@@ -1868,7 +1866,7 @@ Personally, I am very pleased with the sound.
 Listen to it here:
 [[https://mthu.bandcamp.com/album/we-are]{.underline}](https://mthu.bandcamp.com/album/we-are)
 
-## 33. How to Generate an Audio Tone? 
+## 33. How to Generate an Audio Tone?
 
 FFmpeg also has the ability to generate sounds or tones natively. With
 the right kind of scripting, you could make chiptune like music straight
@@ -1876,7 +1874,7 @@ from the terminal. In this example, generating a single 2000Hz sound for
 10 seconds is enough for now:
 
 ```
-  \$ ffmpeg -f lavfi -i \"sine=frequency=2000:duration=10\" output.mp3
+$ ffmpeg -f lavfi -i "sine=frequency=2000:duration=10" output.mp3
 ```
 
 A new argument, lavfi, needs to be introduced here as this time there is
@@ -1898,7 +1896,7 @@ duration, d
 
 Indicates the duration of the generated frequency output
 ```
-## 34. How to Generate Text to Speech Audio? 
+## 34. How to Generate Text to Speech Audio?
 
 **Tip:** You'll need to enable \--enable-libflite, full Tutorial:
 [[http://johnriselvato.com/how-to-install-flite-flitevox-for-ffmpeg/]{.underline}](http://johnriselvato.com/how-to-install-flite-flitevox-for-ffmpeg/)
@@ -1913,19 +1911,19 @@ from a file or inside in the command.
 An example of text from a text file (speech.txt):
 
 ```
-  \$ ffmpeg -f lavfi -i \"flite=textfile=speech.txt\" output.mp3
+$ ffmpeg -f lavfi -i "flite=textfile=speech.txt" output.mp3
 ```
 
 An example of text inside the command:
 
 ```
-  \$ ffmpeg -f lavfi -i flite=text=\'Hello World!\' output.mp3
+$ ffmpeg -f lavfi -i flite=text='Hello World!' output.mp3
 ```
 
 For more information about flite, visit:
 [[https://ffmpeg.org/ffmpeg-filters.html#flite]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#flite)
 
-## 35. How to Add a Low-Pass Filter to an Audio Track? 
+## 35. How to Add a Low-Pass Filter to an Audio Track?
 
 A *low-pass filter* is an audio filter that cuts off frequencies that
 are higher than the desired cutoff frequency. This filter is popular in
@@ -1936,7 +1934,7 @@ With FFmpeg the filter lowpass is used by setting the desired cutoff
 frequency in Hz. In this example, any frequency above 3200Hz is cut off:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"lowpass=f=3200\" output.mp3
+$ ffmpeg -i input.mp3 -af "lowpass=f=3200" output.mp3
 ```
 
 The low-pass filter is great for getting closer to the bass of the
@@ -1944,7 +1942,7 @@ audio. For the opposite effect, a high-pass filter is used which can be
 found in question 36, *"How to Add a High-Pass Filter to an Audio
 Track?"*.
 
-## 36. How to Add a High-Pass Filter to an Audio Track? 
+## 36. How to Add a High-Pass Filter to an Audio Track?
 
 A *high-pass filter* is an audio filter that cuts off frequencies that
 are lower than the desired cutoff frequency. This is often used to cut
@@ -1956,7 +1954,7 @@ desired cut off frequency in Hz. For example, here bass lower than 300Hz
 is remove:
 
 ```
-  \$ ffmpeg -i input.mp3 -af \"highpass=f=3200\" output.mp3
+$ ffmpeg -i input.mp3 -af "highpass=f=3200" output.mp3
 ```
 
 The high-pass filter removes the lower frequencies but for the opposite
@@ -1964,13 +1962,13 @@ effect, a low-pass filter is used. More information on the low-pass
 filter read question 35, *"How to Add a Low-pass Filter to an Audio
 Track?"*.
 
-### A Note About Audio only Related Filters 
+### A Note About Audio only Related Filters
 
 This covers the most common questions about audio filters. The next few
 questions are specific to audio inside video formats. Here removing
 audio, mixing new audio and even replacing audio in a video is covered.
 
-## 37. How to Remove Audio From a Video? 
+## 37. How to Remove Audio From a Video?
 
 Although this next command isn't exactly a filter, it's still useful to
 know how to remove or mute, audio in an MP4.
@@ -1982,7 +1980,7 @@ Below is the quickest way to remove audio from any form of video using
 the -an option:
 
 ```
-  \$ ffmpeg -i input.mp4 -an -vcodec copy output.mp4
+$ ffmpeg -i input.mp4 -an -vcodec copy output.mp4
 ```
 
 **Tip:** -an indicates no audio output.
@@ -1995,8 +1993,8 @@ adding background music to a commentary video. The command is as
 follows:
 
 ```
-  \$ ffmpeg -i input.mp4 -i input.mp3 -filter_complex \"amix\" -map 0:v
-  -map 0:a -map 1:a output.mp4
+$ ffmpeg -i input.mp4 -i input.mp3 -filter_complex "amix" -map 0:v
+-map 0:a -map 1:a output.mp4
 ```
 
 A common issue that comes up with amix is the volume of one input over
@@ -2005,9 +2003,9 @@ this. In the example below the volume of the first input audio \[0:a\]
 is reduce 40%:
 
 ```
-  \$ ffmpeg -i input.mp4 -i input.mp3 -filter_complex
-  \"\[0:a\]volume=0.40,amix\" -map 0:v -map 0:a -map 1:a -shortest
-  output.mp4
+$ ffmpeg -i input.mp4 -i input.mp3 -filter_complex
+"[0:a]volume=0.40,amix" -map 0:v -map 0:a -map 1:a -shortest
+output.mp4
 ```
 
 The option -shortest here changes the duration to the longest input
@@ -2021,15 +2019,15 @@ details.
 question 39, "*How to Replace the Audio on a Video?"*, for more
 information.
 
-## 39. How to Replace the Audio on a Video? 
+## 39. How to Replace the Audio on a Video?
 
 There are times when the audio on a video needs to be replaced. Here
 filters are not even needed to replace audio but the use of -map become
 important to understand:
 
 ```
-  \$ ffmpeg -i input.mp4 -i input.mp3 -map 0:v -map 1:a -shortest
-  output.mp4
+$ ffmpeg -i input.mp4 -i input.mp3 -map 0:v -map 1:a -shortest
+output.mp4
 ```
 
 Here the video from the first input and the audio from the second input
@@ -2059,14 +2057,14 @@ conversions will get you familiar with using FFmpeg with video. In the
 following questions, you'll learn how to convert the most common video
 formats into MP4 and a few methods of file compression.
 
-## 40. How to Convert MOV to MP4? 
+## 40. How to Convert MOV to MP4?
 
 MOV is a video format developed by Apple but compatible with most
 software and players. MOV uses the MPEG-4 codec for compression making
 the conversion between MOV to MP4 very simple, as seen below:
 
 ```
-  \$ ffmpeg -i input.mov output.mp4
+$ ffmpeg -i input.mov output.mp4
 ```
 
 **Tip:** MOV files are usually larger in size but a higher quality video
@@ -2075,7 +2073,7 @@ compatibility issues due to it being maintained for Apple products.
 
 **Tip:** Instagram and Twitter support MOV video uploads.
 
-## 41. How to Convert MKV to MP4? 
+## 41. How to Convert MKV to MP4?
 
 The *Matroska Multimedia Container* or MKV is a free open container
 format that differs from formats like MOV or MP4. MKV files can store an
@@ -2087,7 +2085,7 @@ Because of the nature of MKV, converting to MP4 requires a few
 arguments, as seen in the example below:
 
 ```
-  \$ ffmpeg -i input.mkv -c:a copy -c:v libx264 output.mp4
+$ ffmpeg -i input.mkv -c:a copy -c:v libx264 output.mp4
 ```
 
 In this example, the command must specify that the audio codec is copied
@@ -2099,7 +2097,7 @@ MKV has two audio tracks and the second track is required for the
 output, the command is as follows:
 
 ```
-  \$ ffmpeg -i input.mkv -map 0:v -map 0:a:1 output.mp4
+$ ffmpeg -i input.mkv -map 0:v -map 0:a:1 output.mp4
 ```
 
 **Tip:** Instagram and Twitter do not support MKV video uploads.
@@ -2111,19 +2109,19 @@ by Microsoft. AVI has support for multiple video codecs including
 MPEG-4. This makes the conversion to MP4 simple:
 
 ```
-  \$ ffmpeg -i input.avi output.mp4
+$ ffmpeg -i input.avi output.mp4
 ```
 
 If the input.avi codec is not MPEG-4, setting the libx264 codec might be
 required:
 
 ```
-  \$ ffmpeg -i input.avi -c:v libx264 output.mp4
+$ ffmpeg -i input.avi -c:v libx264 output.mp4
 ```
 
 **Tip:** Instagram and Twitter do not support AVI video uploads.
 
-## 43. How to Convert FLV to MP4? 
+## 43. How to Convert FLV to MP4?
 
 FLV or *Flash Video* is a multimedia container format maintained by
 Adobe Systems. It was once the staple of how most media was delivered on
@@ -2133,12 +2131,12 @@ Although replaced in the modern streaming world, FLV files do exist and
 converting to MP4 is easy when encoding with libx264:
 
 ```
-  \$ ffmpeg -i input.flv -vcodec libx264 output.mp4
+$ ffmpeg -i input.flv -vcodec libx264 output.mp4
 ```
 
 **Tip:** Instagram and Twitter do not support FLV video uploads.
 
-## 44. How to Convert WebM to MP4? 
+## 44. How to Convert WebM to MP4?
 
 As an open source alternative to HTML5 video (the successor of FLV),
 WebM is another multimedia container format that is currently being
@@ -2147,7 +2145,7 @@ iOS (or Safari), thus converting to MP4 is beneficial. Luckily, the
 conversion is simple because most WebM video codecs are H.264:
 
 ```
-  \$ ffmpeg -i input.webm output.mp4
+$ ffmpeg -i input.webm output.mp4
 ```
 
 There may be an issue on macOS with the previewer not working with this
@@ -2155,7 +2153,7 @@ new MP4, one solution is to set the frame rate during the conversion, as
 seen below:
 
 ```
-  \$ ffmpeg -i input.webm -r 24 output.mp4
+$ ffmpeg -i input.webm -r 24 output.mp4
 ```
 
 ```
@@ -2166,7 +2164,7 @@ Indicates the frame rate (Hz value) or FPS
 
 **Tip:** Instagram and Twitter do not support WebM video uploads.
 
-### A Note about Converting to MP4 
+### A Note about Converting to MP4
 
 By now you have a basic understanding of how simple it is to convert the
 most popular video container formats to MP4. In most cases encoding to
@@ -2175,7 +2173,7 @@ H.264 is all that is needed for formats.
 To finish the *"Basic Video Conversion"* section, let's convert an MP4
 into a GIF and learn how to compress MP4 files to reduce file size.
 
-## 45. How to Convert MP4 to GIF? 
+## 45. How to Convert MP4 to GIF?
 
 In the previous video format conversions the formats supported audio
 without any additional encoding. A *Graphic Interchange Format* or GIF
@@ -2188,13 +2186,13 @@ internet without needing a video player. As with most conversions, the
 FFmpeg command is simple:
 
 ```
-  \$ ffmpeg -i input.mp4 output.gif
+$ ffmpeg -i input.mp4 output.gif
 ```
 
 **Tip:** Twitter does support the GIF format while Instagram natively
 does not.
 
-## 46. How to Compress MP4 and Reduce File Size? 
+## 46. How to Compress MP4 and Reduce File Size?
 
 Although not a conversion to another format, compression is one of the
 most asked questions about MP4 files with FFmpeg. People are constantly
@@ -2206,7 +2204,7 @@ average bitrate and retains quality. -crf around 23 is recommended but
 feel free to experiment, the lower the number the higher the bitrate.
 
 ```
-  \$ ffmpeg -i input.mp4 -vcodec libx265 -crf 23 output.mp4
+$ ffmpeg -i input.mp4 -vcodec libx265 -crf 23 output.mp4
 ```
 
 Another example is with presets. Presets are various encoding speeds to
@@ -2237,7 +2235,7 @@ FFmpeg can remove a few seconds from the beginning of a video or a few
 minutes from the end. Really any kind of cutting, chopping, slicing, etc
 can be accomplished with FFmpeg, and quickly.
 
-## 47. How to Trim 'x' Seconds From the Start of a Video? 
+## 47. How to Trim 'x' Seconds From the Start of a Video?
 
 Trimming a few seconds, minutes or hours from a video is simple but
 requires an understanding of the *seeking* and *duration* options.
@@ -2248,7 +2246,7 @@ two numbers because trimming requires tricky subtraction. Let's look at
 the following example:
 
 ```
-  \$ ffmpeg -ss 00:00:15 -i input.mp4 -t 00:05:00 -async 1 output.mp4
+$ ffmpeg -ss 00:00:15 -i input.mp4 -t 00:05:00 -async 1 output.mp4
 ```
 
 As outlined in *"A Note About Trimming"*, -ss is used to *seek* to a
@@ -2261,15 +2259,15 @@ value. Luckily, FFmpeg has a tool called ffprobe which can be used
 output an exact duration:
 
 ```
-  \$ ffprobe -i input.mp4 -show_entries format=duration -v quiet -of
-  csv=\"p=0\" -sexagesimal
+$ ffprobe -i input.mp4 -show_entries format=duration -v quiet -of
+csv="p=0" -sexagesimal
 ```
 
 **Challenge:** See question 7, *"How to Use FFmpeg in Various
 Languages?"*, for ideas on how to use this output as a variable and
 dynamically set video duration.
 
-## 48. How to Trim 'x' Seconds From the End of a Video? 
+## 48. How to Trim 'x' Seconds From the End of a Video?
 
 Trimming a couple of seconds, minutes or hours off the end of a video is
 easy but again requires a different understanding of time in FFmpeg.
@@ -2283,7 +2281,7 @@ In this example, the input file is 5 minutes long with the requirement
 of 1 minute removed from the end:
 
 ```
-  \$ ffmpeg -t 00:04:00 -i input.mp4 -async 1 output.mp4
+$ ffmpeg -t 00:04:00 -i input.mp4 -async 1 output.mp4
 ```
 
 By setting a smaller time than the actual video duration, FFmpeg
@@ -2291,7 +2289,7 @@ automatically trims the video length (5 minutes - 1 minute = 4 minutes).
 Now the benefit of manually setting the duration instead of FFmpeg
 automatically handling it is obvious.
 
-## 49. How to Trim 'x' Seconds From the Start and End of a Video? 
+## 49. How to Trim 'x' Seconds From the Start and End of a Video?
 
 The last two questions covered trimming the start of a video and
 trimming the end of a video, but what does the command look like
@@ -2302,13 +2300,13 @@ of 15 seconds to be removed from the start and 1 minute to be removed
 from the end. Resulting in a new 3 minute and 45 second video clip:
 
 ```
-  \$ ffmpeg -t 00:04:00 -i input.mp4 -ss 00:00:15 -async 1 output.mp4
+$ ffmpeg -t 00:04:00 -i input.mp4 -ss 00:00:15 -async 1 output.mp4
 ```
 
 Together, with the use of -t and -ss, the manipulation of the video
 length is quick and easy.
 
-## 50. How to Splice a Video into Segments? 
+## 50. How to Splice a Video into Segments?
 
 Splicing a video (or dividing a video into multiple *segments*) is a
 common way to break large files into smaller parts. This is commonly
@@ -2319,8 +2317,8 @@ Here is a basic example where the input is a 20 second clip with the
 *desired* result of multiple 5 second segments:
 
 ```
-  \$ ffmpeg -i input.mp4 -c copy -f segment -segment_time 00:00:05
-  -reset_timestamps 1 output\_%02d.mp4
+$ ffmpeg -i input.mp4 -c copy -f segment -segment_time 00:00:05
+-reset_timestamps 1 output_%02d.mp4
 ```
 
 Naturally, it is expected that each clip is 5 seconds long.
@@ -2347,7 +2345,7 @@ which is useful for when each segment must have playback (optional)
 
 **Challenge:** How would you do this with an audio file instead?
 
-## 51. How to Stitch Segments to One Video? 
+## 51. How to Stitch Segments to One Video?
 
 Stitching videos generated by the segment filter is accomplished using
 the concat filter. See Question 50, *"How to Splice a Video into
@@ -2359,17 +2357,17 @@ First a list of videos to stitch together must be created. The file
 (file.txt) might look like the following:
 
 ```
-  file \'output_00.mp4\'\
-  file \'output_01.mp4\'\
-  file \'output_02.mp4\'\
-  file \'output_03.mp4\'\
-  file \'output_04.mp4\'
+file 'output_00.mp4'
+file 'output_01.mp4'
+file 'output_02.mp4'
+file 'output_03.mp4'
+file 'output_04.mp4'
 ```
 
 Then run the following command to create a single file again:
 
 ```
-  \$ ffmpeg -f concat -i file.txt -c copy -fflags +genpts output.mp4
+$ ffmpeg -f concat -i file.txt -c copy -fflags +genpts output.mp4
 ```
 
 Streaming with concat is not covered in this book but more information
@@ -2390,7 +2388,7 @@ instead of timestamp
 
 **Challenge:** How would you do this with an audio file instead?
 
-## 52. How to Loop a Section of Video Multiple Times? 
+## 52. How to Loop a Section of Video Multiple Times?
 
 Looping a section of a video can be useful for presentations or advanced
 video editing. In this example the input.mp4 is a 5 minute long video
@@ -2398,8 +2396,8 @@ with the requirement that after the 1 minute mark, the video loops 10
 times.
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"loop=loop=10:size=1500:start=1500\" -pix_fmt yuv420p output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"loop=loop=10:size=1500:start=1500" -pix_fmt yuv420p output.mp4
 ```
 
 In the requirements for this example it was stated that after the 1
@@ -2436,9 +2434,9 @@ output. Thus another method is required. Using concat multiple times on
 the same file could be used instead:
 
 ```
-  \$ ffmpeg -i input.mp4 -i input.mp4 -i input.mp4 -filter_complex
-  \"concat=n=3:v=1:a=1 \[v\] \[a\]\" -map \"\[v\]\" -map \"\[a\]\"
-  output.mp4
+$ ffmpeg -i input.mp4 -i input.mp4 -i input.mp4 -filter_complex
+"concat=n=3:v=1:a=1 [v] [a]" -map "[v]" -map "[a]"
+output.mp4
 ```
 
 Then with the use of *seeking*, -ss, the section to be repeated can be
@@ -2450,37 +2448,37 @@ specified.
 Below is a way to identify the framerate of an input (as seen in red):
 
 ```
-  \$ ffmpeg -i input.mp4\
-  ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers\
-  built with Apple clang version 11.0.0\
-  Configuration: \<removed for clarity\>\
-  Input #0, mov,mp4,m4a,3gp,3g2,mj2, from \'input.mp4\':\
-  Metadata:\
-  major_brand : isom\
-  minor_version : 512\
-  compatible_brands: isomiso2avc1mp41\
-  encoder : Lavf58.29.100\
-  Duration: 00:00:20.05, start: 0.000000, bitrate: 1802 kb/s\
-  Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p,
-  720x480 \[SAR 40:33 DAR 20:11\], 1667 kb/s, 29.97 fps, 29.97 tbr, 30k
-  tbn, 59.94 tbc (default)\
-  Metadata:\
-  handler_name : Core Media Video\
-  timecode : 01:00:00:00\
-  Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz,
-  stereo, fltp, 128 kb/s (default)\
-  Metadata:\
-  handler_name : Core Media Audio\
-  Stream #0:2(eng): Data: none (tmcd / 0x64636D74), 0 kb/s\
-  Metadata:\
-  handler_name : Core Media Video\
-  timecode : 01:00:00:00
+$ ffmpeg -i input.mp4
+ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers
+built with Apple clang version 11.0.0
+Configuration: <removed for clarity>
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'input.mp4':
+Metadata:
+major_brand : isom
+minor_version : 512
+compatible_brands: isomiso2avc1mp41
+encoder : Lavf58.29.100
+Duration: 00:00:20.05, start: 0.000000, bitrate: 1802 kb/s
+Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p,
+720x480 [SAR 40:33 DAR 20:11], 1667 kb/s, 29.97 fps, 29.97 tbr, 30k
+tbn, 59.94 tbc (default)
+Metadata:
+handler_name : Core Media Video
+timecode : 01:00:00:00
+Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz,
+stereo, fltp, 128 kb/s (default)
+Metadata:
+handler_name : Core Media Audio
+Stream #0:2(eng): Data: none (tmcd / 0x64636D74), 0 kb/s
+Metadata:
+handler_name : Core Media Video
+timecode : 01:00:00:00
 ```
 
 **Tip:** See question 17, *"What is -map and How is it Used?"*, for more
 details.
 
-## 53. How to Concatenate Multiple Videos? 
+## 53. How to Concatenate Multiple Videos?
 
 Just like stitching segments into the original file, concat is used the
 same way. Refer to question 51, *"How to Stitch Segments to One
@@ -2492,11 +2490,11 @@ below (file.txt):
 
 ```
 +-----------------------------------------------------------------------+
-| file \'input0.mp4\'                                                   |
+| file 'input0.mp4'                                                   |
 |                                                                       |
-| file \'input1.mp4\'                                                   |
+| file 'input1.mp4'                                                   |
 |                                                                       |
-| file \'input2.mp4\'                                                   |
+| file 'input2.mp4'                                                   |
 +=======================================================================+
 +-----------------------------------------------------------------------+
 ```
@@ -2505,7 +2503,7 @@ Then run the following command to load the txt file to create a single
 file from the list:
 
 ```
-  \$ ffmpeg -f concat -i file.txt -c copy -fflags +genpts output.mp4
+$ ffmpeg -f concat -i file.txt -c copy -fflags +genpts output.mp4
 ```
 
 But how can you join multiple MP4 files that are not exactly the same
@@ -2513,9 +2511,9 @@ resolution, codec or framerates? A different method of concat is
 required, as seen in the example below:
 
 ```
-  \$ ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -filter_complex
-  \"\[0:v\] \[0:a\] \[1:v\] \[1:a\] \[2:v\] \[2:a\] concat=n=3:v=1:a=1
-  \[v\] \[a\]\" -map \"\[v\]\" -map \"\[a\]\" output.mp4
+$ ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -filter_complex
+"[0:v] [0:a] [1:v] [1:a] [2:v] [2:a] concat=n=3:v=1:a=1
+[v] [a]" -map "[v]" -map "[a]" output.mp4
 ```
 
 ```
@@ -2571,7 +2569,7 @@ book. This section has the following parts:
 7.  Advanced Video Filters
 
 
-# Color Editing Filters 
+# Color Editing Filters
 
 In the following examples, images are shown for the first time as
 filters become more artistic and visual. Here the ability to blend, edit
@@ -2588,7 +2586,7 @@ Left input.mp4 / Right input2.mp4
 To start off, blending and other basic filters are used to introduce the
 topic of video filters.
 
-## 54. How to Blend Two Videos Together? 
+## 54. How to Blend Two Videos Together?
 
 Blending has an interesting effect when two inputs are used. The blend
 filter has the potential to create outstanding artistic results, so
@@ -2605,8 +2603,8 @@ In this example, using the difference filter applied to both video
 inputs gives an interesting inverted look as seen in figure 54.0:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex
-  \"blend=difference\" output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex
+"blend=difference" output.mp4
 ```
 
 ```
@@ -2692,8 +2690,8 @@ another video. For example, blending a solid color video (red.mp4) with
 a lighten blending would result in figure 54.1:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i red.mp4 -filter_complex \"blend=lighten\"
-  output.mp4
+$ ffmpeg -i input1.mp4 -i red.mp4 -filter_complex "blend=lighten"
+output.mp4
 ```
 
 Using colors or gradients and multiple blends, custom Instagram-like
@@ -2702,7 +2700,7 @@ filters can easily be created.
 **Tip:** Read question 96, *"How to Generate a Solid Colored Video"*,
 for more information on creating a solid colored video.
 
-## 55. How to Add Color Normalization to a Video? 
+## 55. How to Add Color Normalization to a Video?
 
 Normalization is a color correction filter that standardizes the RGB
 values in each frame of a video. With the use of histogram and contrast
@@ -2711,7 +2709,7 @@ and flickering. Below is an example of normalization at the highest
 strength:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"normalize=strength=1\" output.mp4
+$ ffmpeg -i input.mp4 -vf "normalize=strength=1" output.mp4
 ```
 
 **Tip:** If this filter is applied to an MP4, you may need to add a
@@ -2733,7 +2731,7 @@ Indicates setting a temporal smoothing based on the previous frame (1 or
 0 with a default 0 - no smoothing)
 ```
 
-## 56. How to Add Color Balance to a Video? 
+## 56. How to Add Color Balance to a Video?
 
 The color balance filter allows the RGB shadows, midtones, highlights
 and preserving lightness can be adjusted. This filter can be used to
@@ -2747,8 +2745,8 @@ In this example, the green shadows are increase and the blue highlights
 are maxed out, as seen in figure 56.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"colorbalance=gs=.5:bh=1\" -pix_fmt yuv420p
-  output.mp4
+$ ffmpeg -i input.mp4 -vf "colorbalance=gs=.5:bh=1" -pix_fmt yuv420p
+output.mp4
 ```
 
 ```
@@ -2780,7 +2778,7 @@ with default 0.0)
 **Tip:** Negative values shift to complementary colors while positive
 values shift to primary colors.
 
-## 57. How to Edit the Hue of a Video? 
+## 57. How to Edit the Hue of a Video?
 
 The hue filter allows for modification of the hue and saturation of a
 video.
@@ -2793,7 +2791,7 @@ In the example below, the hue is set to 45 degrees with an increased
 saturation, as seen in figure 57.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"hue=h=45:s=2\" output.mp4
+$ ffmpeg -i input.mp4 -vf "hue=h=45:s=2" output.mp4
 ```
 
 ![](media/image48.png){width="3.5in" height="1.9288888888888889in"}
@@ -2805,8 +2803,8 @@ effects like animating through hue colors quickly. Expressions can also
 be programmed, as seen in figure 57.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"hue=H=2\*PI\*t:s=cos(2\*PI\*t)+10\"
-  output.mp4
+$ ffmpeg -i input.mp4 -vf "hue=H=2*PI*t:s=cos(2*PI*t)+10"
+output.mp4
 ```
 
 ```
@@ -2839,7 +2837,7 @@ t
 Indicates the timestamp (HH:MM:SS)
 ```
 
-## 58. How to Convert a Video to Black and White? 
+## 58. How to Convert a Video to Black and White?
 
 Turning a video to black and white is also accomplished by using the hue
 filter.
@@ -2852,7 +2850,7 @@ Setting the saturation value to 0 results in a black and white video, as
 seen in figure 58.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"hue=s=0\" output.mp4
+$ ffmpeg -i input.mp4 -vf "hue=s=0" output.mp4
 ```
 
 **Challenge:** In addition to changing the video to black and white, add
@@ -2873,8 +2871,8 @@ In this example, all colors are boosted in the video, as seen in figure
 59.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex \"vibrance=intensity=2\"
-  -pix_fmt yuv420p output.mp4
+$ ffmpeg -i input.mp4 -filter_complex "vibrance=intensity=2"
+-pix_fmt yuv420p output.mp4
 ```
 
 ![](media/image40.png){width="3.5in" height="1.9288888888888889in"}
@@ -2886,8 +2884,8 @@ a negative intensity with a green saturation is applied. As seen in
 figure 59.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"vibrance=intensity=-2:gbal=10\" -pix_fmt yuv420p output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"vibrance=intensity=-2:gbal=10" -pix_fmt yuv420p output.mp4
 
 ```
 
@@ -2926,7 +2924,7 @@ blum
 Indicates the blue luma coefficient (1 to 0 default 0)
 ```
 
-## 60. How to Invert the Colors of a Video? 
+## 60. How to Invert the Colors of a Video?
 
 FFmpeg has a very simple filter, negate, that inverts the colors of the
 input. The train station looks really futuristic with this filter on.
@@ -2939,10 +2937,10 @@ Although this filter is simplistic in use, it has a great effect, below
 is the command as seen in figure 60.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"negate\" output.mp4
+$ ffmpeg -i input.mp4 -vf "negate" output.mp4
 ```
 
-## 61. How to RGB Shift a Video? 
+## 61. How to RGB Shift a Video?
 
 RBG shifting is one of the coolest and easiest effects for emulating 3D
 or add that Vaporwave Aesthetics. With rgbashift, the RGBA pixels can
@@ -2956,8 +2954,8 @@ In this example, a red horizontal shift is applied to create red/blue
 3D, as seen in figure 61.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"rgbashift=rh=-10\" -pix_fmt yuv420p
-  output.mp4
+$ ffmpeg -i input.mp4 -vf "rgbashift=rh=-10" -pix_fmt yuv420p
+output.mp4
 ```
 
 ![](media/image46.png){width="3.5in" height="1.9276924759405074in"}
@@ -2968,8 +2966,8 @@ In this example, a blue horizontal shift is applied, as seen in figure
 61.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"rgbashift=bh=10\" -pix_fmt yuv420p
-  output.mp4
+$ ffmpeg -i input.mp4 -vf "rgbashift=bh=10" -pix_fmt yuv420p
+output.mp4
 ```
 
 ![](media/image21.png){width="3.5in" height="1.96in"}
@@ -2980,8 +2978,8 @@ In this example, a green vertical shift is applied, as seen in figure
 61.2:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"rgbashift=gv=10\" -pix_fmt yuv420p
-  output.mp4
+$ ffmpeg -i input.mp4 -vf "rgbashift=gv=10" -pix_fmt yuv420p
+output.mp4
 ```
 
 ```
@@ -3035,14 +3033,14 @@ A vignette can be added without additional parameters as seen in figure
 62.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"vignette\" output.mp4
+$ ffmpeg -i input.mp4 -vf "vignette" output.mp4
 ```
 
 The vignette filter also has an angle parameter to adjust the angle of
 the fade. Below is a vignette with a 30 degree angle:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"vignette=angle=PI/6\" output.mp4
+$ ffmpeg -i input.mp4 -vf "vignette=angle=PI/6" output.mp4
 ```
 
 ```
@@ -3089,8 +3087,8 @@ colors remain the same.
 Figure 63.0 shows this inconsistency:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"colorhold=color=00FFFF:similarity=1\"
-  -pix_fmt yuv420p output.mp4
+$ ffmpeg -i input.mp4 -vf "colorhold=color=00FFFF:similarity=1"
+-pix_fmt yuv420p output.mp4
 ```
 
 Technically with enough effort and guess work, removing all colors
@@ -3131,14 +3129,14 @@ In this example, a color palette of 256 pixels is generated, as seen in
 figure 64.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"palettegen\" palette.png
+$ ffmpeg -i input.mp4 -vf "palettegen" palette.png
 ```
 
 The palette.png is rather tiny but is very powerful when combined with
 the paletteuse filter. More information on using this color palette,
 visit question 65, *"How to Apply a Color Palette to a Video?"*.
 
-## 65. How to Apply a Color Palette to a Video? 
+## 65. How to Apply a Color Palette to a Video?
 
 In question 64, *"How to Generate a Color Palette From a Video?"*, a 256
 pixel palette.png was generated from input.mp4. In this example, the
@@ -3154,8 +3152,8 @@ palette applies faded blue color where green was once seen, as seen in
 figure 65.0:
 
 ```
-  \$ ffmpeg -i input2.mp4 -i palette.png -filter_complex \"paletteuse\"
-  -c:v libx264 -pix_fmt yuv420p output.mp4
+$ ffmpeg -i input2.mp4 -i palette.png -filter_complex "paletteuse"
+-c:v libx264 -pix_fmt yuv420p output.mp4
 ```
 
 ```
@@ -3173,7 +3171,7 @@ Ordered 8x8 bayer dithering
 
 heckbert
 
-Paul Heckbert\'s simple error diffusion
+Paul Heckbert's simple error diffusion
 
 floyd_steinberg
 
@@ -3215,8 +3213,8 @@ information. Maxing out both variables result in a sharper image, as
 seen in figure 66.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf
-  \"unsharp=luma_amount=1.5:chroma_amount=1.5\" output.mp4
+$ ffmpeg -i input.mp4 -vf
+"unsharp=luma_amount=1.5:chroma_amount=1.5" output.mp4
 ```
 
 If negative values are set the image instead is slightly blurred. This
@@ -3241,7 +3239,7 @@ Indicates the chroma effect strength (1.5 to -1.5 with default 0.0)
 For more information about this filter, visit:
 [[https://ffmpeg.org/ffmpeg-filters.html#unsharp-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#unsharp-1)
 
-## 67. How to Blur a Video with Unsharp? 
+## 67. How to Blur a Video with Unsharp?
 
 FFmpeg has another sharpen/blur filter called unsharp. Although it's
 still not as strong as some filters, it does have it's own aesthetic.
@@ -3254,8 +3252,8 @@ In this example, unsharp provides the bluriest image possible with this
 filter. as seen in figure 67.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf
-  \"unsharp=luma_amount=-1.5:chroma_amount=-1.5\" output.mp4
+$ ffmpeg -i input.mp4 -vf
+"unsharp=luma_amount=-1.5:chroma_amount=-1.5" output.mp4
 ```
 
 ```
@@ -3287,8 +3285,8 @@ In this example, the luma radius and strength are used to blur the
 video, as seen in figure 68.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex \"smartblur=lr=5:ls=1\"
-  output.mp4
+$ ffmpeg -i input.mp4 -filter_complex "smartblur=lr=5:ls=1"
+output.mp4
 ```
 
 ![](media/image64.png){width="4.6in" height="1.265in"}
@@ -3300,8 +3298,8 @@ blur a glowing effect. Most notably, the red and blues pop, as seen in
 figure 68.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"smartblur=lr=5:ls=1:lt=30:cr=5:cs=-1:ct=30\" output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"smartblur=lr=5:ls=1:lt=30:cr=5:cs=-1:ct=30" output.mp4
 ```
 
 **Tip:** *luma* is the brightness of the image while *chroma* is the
@@ -3359,7 +3357,7 @@ In this example, the maximum blur is set. It might look gray in figure
 69.0 but the effect is embellished with video playback:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"gblur=sigma=1024\" output.mp4
+$ ffmpeg -i input.mp4 -vf "gblur=sigma=1024" output.mp4
 ```
 
 ![](media/image26.png){width="3.0in" height="1.6523075240594927in"}
@@ -3369,7 +3367,7 @@ Figure 69.1: standard Gaussian blur
 In this example, a normal blur is set, as seen in figure 69.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"gblur=sigma=10\" output.mp4
+$ ffmpeg -i input.mp4 -vf "gblur=sigma=10" output.mp4
 ```
 
 ```
@@ -3383,7 +3381,7 @@ Indicates the horizontal sigma or peak spread. The higher the value the
 blurrier the output (0 to 1024 with default 0.5)
 ```
 
-## 70. How to Apply a Box Blur to a Video? 
+## 70. How to Apply a Box Blur to a Video?
 
 A *boxblur* is another blur algorithm that uses a form of low-pass blur
 filtering. The blur is dependent on the neighboring pixels applying an
@@ -3398,7 +3396,7 @@ parameters. In this example, a comparison between smartblur and boxblur
 with similar luma_radius is shown in figure 70.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"boxblur=lr=2\" -pix_fmt yuv420p output.mp4
+$ ffmpeg -i input.mp4 -vf "boxblur=lr=2" -pix_fmt yuv420p output.mp4
 ```
 
 **Tip:** It seems the smartblur has more detail than the boxblur in this
@@ -3457,8 +3455,8 @@ Figure 71.0: pixeliz0r filter
 The output of the pixeliz0r is shown in figure 71.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"frei0r=filter_name=pixeliz0r\" -pix_fmt
-  yuv420p output.mp4
+$ ffmpeg -i input.mp4 -vf "frei0r=filter_name=pixeliz0r" -pix_fmt
+yuv420p output.mp4
 ```
 
 ![](media/image7.png){width="3.0in" height="1.6523075240594927in"}
@@ -3471,8 +3469,8 @@ losing pixels and then scaling it back to the original resolution. This
 is shown in figure 71.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf
-  \"scale=iw/8:ih/8,scale=8\*iw:8\*ih:flags=neighbor\" output.mp4
+$ ffmpeg -i input.mp4 -vf
+"scale=iw/8:ih/8,scale=8*iw:8*ih:flags=neighbor" output.mp4
 ```
 
 **Tip:** the *flag* argument is set to the nearest neighbor here because
@@ -3498,14 +3496,14 @@ uses the exact filter.
 In this example the volume of an MP4 increases by 20dB:
 
 ```
-  \$ ffmpeg -i input.mp4 -af \"volume=volume=20dB\" output.mp4
+$ ffmpeg -i input.mp4 -af "volume=volume=20dB" output.mp4
 ```
 
 The volume value can also be a negative value to decrease the volume as
 seen in the following example:
 
 ```
-  \$ ffmpeg -i input.mp4 -af \"volume=volume=-20dB\" output.mp4
+$ ffmpeg -i input.mp4 -af "volume=volume=-20dB" output.mp4
 ```
 
 ```
@@ -3515,7 +3513,7 @@ Indicates the volume filter name
 
 volume
 
-Indicates the volume value (input_volume \* value = output_volume)
+Indicates the volume value (input_volume * value = output_volume)
 ```
 
 The volume filter has over 17 different parameters to precisely change
@@ -3532,7 +3530,7 @@ In this example, the input video increases the duration by 2 but the
 speed by half:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"setpts=2.0\*PTS\" output.mp4
+$ ffmpeg -i input.mp4 -vf "setpts=2.0*PTS" output.mp4
 ```
 
 The only issue with the above command is the video is changed but the
@@ -3541,9 +3539,9 @@ setpts) is used to change the audio playback speed. Through the use of
 chaining, both filters can be applied at the same time:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"\[0:v\]setpts=2.0\*PTS\[v\];\[0:a\]asetpts=2.0\*PTS\[a\]\" -map
-  \"\[v\]\" -map \"\[a\]\" output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"[0:v]setpts=2.0*PTS[v];[0:a]asetpts=2.0*PTS[a]" -map
+"[v]" -map "[a]" output.mp4
 ```
 
 Due to the nature of slowing down a video, the playback may feel rather
@@ -3553,9 +3551,9 @@ filter. This optional command takes the output.mp4 generated in the
 above commands and creates a new output, minterpolate.mp4:
 
 ```
-  \$ ffmpeg -i output.mp4 -vf
-  \"minterpolate=mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=60\"
-  minterpolate.mp4
+$ ffmpeg -i output.mp4 -vf
+"minterpolate=mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=60"
+minterpolate.mp4
 ```
 
 The minterpolate filter has various modes and parameters for
@@ -3636,9 +3634,9 @@ filters; setpts and asetpts also increase the video speed.
 In this example, the video and audio is sped up 2x the original:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"\[0:v\]setpts=0.5\*PTS\[v\];\[0:a\]asetpts=0.5\*PTS\[a\]\" -map
-  \"\[v\]\" -map \"\[a\]\" output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"[0:v]setpts=0.5*PTS[v];[0:a]asetpts=0.5*PTS[a]" -map
+"[v]" -map "[a]" output.mp4
 ```
 
 **Tip:** the lower the number the faster the playback.
@@ -3659,15 +3657,15 @@ Indicates the name of the audio filter that changes the presentation
 timestamp speed
 ```
 
-## 75. How to Reverse a Video? 
+## 75. How to Reverse a Video?
 
 The reverse filter is another great example of how FFmpeg can solve a
 problem quicker than a GUI video editor. The command is simple and the
 results are a reversed video with audio reversed as well:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"\[0:v\]reverse;\[0:a\]areverse\" output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"[0:v]reverse;[0:a]areverse" output.mp4
 ```
 
 This filter requires the video to be stored in the memory buffer,
@@ -3689,7 +3687,7 @@ Indicates the audio reverse filter name
 question 51, *"How to Stitch Segments to One Video?"*, for more
 information.
 
-## 76. How to Crop a Video? 
+## 76. How to Crop a Video?
 
 In cases where a video requires a new dimensional crop, the use of the
 crop filter makes it easy.
@@ -3703,7 +3701,7 @@ remove an area from a video. In this example, the video crops to 300px
 by 200px from the position x=10 and y=20, as seen in figure 76.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"crop=w=300:h=200:x=10:y=20\" output.mp4
+$ ffmpeg -i input.mp4 -vf "crop=w=300:h=200:x=10:y=20" output.mp4
 ```
 
 ![](media/image59.png){width="2.0in" height="1.3266666666666667in"}
@@ -3714,7 +3712,7 @@ In this example, the video crops to 300px by 200px from the center of
 the video, as seen in figure 76.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"crop=w=300:h=200\" output.mp4
+$ ffmpeg -i input.mp4 -vf "crop=w=300:h=200" output.mp4
 ```
 
 ![](media/image17.png){width="2.0in" height="1.1023622047244095in"}
@@ -3725,7 +3723,7 @@ In this example, the video is dynamically cropped 1/4th the original
 input size from the center, as seen in figure 76.2:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"crop=w=1/4\*in_w:h=1/4\*in_h\" output.mp4
+$ ffmpeg -i input.mp4 -vf "crop=w=1/4*in_w:h=1/4*in_h" output.mp4
 ```
 
 ```
@@ -3778,14 +3776,14 @@ If the frame rate needs to be set before a filter is applied used -r. In
 this example, the frame rate is changed to 24 FPS:
 
 ```
-  \$ ffmpeg -r 24 -i input.mp4 output.mp4
+$ ffmpeg -r 24 -i input.mp4 output.mp4
 ```
 
 If the frame rate needs to be set during a filter chain, the fps filter
 is used. In this example, the frame rates is changed to 30 FPS:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"fps=fps=30\" output.mp4
+$ ffmpeg -i input.mp4 -vf "fps=fps=30" output.mp4
 ```
 
 **Tip:** some discussion on "-r vs fps" shows -r sometimes generates too
@@ -3801,25 +3799,25 @@ at converting to the most common.
 Standard Definition 480p (640x480):
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"scale=640:480,setsar=1\" output.mp4
+$ ffmpeg -i input.mp4 -vf "scale=640:480,setsar=1" output.mp4
 ```
 
 High Definition 720p (1280x720):
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"scale=1280:720,setsar=1\" output.mp4
+$ ffmpeg -i input.mp4 -vf "scale=1280:720,setsar=1" output.mp4
 ```
 
 Full HD 1080p (1920x1080):
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"scale=1920:1080,setsar=1\" output.mp4
+$ ffmpeg -i input.mp4 -vf "scale=1920:1080,setsar=1" output.mp4
 ```
 
 4K (3840x2160):
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"scale=3840:2160,setsar=1\" output.mp4
+$ ffmpeg -i input.mp4 -vf "scale=3840:2160,setsar=1" output.mp4
 ```
 
 ![](media/image20.png){width="2.5208333333333335in"
@@ -3833,9 +3831,9 @@ borders to keep the aspect ratio. Here's an example of using the pad
 filter to add the black borders, as seen in figure 78.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf
-  \"scale=640:480:force_original_aspect_ratio=decrease,pad=640:480:(ow-iw)/2:(oh-ih)/2\"
-  output.mp4
+$ ffmpeg -i input.mp4 -vf
+"scale=640:480:force_original_aspect_ratio=decrease,pad=640:480:(ow-iw)/2:(oh-ih)/2"
+output.mp4
 ```
 
 ```
@@ -3898,10 +3896,10 @@ Luckily, the use of quantization is accomplished with a simple video
 filter, qp:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"qp\" output.mp4
+$ ffmpeg -i input.mp4 -vf "qp" output.mp4
 ```
 
-## 80. How to Remove Duplicate Frames From a Video? 
+## 80. How to Remove Duplicate Frames From a Video?
 
 At some point using -r to change the frame rate or using minterpolate to
 smooth a slow motion video, duplicate frames might be generated. This
@@ -3914,7 +3912,7 @@ that were *inverse-telecined* incorrectly. The example below is the
 simplest form of using mpdecimate:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"mpdecimate\" output.mp4
+$ ffmpeg -i input.mp4 -vf "mpdecimate" output.mp4
 ```
 
 That about covers manipulating a video's playback or compressing file
@@ -3936,7 +3934,7 @@ side by side. A task which is so much quicker in FFmpeg than in a GUI.
 The flipping and rotation filters are quick and easy as well. Again, way
 quicker than using a GUI. Starting to see the pattern?
 
-## 81. How to Stack Multiple Videos Horizontally? 
+## 81. How to Stack Multiple Videos Horizontally?
 
 Throughout this entire book, the hstack filter has been used to create
 comparison "figure images". It's a filter that once you start using it,
@@ -3950,15 +3948,15 @@ The hstack filter takes two or more inputs, stacks them horizontally and
 outputs a new larger resolution video, as seen in figure 81.0:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex \"hstack\"
-  output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex "hstack"
+output.mp4
 ```
 
 If more than 2 inputs are required, the inputs variable must be set:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex
-  \"hstack=inputs=3\" output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex
+"hstack=inputs=3" output.mp4
 ```
 
 **Tip:** The height of each video must be the same.
@@ -3967,7 +3965,7 @@ If more than 2 inputs are required, the inputs variable must be set:
 remaining inputs continue to play. To prevent this, you'll need to
 additionally add trimming.
 
-## 82. How to Stack Multiple Videos Vertically? 
+## 82. How to Stack Multiple Videos Vertically?
 
 The vstack filter is the same as the hstack except the videos are
 stacked vertically. This filter does take up more space visually but
@@ -3985,20 +3983,20 @@ The vstack filter takes two or more inputs, stacks them vertically and
 outputs a new larger resolution video, as seen in figure 82.0:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex \"vstack\"
-  output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex "vstack"
+output.mp4
 ```
 
 If more than 2 inputs are required, the inputs variable must be set:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex
-  \"vstack=inputs=3\" output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex
+"vstack=inputs=3" output.mp4
 ```
 
 **Tip:** The width of each video must be the same.
 
-## 83. How to Horizontal Flip a Video? 
+## 83. How to Horizontal Flip a Video?
 
 A horizontal flip applied to an input is easy to do with the hflip
 filter.
@@ -4011,12 +4009,12 @@ This effect is also known as mirroring on the horizontal axis, as seen
 in figure 83.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"hflip\" output.mp4
+$ ffmpeg -i input.mp4 -vf "hflip" output.mp4
 ```
 
 **Tip:** Applying a horizontal flip mirrors text.
 
-## 84. How to Vertically Flip a Video ? 
+## 84. How to Vertically Flip a Video ?
 
 A vertical flip applied to an input is easy to do with the vflip filter.
 
@@ -4028,7 +4026,7 @@ This effect is also known as mirroring on the vertical axis, as seen in
 figure 84.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"vflip\" output.mp4
+$ ffmpeg -i input.mp4 -vf "vflip" output.mp4
 ```
 
 ## 85. How to Rotate a Video?
@@ -4046,7 +4044,7 @@ In this example, the video rotates 45 degree and a black background is
 automatically applied, as seen in figure 85.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"rotate=45\*PI/180\" output.mp4
+$ ffmpeg -i input.mp4 -vf "rotate=45*PI/180" output.mp4
 ```
 
 **Tip:** Rotation with rotate has various parameters such as fillcolor,
@@ -4060,25 +4058,25 @@ has presets for clockwise and counterclockwise rotation.
 90 degree Counterclockwise with vertical flip:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"transpose=0\" output.mp4
+$ ffmpeg -i input.mp4 -vf "transpose=0" output.mp4
 ```
 
 90 degree clockwise:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"transpose=1\" output.mp4
+$ ffmpeg -i input.mp4 -vf "transpose=1" output.mp4
 ```
 
 90 degree counterclockwise:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"transpose=2\" output.mp4
+$ ffmpeg -i input.mp4 -vf "transpose=2" output.mp4
 ```
 
 90 degree clockwise with vertical flip:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"transpose=3\" output.mp4
+$ ffmpeg -i input.mp4 -vf "transpose=3" output.mp4
 ```
 
 There's something really powerful about rotating a video from memory or
@@ -4095,7 +4093,7 @@ required to be set. Fortunately, FFmpeg does support embedding and
 burning subtitles into a video. In this section, all three variations
 are covered.
 
-## 86. How to Extract Subtitles From Video? 
+## 86. How to Extract Subtitles From Video?
 
 Extracting subtitles are pretty useful if you want to edit them or just
 save a backup copy. It's good to double check subtitles are available to
@@ -4106,29 +4104,29 @@ In this example we'll be using an MKV file with subtitles embedded
 already. First, to check if a video has subtitles look at its metadata:
 
 ```
-  \$ ffmpeg -i input.mkv\
-  \<removed **for** clarity\>\
-  Stream #0:4(eng): Subtitle: ssa\
-  Metadata:\
-  title : English (Full)\
-  BPS : 97\
-  BPS-eng : 97\
-  DURATION : 00:27:19.200000000\
-  DURATION-eng : 00:27:19.200000000\
-  NUMBER_OF_FRAMES: 353\
-  NUMBER_OF_FRAMES-eng: 353\
-  NUMBER_OF_BYTES : 20040\
-  NUMBER_OF_BYTES-eng: 20040\
-  \_STATISTICS_WRITING_APP: mkvmerge v9.2.0 (\'Photograph\') 64bit\
-  \_STATISTICS_WRITING_APP-eng: mkvmerge v9.2.0 (\'Photograph\') 64bit\
-  \_STATISTICS_WRITING_DATE_UTC: 2018-12-02 03:14:25\
-  \_STATISTICS_WRITING_DATE_UTC-eng: 2018-12-02 03:14:25\
-  \_STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES\
-  \_STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES\
-  Stream #0:5: Attachment: ttf\
-  Metadata:\
-  filename : seguisb.ttf\
-  mimetype : application/x-truetype-font
+$ ffmpeg -i input.mkv
+<removed **for** clarity>
+Stream #0:4(eng): Subtitle: ssa
+Metadata:
+title : English (Full)
+BPS : 97
+BPS-eng : 97
+DURATION : 00:27:19.200000000
+DURATION-eng : 00:27:19.200000000
+NUMBER_OF_FRAMES: 353
+NUMBER_OF_FRAMES-eng: 353
+NUMBER_OF_BYTES : 20040
+NUMBER_OF_BYTES-eng: 20040
+_STATISTICS_WRITING_APP: mkvmerge v9.2.0 ('Photograph') 64bit
+_STATISTICS_WRITING_APP-eng: mkvmerge v9.2.0 ('Photograph') 64bit
+_STATISTICS_WRITING_DATE_UTC: 2018-12-02 03:14:25
+_STATISTICS_WRITING_DATE_UTC-eng: 2018-12-02 03:14:25
+_STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+_STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+Stream #0:5: Attachment: ttf
+Metadata:
+filename : seguisb.ttf
+mimetype : application/x-truetype-font
 ```
 
 In the above output regarding input.mkv, in red it is shown that this
@@ -4140,7 +4138,7 @@ To extract the above subtitle type from the MKV, the following command
 is used:
 
 ```
-  \$ ffmpeg -txt_format text -i input.mkv out.ssa
+$ ffmpeg -txt_format text -i input.mkv out.ssa
 ```
 
 **Tip:** This does require FFmpeg to have libzvbi to be enabled
@@ -4153,21 +4151,21 @@ even converts to other subtitle formats without any extra handling. For
 example:
 
 ```
-  \$ ffmpeg -i input.mkv out.srt
+$ ffmpeg -i input.mkv out.srt
 ```
 
 The formatting also is standard to srt, as seen in out.srt:
 
 ```
-  1\
-  00:00:01,080 \--\> 00:00:07,460\
-  \<font face=\"Segoe UI Semibold\"
-  size=\"60\"\>\<b\>\<i\>{\\an3}Hello\</i\>\</b\>\</font\>\
-  \
-  2\
-  00:00:07,540 \--\> 00:00:15,050\
-  \<font face=\"Segoe UI Semibold\"
-  size=\"60\"\>\<b\>\<i\>{\\an3}World\</i\>\</b\>\</font\>
+1
+00:00:01,080 --> 00:00:07,460
+<font face="Segoe UI Semibold"
+size="60"><b><i>{an3}Hello</i></b></font>
+
+2
+00:00:07,540 --> 00:00:15,050
+<font face="Segoe UI Semibold"
+size="60"><b><i>{an3}World</i></b></font>
 ```
 
 ## 87. How to Add Subtitles to a Video?
@@ -4179,9 +4177,9 @@ common subtitle formats into a video.
 Here input.srt is used as an example:
 
 ```
-  1\
-  00:00:01,000 \--\> 00:00:07,000\
-  Subtitles Added!
+1
+00:00:01,000 --> 00:00:07,000
+Subtitles Added!
 ```
 
 ![](media/image50.png){width="3.5in" height="1.96in"}
@@ -4194,7 +4192,7 @@ Here the command embeds input.srt into an output.mp4, as seen in figure
 87.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -i input.srt -c copy -scodec mov_text output.mp4
+$ ffmpeg -i input.mp4 -i input.srt -c copy -scodec mov_text output.mp4
 ```
 
 **Tip:** Some video players do not natively show subtitles. VLC for
@@ -4215,9 +4213,9 @@ with subtitles, this method is advised. Again, using this example
 input.srt, let's burn these words into input.mp4:
 
 ```
-  1\
-  00:00:01,000 \--\> 00:00:07,000\
-  Subtitles Added!
+1
+00:00:01,000 --> 00:00:07,000
+Subtitles Added!
 ```
 
 ![](media/image50.png){width="3.5in" height="1.9276924759405074in"}
@@ -4229,10 +4227,10 @@ parameter and one input file must be set. The filter automatically
 places the subtitle at the bottom of the video, as seen in figure 88.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"subtitles=input.srt\" output.mp4
+$ ffmpeg -i input.mp4 -vf "subtitles=input.srt" output.mp4
 ```
 
-## 89. How to Overlay Custom Text in a Video? 
+## 89. How to Overlay Custom Text in a Video?
 
 Subtitles might be too complicated for a video due to creating a
 subtitle file. FFmpeg has the drawtext filter that allows for quick text
@@ -4249,8 +4247,8 @@ In this example, the text "Hello World" is printed in red color with
 89.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"drawtext=text=\'Hello
-  World\':fontsize=64:fontcolor=red:x=((w-text_w)/2):y=h-70\" output.mp4
+$ ffmpeg -i input.mp4 -vf "drawtext=text='Hello
+World':fontsize=64:fontcolor=red:x=((w-text_w)/2):y=h-70" output.mp4
 ```
 
 **Tip:** FFmpeg has a standardized coordinate system that all filters
@@ -4321,9 +4319,9 @@ For this example, logo.png (100px by 34px) is added to the bottom right
 of the video, as shown in figure 90.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -i logo.png -filter_complex
-  \"overlay=x=main_w-overlay_w-5:y=main_h-overlay_h\" -codec:a copy
-  output.mp4
+$ ffmpeg -i input.mp4 -i logo.png -filter_complex
+"overlay=x=main_w-overlay_w-5:y=main_h-overlay_h" -codec:a copy
+output.mp4
 ```
 
 ```
@@ -4354,7 +4352,7 @@ overlay_h, h
 Indicates the overlay input height
 ```
 
-## 91. How to Create a Slideshow Video From Multiple Images? 
+## 91. How to Create a Slideshow Video From Multiple Images?
 
 This is a neat and quick way to start using FFmpeg for more basic tasks
 you might normally accomplish in a larger video editor. Making a
@@ -4367,8 +4365,8 @@ input-002.png, input-003.png, input-004.png, etc
 Using the below command, each input image stays on screen for 10 second:
 
 ```
-  \$ ffmpeg -framerate 1/10 -i input-%03d.png -c:v libx264 -pix_fmt
-  yuv420p output.mp4
+$ ffmpeg -framerate 1/10 -i input-%03d.png -c:v libx264 -pix_fmt
+yuv420p output.mp4
 ```
 
 In the above example, the %03d variable is the way FFmpeg finds all
@@ -4377,7 +4375,7 @@ inputs with the 3 digit sequence.
 **Tip:** The duration of each image in minutes is the inverse of the
 framerate. Because the framerate is set before the input.
 
-## 92. How to Extract an Image Frame From a Video at a Specific Time? 
+## 92. How to Extract an Image Frame From a Video at a Specific Time?
 
 Previously -ss or the seeking option was used to trim, here seeking is
 used to jump to a specific time. Once the frame is selected, using
@@ -4391,14 +4389,14 @@ In this example, the script seeks to the 10 second mark and output the
 frame, as seen in figure 92.0:
 
 ```
-  \$ ffmpeg -ss 00:00:10 -i input.mp4 -frames:v 1 output.png
+$ ffmpeg -ss 00:00:10 -i input.mp4 -frames:v 1 output.png
 ```
 
 If the desired result was to output the next 5 frames from the 10 second
 mark, the script below would work:
 
 ```
-  \$ ffmpeg -ss 00:00:10 -i input.mp4 -frames:v 5 output-%03d.png
+$ ffmpeg -ss 00:00:10 -i input.mp4 -frames:v 5 output-%03d.png
 ```
 
 ```
@@ -4425,8 +4423,8 @@ In the example below, an image is looped to create a video with an MP3
 attached:
 
 ```
-  \$ ffmpeg -loop 1 -i input.png -i input.mp3 -c:v libx264 -pix_fmt
-  yuv420p output.mp4
+$ ffmpeg -loop 1 -i input.png -i input.mp3 -c:v libx264 -pix_fmt
+yuv420p output.mp4
 ```
 
 ```
@@ -4452,8 +4450,8 @@ In the example below, the script creates a 3x1 or 3 image tile preview,
 as seen in figure 94.0:
 
 ```
-  \$ ffmpeg -skip_frame nokey -i input.mp4 -vf
-  \"scale=(in_w/3):(in_h/3),tile=layout=3x1\" output.png
+$ ffmpeg -skip_frame nokey -i input.mp4 -vf
+"scale=(in_w/3):(in_h/3),tile=layout=3x1" output.png
 ```
 
 ```
@@ -4478,7 +4476,7 @@ color
 Indicates the margin / padding background color in HEX values (FFFFFF)
 ```
 
-## 95. How to Generate a Picture Waveform from a Video? 
+## 95. How to Generate a Picture Waveform from a Video?
 
 The showwavespic filter generates an audio signal waveform for the
 entire audio clip. This might be useful to determine if a volume change
@@ -4493,8 +4491,8 @@ In this example, the showwavespic filter is at its default settings and
 generates an image shown in figure 95.0:
 
 ```
-  \$ ffmpeg -i input.mp3 -filter_complex \"showwavespic\" -frames:v 1
-  output.png
+$ ffmpeg -i input.mp3 -filter_complex "showwavespic" -frames:v 1
+output.png
 ```
 
 Additional parameters such as setting the color, the waveform colors, a
@@ -4511,7 +4509,7 @@ Indicates if channels are drawn separately (default 0)
 
 colors
 
-Indicates custom colors of the waveform, each separated by '\|'.
+Indicates custom colors of the waveform, each separated by '|'.
 Supports common colors (red, blue, green, white, etc) and HEX values
 (FFFFFF)
 
@@ -4551,8 +4549,8 @@ In this example, the output video is a red 720 by 480 video that is 30
 seconds long, as seen in figure 96.0:
 
 ```
-  \$ ffmpeg -f lavfi -i \"color=color=red:720x480:d=30\" -pix_fmt yuv420p
-  output.mp4
+$ ffmpeg -f lavfi -i "color=color=red:720x480:d=30" -pix_fmt yuv420p
+output.mp4
 ```
 
 **Tip:** Take note at the fact that there isn't an actual input thus a
@@ -4587,14 +4585,14 @@ really take filtering to the next level and create wonderful pieces of
 visual art with the output.
 
 
-# Advanced Video Filters 
+# Advanced Video Filters
 
 This section covers multiple advanced video filters to increase FFmpeg
 usage. Some examples use 3rd party software or require unstable FFmpeg
 builds. This is for the advanced user who wants to extend FFmpeg outside
 of the native features.
 
-## 97. How to Datamosh/Glitch a Video? 
+## 97. How to Datamosh/Glitch a Video?
 
 Datamoshing is an interesting technique of applying movement in one
 layer to another. With additional compression and frame removal it
@@ -4612,14 +4610,14 @@ First you'll need to install Ruby / gems if you don't have it already.
 Next, we'll install the AviGlitch library:
 
 ```
-  \$ sudo gem install aviglitch
+$ sudo gem install aviglitch
 ```
 
 After installation, convert the input file into an AVI, as AviGlitch
 only accepts AVI as input. Now run the newly installed command:
 
 ```
-  \$ datamosh input.avi -o output.avi
+$ datamosh input.avi -o output.avi
 ```
 
 The glitching has finished. So with FFmpeg, convert the new video to a
@@ -4642,9 +4640,9 @@ effect that needs to be self-tested to grasp the full experience.
 The full script is below:
 
 ```
-  \$ ffmpeg -i input3.mp4 input.avi\
-  \$ datamosh input.avi -o output.avi\
-  \$ ffmpeg -i output.avi output.mp4
+$ ffmpeg -i input3.mp4 input.avi
+$ datamosh input.avi -o output.avi
+$ ffmpeg -i output.avi output.mp4
 ```
 
 **Tip:** The more movement and scene changes, the better the datamosh.
@@ -4669,8 +4667,8 @@ In this example a wipeup fade is applied to 2 inputs with a duration of
 2 seconds 5 seconds before the end of input1.mp4:
 
 ```
-  \$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex
-  \"xfade=transition=fade:duration=2:offset=5\" output.mp4
+$ ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex
+"xfade=transition=fade:duration=2:offset=5" output.mp4
 ```
 
 ```
@@ -4714,8 +4712,8 @@ In this example, half maximum noise is added and new patterns are
 applied between frames (*temporal noise*), as seen in figure 99.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"noise=alls=50:allf=t+p+u\" -pix_fmt
-  yuv420p output.mp4
+$ ffmpeg -i input.mp4 -vf "noise=alls=50:allf=t+p+u" -pix_fmt
+yuv420p output.mp4
 ```
 
 ```
@@ -4750,7 +4748,7 @@ u
 Indicates uniform noise (else it's gaussian)
 ```
 
-## 100. How to Apply Static to a Video? 
+## 100. How to Apply Static to a Video?
 
 In the previous question, *"How to Add Noise to a Video?"*, the noise
 was added that had RGB values. This might not be suitable if the
@@ -4766,9 +4764,9 @@ full of random black or white pixels is created. Then an overlay blend
 is applied to give the final result, as seen in figure 100.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"geq=random(1)\*255:128:128\[static\];
-  \[0:v\]\[static\]blend=overlay\" output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"geq=random(1)*255:128:128[static];
+[0:v][static]blend=overlay" output.mp4
 ```
 
 ![](media/image14.png){width="3.5in" height="1.9276924759405074in"}
@@ -4780,9 +4778,9 @@ example using noise and blending to get a more low light grain effect
 but results in a sharper darker image, as seen in figure 100.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -filter_complex
-  \"\[0:v\]noise=alls=50:allf=t+p+u,hue=s=0\[static\];
-  \[0:v\]\[static\]blend=overlay\[overlay\]\" -map \[overlay\] output.mp4
+$ ffmpeg -i input.mp4 -filter_complex
+"[0:v]noise=alls=50:allf=t+p+u,hue=s=0[static];
+[0:v][static]blend=overlay[overlay]" -map [overlay] output.mp4
 ```
 
 ```
@@ -4836,20 +4834,20 @@ integrity of the playback because only 30 frames at a time are
 randomized:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"random\" output.mp4
+$ ffmpeg -i input.mp4 -vf "random" output.mp4
 ```
 
 If additional frames are required to shuffle, setting the number of
 frames and the number of seeds can be set:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"random=frames=100:seed=50\" output.mp4
+$ ffmpeg -i input.mp4 -vf "random=frames=100:seed=50" output.mp4
 ```
 
 Apply a color shift and the datamosh effect for some really cool
 results.
 
-## 102. How to Use Green Screen to Mask a Video Into Another Video? 
+## 102. How to Use Green Screen to Mask a Video Into Another Video?
 
 The use of a *green screen* is the most common way to add a subject to a
 scene in video production. By setting the scene at the purest green (not
@@ -4875,9 +4873,9 @@ The result includes the black background but the train video in replace
 off the green words, as seen in figure 102.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -i greenscreen.mp4 -filter_complex
-  \'\[1:v\]colorkey=color=00FF00:similarity=0.85:blend=0.0\[ckout\];\[0:v\]\[ckout\]overlay\[out\]\'
-  -map \'\[out\]\' output.mp4
+$ ffmpeg -i input.mp4 -i greenscreen.mp4 -filter_complex
+'[1:v]colorkey=color=00FF00:similarity=0.85:blend=0.0[ckout];[0:v][ckout]overlay[out]'
+-map '[out]' output.mp4
 ```
 
 If you don't have a video version of your image, use parts of the code
@@ -4886,7 +4884,7 @@ create a looping single image.
 
 **Tip:** #00FF00 is the pure green found in green screens.
 
-### A Note about frei0r filters 
+### A Note about frei0r filters
 
 Previously this book covered FFmpeg and it's native filters. Some
 filters required special configurations to be enabled like the frei0r
@@ -4913,8 +4911,8 @@ become all the rage. In this example, we'll simulate the glow of a Tokyo
 train station, as seen in figure 103.0:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"frei0r=glow:0.5\" -pix_fmt yuv420p
-  output.mp4
+$ ffmpeg -i input.mp4 -vf "frei0r=glow:0.5" -pix_fmt yuv420p
+output.mp4
 ```
 
 You'll notice that the syntax for parameters and the corresponding
@@ -4938,8 +4936,8 @@ first value is the *amplitude* and the second is the *frequency* of the
 effect. The output of this command can be seen in figure 103.1:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"frei0r=distort0r:filter_params=0.2\|0.05\"
-  -pix_fmt yuv420p output.mp4
+$ ffmpeg -i input.mp4 -vf "frei0r=distort0r:filter_params=0.2|0.05"
+-pix_fmt yuv420p output.mp4
 ```
 
 At this point, you should have a better understanding of the proper
@@ -4959,8 +4957,8 @@ Here the vertigo filter applies an almost wave-like ghosting effect to
 each frame simulating the effects of vertigo, as seen in figure 103.2:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"frei0r=vertigo:0.1\" -pix_fmt yuv420p
-  output.mp4
+$ ffmpeg -i input.mp4 -vf "frei0r=vertigo:0.1" -pix_fmt yuv420p
+output.mp4
 ```
 
 A still image doesn't do it justice as the wave-like moment is what
@@ -5047,7 +5045,7 @@ but to go live, the 'Go Live' button must be clicked. Once live, the
 live chat is available and you're ready to communicate with your fan
 base.
 
-## 105. How to Stream a File to YouTube? 
+## 105. How to Stream a File to YouTube?
 
 Streaming a local file to YouTube is extremely easy and actually a
 feature that really takes your FFmpeg skills to the next level with
@@ -5057,11 +5055,11 @@ With the minimal amount of code, this script streams input.mp4 to
 YouTube without any issues (stream.sh):
 
 ```
-  YOUTUBE_URL=\"rtmp://a.rtmp.YouTube.com/live2\" \# YouTube Streaming
-  URL\
-  KEY=\"xxxx-xxxx-xxxx-xxxx\" \# Your YouTube Streaming Key\
-  \
-  ffmpeg -re -i input.mp4 -framerate 30 -f FLV \"\$YOUTUBE_URL/\$KEY\"
+YOUTUBE_URL="rtmp://a.rtmp.YouTube.com/live2" # YouTube Streaming
+URL
+KEY="xxxx-xxxx-xxxx-xxxx" # Your YouTube Streaming Key
+
+ffmpeg -re -i input.mp4 -framerate 30 -f FLV "$YOUTUBE_URL/$KEY"
 ```
 
 Here a new option is introduced, -re. In streaming, it is imperative for
@@ -5072,7 +5070,7 @@ view it. Breaking the realtime point of going live.
 
 **Tip:** -framerate 30 is required else the stream does not start.
 
-## 106. How to Stream a Webcam to YouTube? 
+## 106. How to Stream a Webcam to YouTube?
 
 Streaming a file to YouTube, it's easy, streaming a webcam video, not so
 much. All the tutorials online, including the FFmpeg's Wiki, detail
@@ -5088,28 +5086,28 @@ but parts of Linux are also discussed.
 Finding a macOS FaceTime HD Camera at index 0:
 
 ```
-  \$ ffmpeg -f avfoundation -list_devices true -i \"\"\
-  \...\
-  \[AVFoundation input device @ 0x7f82d94XXXX\] AVFoundation video
-  devices:\
-  \[AVFoundation input device @ 0x7f82d94XXXX\] \[0\] FaceTime HD Camera
-  (Built-in)\
-  \[AVFoundation input device @ 0x7f82d94XXXX\] \[1\] Capture screen 0\
-  \[AVFoundation input device @ 0x7f82d94XXXX\] AVFoundation audio
-  devices:\
-  \[AVFoundation input device @ 0x7f82d94XXXX\] \[0\] Built-in Microphone
+$ ffmpeg -f avfoundation -list_devices true -i ""
+...
+[AVFoundation input device @ 0x7f82d94XXXX] AVFoundation video
+devices:
+[AVFoundation input device @ 0x7f82d94XXXX] [0] FaceTime HD Camera
+(Built-in)
+[AVFoundation input device @ 0x7f82d94XXXX] [1] Capture screen 0
+[AVFoundation input device @ 0x7f82d94XXXX] AVFoundation audio
+devices:
+[AVFoundation input device @ 0x7f82d94XXXX] [0] Built-in Microphone
 ```
 
 Finding Linux USB Camera at index 0:
 
 ```
 +-----------------------------------------------------------------------+
-| \$ v4l2-ctl \--list-devices                                           |
+| $ v4l2-ctl --list-devices                                           |
 |                                                                       |
-| USB3.0 PC CAMERA (usb-0000:00:xx.x-1):\                               |
-| /dev/video1\                                                          |
-| \                                                                     |
-| USB2.0 CAMERA (usb-0000:00:xx.x-2):\                                  |
+| USB3.0 PC CAMERA (usb-0000:00:xx.x-1):                               |
+| /dev/video1                                                          |
+|                                                                      |
+| USB2.0 CAMERA (usb-0000:00:xx.x-2):                                  |
 | /dev/video0                                                           |
 +=======================================================================+
 +-----------------------------------------------------------------------+
@@ -5121,8 +5119,8 @@ According to the FFmpeg documentation, this is what the working script
 should look like for macOS:
 
 ```
-  \$ ffmpeg -f avfoundation -framerate 30 -i \"0\" -f FLV
-  \"\<YOUTUBE_URL\>/\<YOUTUBE_KEY\>\"
+$ ffmpeg -f avfoundation -framerate 30 -i "0" -f FLV
+"<YOUTUBE_URL>/<YOUTUBE_KEY>"
 ```
 
 It doesn't. but as mentioned earlier, getting a webcam to stream to
@@ -5144,14 +5142,14 @@ input.mp4.
 Below is a working "hack" version of the script (stream.sh):
 
 ```
-  YOUTUBE_URL=\"rtmp://a.rtmp.YouTube.com/live2\" \# YouTube Streaming
-  URL\
-  KEY=\"xxxx-xxxx-xxxx-xxxx\" \# Your YouTube Streaming Key\
-  \
-  ffmpeg -f avfoundation -framerate 30 -i \"0\" -stream_loop -1 -i
-  input.mp4 \\\
-  -filter_complex \"hue=H=0\" \\\
-  -f FLV \"\$YOUTUBE_URL/\$KEY\"
+YOUTUBE_URL="rtmp://a.rtmp.YouTube.com/live2" # YouTube Streaming
+URL
+KEY="xxxx-xxxx-xxxx-xxxx" # Your YouTube Streaming Key
+
+ffmpeg -f avfoundation -framerate 30 -i "0" -stream_loop -1 -i
+input.mp4 
+-filter_complex "hue=H=0" 
+-f FLV "$YOUTUBE_URL/$KEY"
 ```
 
 **Tip:** -framerate 30 is required else the stream won't start.
@@ -5168,14 +5166,14 @@ new stream script is as follows (stream.sh):
 
 ```
 +-----------------------------------------------------------------------+
-| YOUTUBE_URL=\"rtmp://a.rtmp.YouTube.com/live2\" \# YouTube Streaming  |
-| URL\                                                                  |
-| KEY=\"xxxx-xxxx-xxxx-xxxx\" \# Your YouTube Streaming Key             |
+| YOUTUBE_URL="rtmp://a.rtmp.YouTube.com/live2" # YouTube Streaming  |
+| URL                                                                  |
+| KEY="xxxx-xxxx-xxxx-xxxx" # Your YouTube Streaming Key             |
 |                                                                       |
-| ffmpeg -f avfoundation -framerate 30 -i \"0:1\" -stream_loop -1 -i    |
-| input.mp4 \\\                                                         |
-| -filter_complex \"hue=H=0\" -map 0:v -map -0:a \\\                    |
-| -f FLV \"\$YOUTUBE_URL/\$KEY\"                                        |
+| ffmpeg -f avfoundation -framerate 30 -i "0:1" -stream_loop -1 -i    |
+| input.mp4                                                          |
+| -filter_complex "hue=H=0" -map 0:v -map -0:a                     |
+| -f FLV "$YOUTUBE_URL/$KEY"                                        |
 +=======================================================================+
 +-----------------------------------------------------------------------+
 ```
@@ -5205,12 +5203,12 @@ example the perspective filter skews the input video, as seen in figure
 107.0:
 
 ```
-  YOUTUBE_URL=\"rtmp://a.rtmp.YouTube.com/live2\" \# YouTube Streaming
-  URL\
-  KEY=\"xxxx-xxxx-xxxx-xxxx\" \# Your YouTube Streaming Key\
-  \
-  ffmpeg -re -i input.mp4 -framerate 30 -filter_complex
-  \"frei0r=perspective:0.2/0.2\|0.8/0.2\" -f FLV \"\$YOUTUBE_URL/\$KEY\"
+YOUTUBE_URL="rtmp://a.rtmp.YouTube.com/live2" # YouTube Streaming
+URL
+KEY="xxxx-xxxx-xxxx-xxxx" # Your YouTube Streaming Key
+
+ffmpeg -re -i input.mp4 -framerate 30 -filter_complex
+"frei0r=perspective:0.2/0.2|0.8/0.2" -f FLV "$YOUTUBE_URL/$KEY"
 ```
 
 Streaming isn't difficult but requires a little extra setup than
@@ -5264,21 +5262,21 @@ input'*, keeps popping up it's because the script specifies the video
 filter argument (-vf) but an audio filter is used, for example:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"volume=10dB\" output.mp4
+$ ffmpeg -i input.mp4 -vf "volume=10dB" output.mp4
 ```
 
 To fix this error in the example above, use -af or -filter_complex as
 seen below:
 
 ```
-  \$ ffmpeg -i input.mp4 -af \"volume=10dB\" output.mp4
+$ ffmpeg -i input.mp4 -af "volume=10dB" output.mp4
 ```
 
 In some cases like the one above, the input is a video but the filter is
 for audio, it is worth noting that -af or *audio filters* can be applied
 to videos because videos have audio codecs.
 
-## 111. How to Fix the 'Cannot connect video filter to audio input' Error? 
+## 111. How to Fix the 'Cannot connect video filter to audio input' Error?
 
 When starting to learn FFmpeg, memorizing when to use -vf or -af might
 be tricky. If the error, *'Cannot connect video filter to non video
@@ -5286,7 +5284,7 @@ input'*, keeps popping up it's because the script specifies the audio
 filter argument (-af) but a video filter is used, for example:
 
 ```
-  \$ ffmpeg -i input.mp4 -af \"boxblur=10\" output.mp4
+$ ffmpeg -i input.mp4 -af "boxblur=10" output.mp4
 ```
 
 Obviously, the boxblur filter is a video filter thus -af should not be
@@ -5294,7 +5292,7 @@ used. To fix this error in the example above, use -vf or -filter_complex
 as seen below:
 
 ```
-  \$ ffmpeg -i input.mp4 -vf \"boxblur=10\" output.mp4
+$ ffmpeg -i input.mp4 -vf "boxblur=10" output.mp4
 ```
 
 It is worth noting that -vf or *video filters* can never be applied to
@@ -5307,7 +5305,7 @@ For example, if a filter isn't enabled, the following shows:
 
 ```
 +-----------------------------------------------------------------------+
-| No such filter: \'X\'                                                 |
+| No such filter: 'X'                                                   |
 |                                                                       |
 | Error reinitializing filters!                                         |
 |                                                                       |
@@ -5319,7 +5317,7 @@ For example, if a filter isn't enabled, the following shows:
 The error might also look like this:
 
 ```
-  ERROR: \'X\' not found
+ERROR: 'X' not found
 ```
 
 The suggested fix is to double check if the spelling is correct and if
@@ -5363,169 +5361,169 @@ John Riselvato
 Resources
 
 -   FFmpeg website:
-    > [[https://ffmpeg.org]{.underline}](https://ffmpeg.org)
+> [[https://ffmpeg.org]{.underline}](https://ffmpeg.org)
 
 -   FFmpeg wikipedia page:
-    > [[https://en.wikipedia.org/wiki/FFmpeg]{.underline}](https://en.wikipedia.org/wiki/FFmpeg)
+> [[https://en.wikipedia.org/wiki/FFmpeg]{.underline}](https://en.wikipedia.org/wiki/FFmpeg)
 
 -   Installing homebrew on macOS:
-    > [[https://brew.sh]{.underline}](https://brew.sh)
+> [[https://brew.sh]{.underline}](https://brew.sh)
 
 -   FFmpeg wiki page for installing on linux:
-    > [[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
+> [[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
 
 -   FFmpeg builds for Windows:
-    > [[https://ffmpeg.zeranoe.com/builds/]{.underline}](https://ffmpeg.zeranoe.com/builds/)
+> [[https://ffmpeg.zeranoe.com/builds/]{.underline}](https://ffmpeg.zeranoe.com/builds/)
 
 -   Dependencies with macOS + Homebrew Discussion:
-    > [[https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8]{.underline}](https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8)
+> [[https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8]{.underline}](https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8)
 
 -   Installing dependencies on Linux:
-    > [[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
+> [[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
 
 -   Python using 3rd party library ffmpy:
-    > [[https://pypi.org/project/ffmpy/]{.underline}](https://pypi.org/project/ffmpy/)
+> [[https://pypi.org/project/ffmpy/]{.underline}](https://pypi.org/project/ffmpy/)
 
 -   Ruby using 3rd party library Streamio:
-    > [[https://github.com/streamio/streamio-ffmpeg]{.underline}](https://github.com/streamio/streamio-ffmpeg)
+> [[https://github.com/streamio/streamio-ffmpeg]{.underline}](https://github.com/streamio/streamio-ffmpeg)
 
 -   Codec wikipedia entry:
-    > [[https://en.wikipedia.org/wiki/Codec]{.underline}](https://en.wikipedia.org/wiki/Codec)
+> [[https://en.wikipedia.org/wiki/Codec]{.underline}](https://en.wikipedia.org/wiki/Codec)
 
 -   x264 video codec download:
-    > [[https://www.videolan.org/developers/x264.html]{.underline}](https://www.videolan.org/developers/x264.html)
+> [[https://www.videolan.org/developers/x264.html]{.underline}](https://www.videolan.org/developers/x264.html)
 
 -   Constant rate factor (CRF):
-    > [[https://streaminglearningcenter.com/blogs/saving-encoding-streaming-deploy-capped-crf.html]{.underline}](https://streaminglearningcenter.com/blogs/saving-encoding-streaming-deploy-capped-crf.html)
+> [[https://streaminglearningcenter.com/blogs/saving-encoding-streaming-deploy-capped-crf.html]{.underline}](https://streaminglearningcenter.com/blogs/saving-encoding-streaming-deploy-capped-crf.html)
 
 -   Introduction to FFmpeg filtering:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#Filtering-Introduction]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#Filtering-Introduction)
+> [[https://ffmpeg.org/ffmpeg-filters.html#Filtering-Introduction]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#Filtering-Introduction)
 
 -   FFmpeg Filter syntax:
-    > [[http://ffmpeg.org/ffmpeg-filters.html#Filtergraph-syntax-1]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#Filtergraph-syntax-1)
+> [[http://ffmpeg.org/ffmpeg-filters.html#Filtergraph-syntax-1]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#Filtergraph-syntax-1)
 
 -   FFmpeg runtime option with commands:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#Changing-options-at-runtime-with-a-command]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#Changing-options-at-runtime-with-a-command)
+> [[https://ffmpeg.org/ffmpeg-filters.html#Changing-options-at-runtime-with-a-command]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#Changing-options-at-runtime-with-a-command)
 
 -   H.264 compression:
-    > [[https://trac.ffmpeg.org/wiki/Encode/H.264]{.underline}](https://trac.ffmpeg.org/wiki/Encode/H.264)
+> [[https://trac.ffmpeg.org/wiki/Encode/H.264]{.underline}](https://trac.ffmpeg.org/wiki/Encode/H.264)
 
 -   Quick gig freelancing:
-    > [[https://www.fiverr.com]{.underline}](https://www.fiverr.com)
+> [[https://www.fiverr.com]{.underline}](https://www.fiverr.com)
 
 -   Advanced audio options:
-    > [[https://ffmpeg.org/ffmpeg.html#Audio-Options]{.underline}](https://ffmpeg.org/ffmpeg.html#Audio-Options)
+> [[https://ffmpeg.org/ffmpeg.html#Audio-Options]{.underline}](https://ffmpeg.org/ffmpeg.html#Audio-Options)
 
 -   Editing volume:
-    > [[http://ffmpeg.org/ffmpeg-filters.html#volume]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#volume)
+> [[http://ffmpeg.org/ffmpeg-filters.html#volume]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#volume)
 
 -   How to normalize audio:
-    > [[https://www.learndigitalaudio.com/normalize-audio]{.underline}](https://www.learndigitalaudio.com/normalize-audio)
+> [[https://www.learndigitalaudio.com/normalize-audio]{.underline}](https://www.learndigitalaudio.com/normalize-audio)
 
 -   Loudnorm:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#loudnorm]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)
+> [[https://ffmpeg.org/ffmpeg-filters.html#loudnorm]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)
 
 -   EBU R128 loudness:
-    > [[https://en.wikipedia.org/wiki/EBU_R_128]{.underline}](https://en.wikipedia.org/wiki/EBU_R_128)
+> [[https://en.wikipedia.org/wiki/EBU_R_128]{.underline}](https://en.wikipedia.org/wiki/EBU_R_128)
 
 -   libavfilter :
-    > [[https://ffmpeg.org/ffmpeg-devices.html#lavfi]{.underline}](https://ffmpeg.org/ffmpeg-devices.html#lavfi)
+> [[https://ffmpeg.org/ffmpeg-devices.html#lavfi]{.underline}](https://ffmpeg.org/ffmpeg-devices.html#lavfi)
 
 -   Sine wave generation:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#sine]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#sine)
+> [[https://ffmpeg.org/ffmpeg-filters.html#sine]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#sine)
 
 -   A massive write up on WebM to MP4 conversion:
-    > [[https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/]{.underline}](https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/)
+> [[https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/]{.underline}](https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/)
 
 -   Segment documentation:
-    > [[https://ffmpeg.org/ffmpeg-formats.html#segment_002c-stream_005fsegment_002c-ssegment]{.underline}](https://ffmpeg.org/ffmpeg-formats.html#segment_002c-stream_005fsegment_002c-ssegment)
+> [[https://ffmpeg.org/ffmpeg-formats.html#segment_002c-stream_005fsegment_002c-ssegment]{.underline}](https://ffmpeg.org/ffmpeg-formats.html#segment_002c-stream_005fsegment_002c-ssegment)
 
 -   Video compress picture types:
-    > [[https://en.wikipedia.org/wiki/Video_compression_picture_types]{.underline}](https://en.wikipedia.org/wiki/Video_compression_picture_types)
+> [[https://en.wikipedia.org/wiki/Video_compression_picture_types]{.underline}](https://en.wikipedia.org/wiki/Video_compression_picture_types)
 
 -   Vignette:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#vignette-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#vignette-1)
+> [[https://ffmpeg.org/ffmpeg-filters.html#vignette-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#vignette-1)
 
 -   Unsharp:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#unsharp-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#unsharp-1)
+> [[https://ffmpeg.org/ffmpeg-filters.html#unsharp-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#unsharp-1)
 
 -   Boxblur:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#boxblur]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#boxblur)
+> [[https://ffmpeg.org/ffmpeg-filters.html#boxblur]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#boxblur)
 
 -   Minterpolate:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#minterpolate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#minterpolate)
+> [[https://ffmpeg.org/ffmpeg-filters.html#minterpolate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#minterpolate)
 
 -   Cropping:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#crop]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#crop)
+> [[https://ffmpeg.org/ffmpeg-filters.html#crop]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#crop)
 
 -   -r vs FPS:
-    > [[https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options]{.underline}](https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options)
+> [[https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options]{.underline}](https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options)
 
 -   Quantization Documentation:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#qp]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#qp)
+> [[https://ffmpeg.org/ffmpeg-filters.html#qp]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#qp)
 
 -   Quantization:
-    > [[https://en.wikipedia.org/wiki/Quantization\_(image_processing)]{.underline}](https://en.wikipedia.org/wiki/Quantization_(image_processing))
+> [[https://en.wikipedia.org/wiki/Quantization\_(image_processing)]{.underline}](https://en.wikipedia.org/wiki/Quantization_(image_processing))
 
 -   Mpdecimate:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#mpdecimate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#mpdecimate)
+> [[https://ffmpeg.org/ffmpeg-filters.html#mpdecimate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#mpdecimate)
 
 -   Duplicate frame removal discussion:
-    > [[https://stackoverflow.com/questions/37088517/remove-sequentially-duplicate-frames-when-using-ffmpeg]{.underline}](https://stackoverflow.com/questions/37088517/remove-sequentially-duplicate-frames-when-using-ffmpeg)
+> [[https://stackoverflow.com/questions/37088517/remove-sequentially-duplicate-frames-when-using-ffmpeg]{.underline}](https://stackoverflow.com/questions/37088517/remove-sequentially-duplicate-frames-when-using-ffmpeg)
 
 -   Rotation with rotate:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#rotate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#rotate)
+> [[https://ffmpeg.org/ffmpeg-filters.html#rotate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#rotate)
 
 -   Rotation with transpose:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#transpose-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#transpose-1)
+> [[https://ffmpeg.org/ffmpeg-filters.html#transpose-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#transpose-1)
 
 -   SSA subtitles:
-    > [[https://matroska.org/technical/specs/subtitles/ssa.html]{.underline}](https://matroska.org/technical/specs/subtitles/ssa.html)
+> [[https://matroska.org/technical/specs/subtitles/ssa.html]{.underline}](https://matroska.org/technical/specs/subtitles/ssa.html)
 
 -   Subtitle Extraction:
-    > [[https://trac.ffmpeg.org/wiki/ExtractSubtitles]{.underline}](https://trac.ffmpeg.org/wiki/ExtractSubtitles)
+> [[https://trac.ffmpeg.org/wiki/ExtractSubtitles]{.underline}](https://trac.ffmpeg.org/wiki/ExtractSubtitles)
 
 -   Intermediate Subtitle Guide:
-    > [[https://en.wikibooks.org/wiki/FFmpeg_An_Intermediate_Guide/subtitle_options]{.underline}](https://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options)
+> [[https://en.wikibooks.org/wiki/FFmpeg_An_Intermediate_Guide/subtitle_options]{.underline}](https://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options)
 
 -   Drawtext documentation:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#drawtext-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#drawtext-1)
+> [[https://ffmpeg.org/ffmpeg-filters.html#drawtext-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#drawtext-1)
 
 -   Image noise Wikipedia:
-    > [[https://en.wikipedia.org/wiki/Image_noise]{.underline}](https://en.wikipedia.org/wiki/Image_noise)
+> [[https://en.wikipedia.org/wiki/Image_noise]{.underline}](https://en.wikipedia.org/wiki/Image_noise)
 
 -   AviGlitch:
-    > [[https://ucnv.github.io/aviglitch/]{.underline}](https://ucnv.github.io/aviglitch/)
+> [[https://ucnv.github.io/aviglitch/]{.underline}](https://ucnv.github.io/aviglitch/)
 
 -   Xfade guide:
-    > [[https://trac.ffmpeg.org/wiki/Xfade]{.underline}](https://trac.ffmpeg.org/wiki/Xfade)
+> [[https://trac.ffmpeg.org/wiki/Xfade]{.underline}](https://trac.ffmpeg.org/wiki/Xfade)
 
 -   geq expression:
-    > [[https://ffmpeg.org/ffmpeg-filters.html#geq]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#geq)
+> [[https://ffmpeg.org/ffmpeg-filters.html#geq]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#geq)
 
 -   Frei0r wikipedia:
-    > [[https://en.wikipedia.org/wiki/Frei0r]{.underline}](https://en.wikipedia.org/wiki/Frei0r)
+> [[https://en.wikipedia.org/wiki/Frei0r]{.underline}](https://en.wikipedia.org/wiki/Frei0r)
 
 -   Frei0r official website:
-    > [[https://frei0r.dyne.org]{.underline}](https://frei0r.dyne.org)
+> [[https://frei0r.dyne.org]{.underline}](https://frei0r.dyne.org)
 
 -   Distort0r documentation:
-    > [[https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r]{.underline}](https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r)
+> [[https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r]{.underline}](https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r)
 
 -   List of Frei0r filters:
-    > [[https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c]{.underline}](https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c)
+> [[https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c]{.underline}](https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c)
 
 -   FFmpeg Webcam wiki:
-    > [[https://trac.ffmpeg.org/wiki/Capture/Webcam]{.underline}](https://trac.ffmpeg.org/wiki/Capture/Webcam)
+> [[https://trac.ffmpeg.org/wiki/Capture/Webcam]{.underline}](https://trac.ffmpeg.org/wiki/Capture/Webcam)
 
 -   FFmpeg Error Wiki:
-    > [[https://trac.ffmpeg.org/wiki/Errors]{.underline}](https://trac.ffmpeg.org/wiki/Errors)
+> [[https://trac.ffmpeg.org/wiki/Errors]{.underline}](https://trac.ffmpeg.org/wiki/Errors)
 
 -   Twitter Emojis used in this book:
-    > [[https://twemoji.twitter.com]{.underline}](https://twemoji.twitter.com)
+> [[https://twemoji.twitter.com]{.underline}](https://twemoji.twitter.com)
 
 -   Cover Images:
-    > [[https://pixabay.com/users/megan_rexazin-6742250/]{.underline}](https://pixabay.com/users/megan_rexazin-6742250/)
+> [[https://pixabay.com/users/megan_rexazin-6742250/]{.underline}](https://pixabay.com/users/megan_rexazin-6742250/)
 
 I want to thank every single resource in this list. Without these
 websites and references this book would not exist. If there's something
