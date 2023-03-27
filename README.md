@@ -446,7 +446,7 @@ required.
 
 Special notes are highlighted in **bold** with the word **Tip**.
 Commands with large amounts of customization may refer to external
-documentation underlined in a [hyperlink blue]{.underline}. Ebook
+documentation underlined in a [hyperlink blue]. Ebook
 readers can click these hyperlinks for external access of said
 documentation.
 
@@ -462,10 +462,10 @@ to follow.
 
 If you have any issues or questions while using this book, feel free to
 contact me on Twitter:
-[[https://twitter.com/ffmpegtutorials]{.underline}](https://twitter.com/ffmpegtutorials)
+[https://twitter.com/ffmpegtutorials](https://twitter.com/ffmpegtutorials)
 
 **Tip:** Every script in this book is available for free on my website:
-[[http://johnriselvato.com/tag/ffmpeg/]{.underline}](http://johnriselvato.com/tag/ffmpeg/)
+[http://johnriselvato.com/tag/ffmpeg/](http://johnriselvato.com/tag/ffmpeg/)
 
 ## Standard Video / Audio File Syntax
 
@@ -536,7 +536,7 @@ https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 **Tip:** For more information on homebrew or installing homebrew, visit:
-[[https://brew.sh]{.underline}](https://brew.sh)
+[https://brew.sh](https://brew.sh)
 
 The FFmpeg installation command is as follows:
 
@@ -566,7 +566,7 @@ out of scope for this book.
 If installation from source is required, visit the following FFmpeg wiki
 page:
 
-[[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
+[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
 
 ## 4. How to Install FFmpeg on Windows?
 
@@ -578,7 +578,7 @@ Installation of FFmpeg on Windows is more involved as Windows doesn't
 natively have a package manager. The good news is the people over at
 *Zeranoe* have provided an FFmpeg build for Windows 64-bit and 32-bit.
 Visit the following for more instructions:
-[[https://ffmpeg.zeranoe.com/builds/]{.underline}](https://ffmpeg.zeranoe.com/builds/)
+[https://ffmpeg.zeranoe.com/builds/](https://ffmpeg.zeranoe.com/builds/)
 
 FFmpeg requires additional configuration on Windows. Below is the
 general requirement to install FFmpeg but installation may vary:
@@ -633,7 +633,7 @@ current workaround is as follows (install all available dependencies):
 ```
 
 Source:
-[[https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8]{.underline}](https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8)
+[https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8](https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8)
 
 **Linux**
 
@@ -676,7 +676,7 @@ hash -r
 ```
 
 Source:
-[[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
+[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
 
 ## 6. How to Install FFmpeg on a PHP Server?
 
@@ -697,7 +697,7 @@ There is a PHP library, *PHP-FFMpeg*, available if this method is too
 simplistic but it requires additional set up not covered in this book.
 
 For more information visit the PHP-FFMpeg GitHub at:
-[[https://github.com/PHP-FFMpeg/PHP-FFMpeg]{.underline}](https://github.com/PHP-FFMpeg/PHP-FFMpeg)
+[https://github.com/PHP-FFMpeg/PHP-FFMpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg)
 
 ## 7. How to Use FFmpeg in Various Languages?
 
@@ -731,7 +731,7 @@ ff.run()
 ```
 
 More information:
-[[https://pypi.org/project/ffmpy/]{.underline}](https://pypi.org/project/ffmpy/)
+[https://pypi.org/project/ffmpy/](https://pypi.org/project/ffmpy/)
 
 **Bash/Shell**
 
@@ -764,7 +764,7 @@ a MOV file is converted to MP4:
 ```
 
 More information:
-[[https://github.com/streamio/streamio-ffmpeg]{.underline}](https://github.com/streamio/streamio-ffmpeg)
+[https://github.com/streamio/streamio-ffmpeg](https://github.com/streamio/streamio-ffmpeg)
 
 As mentioned earlier, FFmpeg is cross-platform and open source ports are
 available in almost every language or platform. Although not covered in
@@ -1393,13 +1393,13 @@ quality but it results in a large file. This is optional.
 
 Converting one audio file to another format is a simple but powerful
 tool. There are even people on
-[[http://fiverr.com]{.underline}](http://fiverr.com) (a quick gig
+[http://fiverr.com](http://fiverr.com) (a quick gig
 freelancing website) who have had 100s of jobs solely on the basis of
 converting one audio file to another. You too now have that ability.
 
 Want to sign up for Fiverr? Feel free to use my referral code and "Earn
 Up To \$100"\* in credit:
-[[http://www.fiverr.com/s2/6229935ae0]{.underline}](http://www.fiverr.com/s2/6229935ae0)
+[http://www.fiverr.com/s2/6229935ae0](http://www.fiverr.com/s2/6229935ae0)
 \* according to Fiverr referral terms and services
 
 <img src="media/image42.png" width="50px" height="50px"/>
@@ -1617,7 +1617,7 @@ Indicates the volume value (input_volume * value = output_volume)
 
 The volume filter has over 17 different parameters to precisely change
 the sound. For more information visit,
-[[http://ffmpeg.org/ffmpeg-filters.html#volume]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#volume)
+[http://ffmpeg.org/ffmpeg-filters.html#volume](http://ffmpeg.org/ffmpeg-filters.html#volume)
 
 ## 28. How to Crossfade Two Audio Tracks?
 
@@ -1678,7 +1678,7 @@ No fade applied
 ```
 
 For more information on crossfades and curves, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#afade]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#afade)
+[https://ffmpeg.org/ffmpeg-filters.html#afade](https://ffmpeg.org/ffmpeg-filters.html#afade)
 
 ## 29. How to Normalize Audio Data?
 
@@ -1723,7 +1723,7 @@ Indicates the max true peak (-9.0 to 0.0 with default -2.0)
 ```
 
 For more information on loudnorm, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#loudnorm]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)
+[https://ffmpeg.org/ffmpeg-filters.html#loudnorm](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)
 
 ## 30. How to Add an Echo to an Audio Track?
 
@@ -1863,7 +1863,7 @@ generated with FFmpeg using Japanese vintage commercials as input.
 Personally, I am very pleased with the sound.
 
 Listen to it here:
-[[https://mthu.bandcamp.com/album/we-are]{.underline}](https://mthu.bandcamp.com/album/we-are)
+[https://mthu.bandcamp.com/album/we-are](https://mthu.bandcamp.com/album/we-are)
 
 ## 33. How to Generate an Audio Tone?
 
@@ -1898,7 +1898,7 @@ Indicates the duration of the generated frequency output
 ## 34. How to Generate Text to Speech Audio?
 
 **Tip:** You'll need to enable \--enable-libflite, full Tutorial:
-[[http://johnriselvato.com/how-to-install-flite-flitevox-for-ffmpeg/]{.underline}](http://johnriselvato.com/how-to-install-flite-flitevox-for-ffmpeg/)
+[http://johnriselvato.com/how-to-install-flite-flitevox-for-ffmpeg/](http://johnriselvato.com/how-to-install-flite-flitevox-for-ffmpeg/)
 
 Generating text to speech is a great feature to have locally on a
 computer. From using it in a YouTube video to making memes on Twitter,
@@ -1920,7 +1920,7 @@ $ ffmpeg -f lavfi -i flite=text='Hello World!' output.mp3
 ```
 
 For more information about flite, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#flite]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#flite)
+[https://ffmpeg.org/ffmpeg-filters.html#flite](https://ffmpeg.org/ffmpeg-filters.html#flite)
 
 ## 35. How to Add a Low-Pass Filter to an Audio Track?
 
@@ -2044,7 +2044,7 @@ available. There are over 90 additional audio filters to accomplish even
 more tasks with new filters being added yearly.
 
 For more information, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#Audio-Filters]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#Audio-Filters)
+[https://ffmpeg.org/ffmpeg-filters.html#Audio-Filters](https://ffmpeg.org/ffmpeg-filters.html#Audio-Filters)
 
 <img src="media/image3.png" width="50px" height="50px"/>
 
@@ -2371,7 +2371,7 @@ $ ffmpeg -f concat -i file.txt -c copy -fflags +genpts output.mp4
 
 Streaming with concat is not covered in this book but more information
 can be found by visiting:
-[[https://ffmpeg.org/ffmpeg-formats.html#concat-1]{.underline}](https://ffmpeg.org/ffmpeg-formats.html#concat-1)
+[https://ffmpeg.org/ffmpeg-formats.html#concat-1](https://ffmpeg.org/ffmpeg-formats.html#concat-1)
 
 ```
 fflags
@@ -3061,7 +3061,7 @@ Indicates the forward or backward mode (forward or backward)
 ```
 
 For more information about additional vignette parameters visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#vignette-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#vignette-1)
+[https://ffmpeg.org/ffmpeg-filters.html#vignette-1](https://ffmpeg.org/ffmpeg-filters.html#vignette-1)
 
 ## 63. How to Remove All Colors Except One From a Video?
 
@@ -3187,7 +3187,7 @@ Frankie Sierra dithering v2 "Lite"
 
 For more information on the advanced parameters available for
 paletteuse, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#paletteuse]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#paletteuse)
+[https://ffmpeg.org/ffmpeg-filters.html#paletteuse](https://ffmpeg.org/ffmpeg-filters.html#paletteuse)
 
 # Sharpening / Blurring Filters
 
@@ -3236,7 +3236,7 @@ Indicates the chroma effect strength (1.5 to -1.5 with default 0.0)
 ```
 
 For more information about this filter, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#unsharp-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#unsharp-1)
+[https://ffmpeg.org/ffmpeg-filters.html#unsharp-1](https://ffmpeg.org/ffmpeg-filters.html#unsharp-1)
 
 ## 67. How to Blur a Video with Unsharp?
 
@@ -3435,7 +3435,7 @@ Indicates the chroma strength (-1 to 2.14748e+09)
 
 **Tip:** alpha_radius is rather complicated and does not meet the
 specification for this book, for more information visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#boxblur]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#boxblur)
+[https://ffmpeg.org/ffmpeg-filters.html#boxblur](https://ffmpeg.org/ffmpeg-filters.html#boxblur)
 
 ## 71. How to Apply a Pixelated Effect to a Video?
 
@@ -3517,7 +3517,7 @@ Indicates the volume value (input_volume * value = output_volume)
 
 The volume filter has over 17 different parameters to precisely change
 the sound. For more information visit,
-[[http://ffmpeg.org/ffmpeg-filters.html#volume]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#volume)
+[http://ffmpeg.org/ffmpeg-filters.html#volume](http://ffmpeg.org/ffmpeg-filters.html#volume)
 
 ## 73. How to Slow Down a Video?
 
@@ -3561,7 +3561,7 @@ with aobmc provides the highest quality motion interpolation but also
 requires the most compute time.
 
 **Tip:** For more information on minterpolate, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#minterpolate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#minterpolate)
+[https://ffmpeg.org/ffmpeg-filters.html#minterpolate](https://ffmpeg.org/ffmpeg-filters.html#minterpolate)
 
 ```
 setpts
@@ -3762,7 +3762,7 @@ Indicates the input height
 
 **Tip:** The crop filter has more parameters to control the crop not
 covered in this section. For more information, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#crop]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#crop)
+[https://ffmpeg.org/ffmpeg-filters.html#crop](https://ffmpeg.org/ffmpeg-filters.html#crop)
 
 ## 77. How to Change the Frame Rate of a Video?
 
@@ -3787,7 +3787,7 @@ $ ffmpeg -i input.mp4 -vf "fps=fps=30" output.mp4
 
 **Tip:** some discussion on "-r vs fps" shows -r sometimes generates too
 many output frames. More information, visit:
-[[https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options]{.underline}](https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options)
+[https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options](https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options)
 
 ## 78. How to Change the Resolution of a Video?
 
@@ -4048,7 +4048,7 @@ $ ffmpeg -i input.mp4 -vf "rotate=45*PI/180" output.mp4
 **Tip:** Rotation with rotate has various parameters such as fillcolor,
 interpolation, and different ways to apply expressions for time, width,
 height, etc. For more information visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#rotate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#rotate)
+[https://ffmpeg.org/ffmpeg-filters.html#rotate](https://ffmpeg.org/ffmpeg-filters.html#rotate)
 
 Another way to rotate video is with the transpose filter. This filter
 has presets for clockwise and counterclockwise rotation.
@@ -4141,7 +4141,7 @@ $ ffmpeg -txt_format text -i input.mkv out.ssa
 
 **Tip:** This does require FFmpeg to have libzvbi to be enabled
 (\--enable-libzvbi). For more information on subtitle extraction, visit:
-[[https://trac.ffmpeg.org/wiki/ExtractSubtitles]{.underline}](https://trac.ffmpeg.org/wiki/ExtractSubtitles)
+[https://trac.ffmpeg.org/wiki/ExtractSubtitles](https://trac.ffmpeg.org/wiki/ExtractSubtitles)
 
 Interestingly enough, FFmpeg also handles the extraction of subtitles
 natively. Even though the input.mkv has a ssa subtitle format, FFmpeg
@@ -4280,7 +4280,7 @@ Indicates the y location
 ```
 
 For more information about drawtext, visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#drawtext-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#drawtext-1)
+[https://ffmpeg.org/ffmpeg-filters.html#drawtext-1](https://ffmpeg.org/ffmpeg-filters.html#drawtext-1)
 
 It's actually really great that FFmpeg supports the extraction and
 embedding of subtitles. Subtitles have become extremely helpful in
@@ -4691,10 +4691,10 @@ seconds (default is 0)
 
 **Tip:** xfade also has an expression parameter for advanced
 configuration, more information at:
-[[https://ffmpeg.org/ffmpeg-filters.html#xfade]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#xfade)
+[https://ffmpeg.org/ffmpeg-filters.html#xfade](https://ffmpeg.org/ffmpeg-filters.html#xfade)
 
 \*Figure 98.0 is from the wiki, more information:
-[[https://trac.ffmpeg.org/wiki/Xfade]{.underline}](https://trac.ffmpeg.org/wiki/Xfade)
+[https://trac.ffmpeg.org/wiki/Xfade](https://trac.ffmpeg.org/wiki/Xfade)
 
 ## 99. How to Add Noise to a Video?
 
@@ -4817,7 +4817,7 @@ Indicates the red expression
 
 **Tip:** geq also has various variables and functions that can be
 applied to the filter. For more information visit:
-[[https://ffmpeg.org/ffmpeg-filters.html#geq]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#geq)
+[https://ffmpeg.org/ffmpeg-filters.html#geq](https://ffmpeg.org/ffmpeg-filters.html#geq)
 
 ## 101. How to Randomize Frames in a Video?
 
@@ -4963,7 +4963,7 @@ A still image doesn't do it justice as the wave-like moment is what
 really gives off the feeling of the room spinning.
 
 For a full list of frei0r filters, visit:
-[[https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c]{.underline}](https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c)
+[https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c](https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c)
 
 **Challenge:** The glamor filter on Instagram probably uses something
 like colorkey to select the whiter colors (hence why eyeballs and teeth
@@ -4972,7 +4972,7 @@ is applied and a star image is centered at the peak of that specific
 output. Try out yourself to see if you can emulate the Instagram filter.
 
 **Tip:** For more information on the distort0r filter:
-[[https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r]{.underline}](https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r)
+[https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r](https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r)
 
 The frei0r filter is the most exciting filter to mess around with in
 FFmpeg. There are so many video filters that if you're looking to make a
@@ -5003,7 +5003,7 @@ To connect to YouTube and send streaming data to their servers, you'll
 need to obtain a YouTube streaming URL and YouTube Stream Key.
 
 First, go to
-[[https://www.youtube.com]{.underline}](https://www.youtube.com) and
+[https://www.youtube.com](https://www.youtube.com) and
 click the create a video button and select the 'Go Live' option from the
 drop-down, as seen in figure 104.0:
 
@@ -5183,7 +5183,7 @@ disable access between streaming sessions.
 
 For streaming a webcam with other operating systems, visit the FFmpeg
 webcam wiki:
-[[https://trac.ffmpeg.org/wiki/Capture/Webcam]{.underline}](https://trac.ffmpeg.org/wiki/Capture/Webcam)
+[https://trac.ffmpeg.org/wiki/Capture/Webcam](https://trac.ffmpeg.org/wiki/Capture/Webcam)
 
 ## 107. How to Use Filters with Video Streaming?
 
@@ -5231,7 +5231,7 @@ This section outlines some of the most common errors found during the
 writing of this book.
 
 **Tip:** The FFmpeg wiki also has its own list of Errors:
-[[https://trac.ffmpeg.org/wiki/Errors]{.underline}](https://trac.ffmpeg.org/wiki/Errors)
+[https://trac.ffmpeg.org/wiki/Errors](https://trac.ffmpeg.org/wiki/Errors)
 
 ## 108. How to Fix the 'width/height not divisible by 2' Error?
 
@@ -5325,7 +5325,7 @@ with Extra Dependencies?"*.
 There may be other errors and messages that might be encountered that
 are not covered in this book. The FFmpeg Wiki has a resource for other
 solutions, which can be found here:
-[[https://trac.ffmpeg.org/wiki/Errors]{.underline}](https://trac.ffmpeg.org/wiki/Errors)
+[https://trac.ffmpeg.org/wiki/Errors](https://trac.ffmpeg.org/wiki/Errors)
 
 <img src="media/image15.png" width="50px" height="50px"/>
 
@@ -5347,7 +5347,7 @@ Twitter. I can't wait to see what wonderful projects you create with
 FFmpeg.
 
 Twitter link:
-[[https://twitter.com/ffmpegtutorials]{.underline}](https://twitter.com/ffmpegtutorials)
+[https://twitter.com/ffmpegtutorials](https://twitter.com/ffmpegtutorials)
 
 Thank you for your purchase of this book and the time spent together
 with it, it means the world to me.
@@ -5359,169 +5359,169 @@ John Riselvato
 Resources
 
 -   FFmpeg website:
-> [[https://ffmpeg.org]{.underline}](https://ffmpeg.org)
+> [https://ffmpeg.org](https://ffmpeg.org)
 
 -   FFmpeg wikipedia page:
-> [[https://en.wikipedia.org/wiki/FFmpeg]{.underline}](https://en.wikipedia.org/wiki/FFmpeg)
+> [https://en.wikipedia.org/wiki/FFmpeg](https://en.wikipedia.org/wiki/FFmpeg)
 
 -   Installing homebrew on macOS:
-> [[https://brew.sh]{.underline}](https://brew.sh)
+> [https://brew.sh](https://brew.sh)
 
 -   FFmpeg wiki page for installing on linux:
-> [[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
+> [https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
 
 -   FFmpeg builds for Windows:
-> [[https://ffmpeg.zeranoe.com/builds/]{.underline}](https://ffmpeg.zeranoe.com/builds/)
+> [https://ffmpeg.zeranoe.com/builds/](https://ffmpeg.zeranoe.com/builds/)
 
 -   Dependencies with macOS + Homebrew Discussion:
-> [[https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8]{.underline}](https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8)
+> [https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8](https://gist.github.com/Piasy/b5dfd5c048eb69d1b91719988c0325d8)
 
 -   Installing dependencies on Linux:
-> [[https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu]{.underline}](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
+> [https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
 
 -   Python using 3rd party library ffmpy:
-> [[https://pypi.org/project/ffmpy/]{.underline}](https://pypi.org/project/ffmpy/)
+> [https://pypi.org/project/ffmpy/](https://pypi.org/project/ffmpy/)
 
 -   Ruby using 3rd party library Streamio:
-> [[https://github.com/streamio/streamio-ffmpeg]{.underline}](https://github.com/streamio/streamio-ffmpeg)
+> [https://github.com/streamio/streamio-ffmpeg](https://github.com/streamio/streamio-ffmpeg)
 
 -   Codec wikipedia entry:
-> [[https://en.wikipedia.org/wiki/Codec]{.underline}](https://en.wikipedia.org/wiki/Codec)
+> [https://en.wikipedia.org/wiki/Codec](https://en.wikipedia.org/wiki/Codec)
 
 -   x264 video codec download:
-> [[https://www.videolan.org/developers/x264.html]{.underline}](https://www.videolan.org/developers/x264.html)
+> [https://www.videolan.org/developers/x264.html](https://www.videolan.org/developers/x264.html)
 
 -   Constant rate factor (CRF):
-> [[https://streaminglearningcenter.com/blogs/saving-encoding-streaming-deploy-capped-crf.html]{.underline}](https://streaminglearningcenter.com/blogs/saving-encoding-streaming-deploy-capped-crf.html)
+> [https://streaminglearningcenter.com/blogs/saving-encoding-streaming-deploy-capped-crf.html](https://streaminglearningcenter.com/blogs/saving-encoding-streaming-deploy-capped-crf.html)
 
 -   Introduction to FFmpeg filtering:
-> [[https://ffmpeg.org/ffmpeg-filters.html#Filtering-Introduction]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#Filtering-Introduction)
+> [https://ffmpeg.org/ffmpeg-filters.html#Filtering-Introduction](https://ffmpeg.org/ffmpeg-filters.html#Filtering-Introduction)
 
 -   FFmpeg Filter syntax:
-> [[http://ffmpeg.org/ffmpeg-filters.html#Filtergraph-syntax-1]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#Filtergraph-syntax-1)
+> [http://ffmpeg.org/ffmpeg-filters.html#Filtergraph-syntax-1](http://ffmpeg.org/ffmpeg-filters.html#Filtergraph-syntax-1)
 
 -   FFmpeg runtime option with commands:
-> [[https://ffmpeg.org/ffmpeg-filters.html#Changing-options-at-runtime-with-a-command]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#Changing-options-at-runtime-with-a-command)
+> [https://ffmpeg.org/ffmpeg-filters.html#Changing-options-at-runtime-with-a-command](https://ffmpeg.org/ffmpeg-filters.html#Changing-options-at-runtime-with-a-command)
 
 -   H.264 compression:
-> [[https://trac.ffmpeg.org/wiki/Encode/H.264]{.underline}](https://trac.ffmpeg.org/wiki/Encode/H.264)
+> [https://trac.ffmpeg.org/wiki/Encode/H.264](https://trac.ffmpeg.org/wiki/Encode/H.264)
 
 -   Quick gig freelancing:
-> [[https://www.fiverr.com]{.underline}](https://www.fiverr.com)
+> [https://www.fiverr.com](https://www.fiverr.com)
 
 -   Advanced audio options:
-> [[https://ffmpeg.org/ffmpeg.html#Audio-Options]{.underline}](https://ffmpeg.org/ffmpeg.html#Audio-Options)
+> [https://ffmpeg.org/ffmpeg.html#Audio-Options](https://ffmpeg.org/ffmpeg.html#Audio-Options)
 
 -   Editing volume:
-> [[http://ffmpeg.org/ffmpeg-filters.html#volume]{.underline}](http://ffmpeg.org/ffmpeg-filters.html#volume)
+> [http://ffmpeg.org/ffmpeg-filters.html#volume](http://ffmpeg.org/ffmpeg-filters.html#volume)
 
 -   How to normalize audio:
-> [[https://www.learndigitalaudio.com/normalize-audio]{.underline}](https://www.learndigitalaudio.com/normalize-audio)
+> [https://www.learndigitalaudio.com/normalize-audio](https://www.learndigitalaudio.com/normalize-audio)
 
 -   Loudnorm:
-> [[https://ffmpeg.org/ffmpeg-filters.html#loudnorm]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)
+> [https://ffmpeg.org/ffmpeg-filters.html#loudnorm](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)
 
 -   EBU R128 loudness:
-> [[https://en.wikipedia.org/wiki/EBU_R_128]{.underline}](https://en.wikipedia.org/wiki/EBU_R_128)
+> [https://en.wikipedia.org/wiki/EBU_R_128](https://en.wikipedia.org/wiki/EBU_R_128)
 
 -   libavfilter :
-> [[https://ffmpeg.org/ffmpeg-devices.html#lavfi]{.underline}](https://ffmpeg.org/ffmpeg-devices.html#lavfi)
+> [https://ffmpeg.org/ffmpeg-devices.html#lavfi](https://ffmpeg.org/ffmpeg-devices.html#lavfi)
 
 -   Sine wave generation:
-> [[https://ffmpeg.org/ffmpeg-filters.html#sine]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#sine)
+> [https://ffmpeg.org/ffmpeg-filters.html#sine](https://ffmpeg.org/ffmpeg-filters.html#sine)
 
 -   A massive write up on WebM to MP4 conversion:
-> [[https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/]{.underline}](https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/)
+> [https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/](https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/)
 
 -   Segment documentation:
-> [[https://ffmpeg.org/ffmpeg-formats.html#segment_002c-stream_005fsegment_002c-ssegment]{.underline}](https://ffmpeg.org/ffmpeg-formats.html#segment_002c-stream_005fsegment_002c-ssegment)
+> [https://ffmpeg.org/ffmpeg-formats.html#segment_002c-stream_005fsegment_002c-ssegment](https://ffmpeg.org/ffmpeg-formats.html#segment_002c-stream_005fsegment_002c-ssegment)
 
 -   Video compress picture types:
-> [[https://en.wikipedia.org/wiki/Video_compression_picture_types]{.underline}](https://en.wikipedia.org/wiki/Video_compression_picture_types)
+> [https://en.wikipedia.org/wiki/Video_compression_picture_types](https://en.wikipedia.org/wiki/Video_compression_picture_types)
 
 -   Vignette:
-> [[https://ffmpeg.org/ffmpeg-filters.html#vignette-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#vignette-1)
+> [https://ffmpeg.org/ffmpeg-filters.html#vignette-1](https://ffmpeg.org/ffmpeg-filters.html#vignette-1)
 
 -   Unsharp:
-> [[https://ffmpeg.org/ffmpeg-filters.html#unsharp-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#unsharp-1)
+> [https://ffmpeg.org/ffmpeg-filters.html#unsharp-1](https://ffmpeg.org/ffmpeg-filters.html#unsharp-1)
 
 -   Boxblur:
-> [[https://ffmpeg.org/ffmpeg-filters.html#boxblur]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#boxblur)
+> [https://ffmpeg.org/ffmpeg-filters.html#boxblur](https://ffmpeg.org/ffmpeg-filters.html#boxblur)
 
 -   Minterpolate:
-> [[https://ffmpeg.org/ffmpeg-filters.html#minterpolate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#minterpolate)
+> [https://ffmpeg.org/ffmpeg-filters.html#minterpolate](https://ffmpeg.org/ffmpeg-filters.html#minterpolate)
 
 -   Cropping:
-> [[https://ffmpeg.org/ffmpeg-filters.html#crop]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#crop)
+> [https://ffmpeg.org/ffmpeg-filters.html#crop](https://ffmpeg.org/ffmpeg-filters.html#crop)
 
 -   -r vs FPS:
-> [[https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options]{.underline}](https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options)
+> [https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options](https://superuser.com/questions/584760/whats-the-meaning-of-ffmpegs-fps-options)
 
 -   Quantization Documentation:
-> [[https://ffmpeg.org/ffmpeg-filters.html#qp]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#qp)
+> [https://ffmpeg.org/ffmpeg-filters.html#qp](https://ffmpeg.org/ffmpeg-filters.html#qp)
 
 -   Quantization:
-> [[https://en.wikipedia.org/wiki/Quantization\_(image_processing)]{.underline}](https://en.wikipedia.org/wiki/Quantization_(image_processing))
+> [https://en.wikipedia.org/wiki/Quantization\_(image_processing)](https://en.wikipedia.org/wiki/Quantization_(image_processing))
 
 -   Mpdecimate:
-> [[https://ffmpeg.org/ffmpeg-filters.html#mpdecimate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#mpdecimate)
+> [https://ffmpeg.org/ffmpeg-filters.html#mpdecimate](https://ffmpeg.org/ffmpeg-filters.html#mpdecimate)
 
 -   Duplicate frame removal discussion:
-> [[https://stackoverflow.com/questions/37088517/remove-sequentially-duplicate-frames-when-using-ffmpeg]{.underline}](https://stackoverflow.com/questions/37088517/remove-sequentially-duplicate-frames-when-using-ffmpeg)
+> [https://stackoverflow.com/questions/37088517/remove-sequentially-duplicate-frames-when-using-ffmpeg](https://stackoverflow.com/questions/37088517/remove-sequentially-duplicate-frames-when-using-ffmpeg)
 
 -   Rotation with rotate:
-> [[https://ffmpeg.org/ffmpeg-filters.html#rotate]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#rotate)
+> [https://ffmpeg.org/ffmpeg-filters.html#rotate](https://ffmpeg.org/ffmpeg-filters.html#rotate)
 
 -   Rotation with transpose:
-> [[https://ffmpeg.org/ffmpeg-filters.html#transpose-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#transpose-1)
+> [https://ffmpeg.org/ffmpeg-filters.html#transpose-1](https://ffmpeg.org/ffmpeg-filters.html#transpose-1)
 
 -   SSA subtitles:
-> [[https://matroska.org/technical/specs/subtitles/ssa.html]{.underline}](https://matroska.org/technical/specs/subtitles/ssa.html)
+> [https://matroska.org/technical/specs/subtitles/ssa.html](https://matroska.org/technical/specs/subtitles/ssa.html)
 
 -   Subtitle Extraction:
-> [[https://trac.ffmpeg.org/wiki/ExtractSubtitles]{.underline}](https://trac.ffmpeg.org/wiki/ExtractSubtitles)
+> [https://trac.ffmpeg.org/wiki/ExtractSubtitles](https://trac.ffmpeg.org/wiki/ExtractSubtitles)
 
 -   Intermediate Subtitle Guide:
-> [[https://en.wikibooks.org/wiki/FFmpeg_An_Intermediate_Guide/subtitle_options]{.underline}](https://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options)
+> [https://en.wikibooks.org/wiki/FFmpeg_An_Intermediate_Guide/subtitle_options](https://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options)
 
 -   Drawtext documentation:
-> [[https://ffmpeg.org/ffmpeg-filters.html#drawtext-1]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#drawtext-1)
+> [https://ffmpeg.org/ffmpeg-filters.html#drawtext-1](https://ffmpeg.org/ffmpeg-filters.html#drawtext-1)
 
 -   Image noise Wikipedia:
-> [[https://en.wikipedia.org/wiki/Image_noise]{.underline}](https://en.wikipedia.org/wiki/Image_noise)
+> [https://en.wikipedia.org/wiki/Image_noise](https://en.wikipedia.org/wiki/Image_noise)
 
 -   AviGlitch:
-> [[https://ucnv.github.io/aviglitch/]{.underline}](https://ucnv.github.io/aviglitch/)
+> [https://ucnv.github.io/aviglitch/](https://ucnv.github.io/aviglitch/)
 
 -   Xfade guide:
-> [[https://trac.ffmpeg.org/wiki/Xfade]{.underline}](https://trac.ffmpeg.org/wiki/Xfade)
+> [https://trac.ffmpeg.org/wiki/Xfade](https://trac.ffmpeg.org/wiki/Xfade)
 
 -   geq expression:
-> [[https://ffmpeg.org/ffmpeg-filters.html#geq]{.underline}](https://ffmpeg.org/ffmpeg-filters.html#geq)
+> [https://ffmpeg.org/ffmpeg-filters.html#geq](https://ffmpeg.org/ffmpeg-filters.html#geq)
 
 -   Frei0r wikipedia:
-> [[https://en.wikipedia.org/wiki/Frei0r]{.underline}](https://en.wikipedia.org/wiki/Frei0r)
+> [https://en.wikipedia.org/wiki/Frei0r](https://en.wikipedia.org/wiki/Frei0r)
 
 -   Frei0r official website:
-> [[https://frei0r.dyne.org]{.underline}](https://frei0r.dyne.org)
+> [https://frei0r.dyne.org](https://frei0r.dyne.org)
 
 -   Distort0r documentation:
-> [[https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r]{.underline}](https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r)
+> [https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r](https://gstreamer.freedesktop.org/documentation/frei0r/frei0r-filter-distort0r.html?gi-language=c#frei0r-filter-distort0r)
 
 -   List of Frei0r filters:
-> [[https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c]{.underline}](https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c)
+> [https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c](https://gstreamer.freedesktop.org/documentation/frei0r/index.html?gi-language=c)
 
 -   FFmpeg Webcam wiki:
-> [[https://trac.ffmpeg.org/wiki/Capture/Webcam]{.underline}](https://trac.ffmpeg.org/wiki/Capture/Webcam)
+> [https://trac.ffmpeg.org/wiki/Capture/Webcam](https://trac.ffmpeg.org/wiki/Capture/Webcam)
 
 -   FFmpeg Error Wiki:
-> [[https://trac.ffmpeg.org/wiki/Errors]{.underline}](https://trac.ffmpeg.org/wiki/Errors)
+> [https://trac.ffmpeg.org/wiki/Errors](https://trac.ffmpeg.org/wiki/Errors)
 
 -   Twitter Emojis used in this book:
-> [[https://twemoji.twitter.com]{.underline}](https://twemoji.twitter.com)
+> [https://twemoji.twitter.com](https://twemoji.twitter.com)
 
 -   Cover Images:
-> [[https://pixabay.com/users/megan_rexazin-6742250/]{.underline}](https://pixabay.com/users/megan_rexazin-6742250/)
+> [https://pixabay.com/users/megan_rexazin-6742250/](https://pixabay.com/users/megan_rexazin-6742250/)
 
 I want to thank every single resource in this list. Without these
 websites and references this book would not exist. If there's something
