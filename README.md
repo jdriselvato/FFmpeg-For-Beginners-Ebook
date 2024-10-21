@@ -1646,7 +1646,7 @@ Indicates the crossfader curve for the first input
 
 curve2
 
-Indicates the crossfader curve for the first input
+Indicates the crossfader curve for the second input
 
 Although in this example, both crossfade curves are exp or
 *exponential*, FFmpeg support multiple curves but below are 6
@@ -4254,7 +4254,7 @@ adhere to. All coordinates start at (0, 0) which is the top left.
 Starting from (0, 0) the pixels go left to right then top to bottoms.
 
 ```
-drawetext
+drawtext
 
 Indicates the text drawing filter name
 
@@ -5215,7 +5215,7 @@ temporary hacks), it's a powerful feature but might not be the best
 practice for traditional streaming. A GUI interface might win this time.
 
 That pretty much covers it for streaming with FFmpeg. If you're a Twitch
-or Facebook streamerm try out what you've learned here and apply it on
+or Facebook streamer, try out what you've learned here and apply it on
 these platforms. Hopefully it's not as complicated.
 
 At this point, all that is left to cover is the common errors found in
